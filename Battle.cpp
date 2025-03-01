@@ -6,43 +6,38 @@ Battle::Battle() : rng(std::time(nullptr)) {
     const float battlefieldWidth = 800.f;
     const float battlefieldHeight = 600.f;
 
-    // Ustawienia pozycji
-    const int unitsPerRow = 10;       // Liczba jednostek w jednym rzêdzie
-    const float rowSpacing = 20.f;    // Odstêpy w pionie
-    const float columnSpacing = 20.f; // Odstêpy w poziomie
+    const int unitsPerRow = 10;
+    const float rowSpacing = 20.f;
+    const float columnSpacing = 20.f;
 
-    // Wspó³rzêdne Y dla dru¿yn
-    const float bottomSideY = 500.f;  // Dru¿yna A (dó³ ekranu)
-    const float topSideY = 100.f;     // Dru¿yna B (góra ekranu)
+    const float bottomSideY = 500.f;
+    const float topSideY = 100.f;
 
-    // Tworzenie dru¿yny A (na dole)
     for (int i = 0; i < 45; ++i) {
-        float x = 100.f + (i % unitsPerRow) * columnSpacing;  // Rozmieszczenie w rzêdach
+        float x = 100.f + (i % unitsPerRow) * columnSpacing;
         float y = bottomSideY + (i / unitsPerRow) * rowSpacing;
 
         if (i < 20) {
-            team.push_back(new Infantry(x, y, true)); // Pierwsze 10 - piechota
+            team.push_back(new Infantry(x, y, true));
         }
         else {
-            team.push_back(new Archer(x, y, true));  // Pozosta³e - kawaleria
+            team.push_back(new Archer(x, y, true));
         }
     }
 
-    // Tworzenie dru¿yny B (na górze)
     for (int i = 0; i < 50; ++i) {
-        float x = 100.f + (i % unitsPerRow) * columnSpacing; // Rozmieszczenie w rzêdach
+        float x = 100.f + (i % unitsPerRow) * columnSpacing;
         float y = topSideY + (i / unitsPerRow) * rowSpacing;
 
         if (i < 20) {
-            teamB.push_back(new Infantry(x, y, false)); // Pierwsze 10 - ³ucznicy
+            teamB.push_back(new Infantry(x, y, false));
         }
         else {
-            teamB.push_back(new Archer(x, y, false)); // Pozosta³e - kawaleria
+            teamB.push_back(new Archer(x, y, false));
         }
     }
 }
 
-// Destruktor: Usuwanie jednostek z pamiêci
 Battle::~Battle() {
     for (auto unit : team) delete unit;
     for (auto unit : teamB) delete unit;
@@ -63,13 +58,12 @@ bool Battle::isFinished() {
     return team.empty() || teamB.empty();
 }
 
-// Usuwa martwe jednostki z dru¿yn
 void Battle::removeDeadUnits() {
     auto removeDead = [](std::vector<Unit*>& team) {
         for (auto it = team.begin(); it != team.end();) {
             if (!(*it)->isAlive()) {
-                delete* it;             // Zwolnienie pamiêci
-                it = team.erase(it);    // Usuniêcie wskaŸnika z wektora
+                delete* it;
+                it = team.erase(it);
             }
             else {
                 ++it;
@@ -77,14 +71,13 @@ void Battle::removeDeadUnits() {
         }
         };
 
-    removeDead(team); // Usuniêcie martwych z dru¿yny A
-    removeDead(teamB); // Usuniêcie martwych z dru¿yny B
+    removeDead(team);
+    removeDead(teamB);
 }
 
 void Battle::displayUnitsHealth(){
     std::cout << "=== Stan jednostek ===" << std::endl;
 
-    // Wyœwietlenie HP dru¿yny A (np. niebiescy)
     std::cout << "Dru¿yna A (Niebiescy):" << std::endl;
     for (const auto& unit : team) {
         std::cout << "HP: " << unit->getHealth() << " | Pozycja: ("
@@ -92,7 +85,6 @@ void Battle::displayUnitsHealth(){
             << (unit->isAlive() ? " [¯yje]" : " [Martwy]") << std::endl;
     }
 
-    // Wyœwietlenie HP dru¿yny B (np. czerwoni)
     std::cout << "Dru¿yna B (Czerwoni):" << std::endl;
     for (const auto& unit : teamB) {
         std::cout << "HP: " << unit->getHealth() << " | Pozycja: ("
