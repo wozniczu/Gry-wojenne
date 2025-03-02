@@ -28,7 +28,7 @@ public:
     const sf::CircleShape& getShape() const;
 
     bool getTeam() const { return team; };
-    float getRange() const { return health; };
+    float getRange() const { return attackRange; };
     float getHealth() const { return health; };
 };
 
