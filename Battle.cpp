@@ -1,9 +1,10 @@
 #include "Battle.h"
-#include <iostream>
-#include <random>
-#include <thread>
 
-Battle::Battle() : finished(false) {
+Battle::Battle() : finished(false), arenaSprite(arenaTexture) {
+    if (!arenaTexture.loadFromFile("arena.jpg")) {
+        std::cerr << "Nie mo¿na za³adowaæ tekstury areny!" << std::endl;
+    }
+    arenaSprite.setTexture(arenaTexture, true);
     // Domyœlna inicjalizacja - 10 jednostek ka¿dego typu po obu stronach
     for (int i = 0; i < 10; i++) {
         teamA.push_back(new Infantry(100.f + (i % 5) * 30.f, 100.f + (i / 5) * 30.f, true));
@@ -16,13 +17,24 @@ Battle::Battle() : finished(false) {
     }
 }
 
-Battle::Battle(int infantryA, int archerA, int cavalryA, int infantryB, int archerB, int cavalryB) : finished(false) {
+Battle::Battle(int infantryA, int archerA, int cavalryA, int infantryB, int archerB, int cavalryB) : finished(false), arenaSprite(arenaTexture) {
     // Generator losowych pozycji
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_real_distribution<float> distribA_x(50.f, 400.f);
     std::uniform_real_distribution<float> distribB_x(1000.f, 1350.f);
     std::uniform_real_distribution<float> distrib_y(100.f, 700.f);
+
+    if (!arenaTexture.loadFromFile("arena.jpg")) {
+        std::cerr << "B³¹d: Nie uda³o siê za³adowaæ tekstury!" << std::endl;
+    }
+
+    arenaSprite.setTexture(arenaTexture, true);
+    arenaSprite.setScale({
+        1400.f / arenaTexture.getSize().x,
+        800.f / arenaTexture.getSize().y
+    });
+
 
     // Tworzenie jednostek dla Dru¿yny A
     for (int i = 0; i < infantryA; i++) {
@@ -112,6 +124,9 @@ void Battle::update() {
 }
 
 void Battle::draw(sf::RenderWindow& window) {
+    // Rysowanie areny
+    window.draw(arenaSprite);
+
     // Rysowanie jednostek
     for (const auto& unit : teamA) {
         if (unit->isAlive()) {
@@ -125,14 +140,11 @@ void Battle::draw(sf::RenderWindow& window) {
         }
     }
 
-    // Informacja o zakoñczeniu bitwy
+    // Rysowanie wyniku po zakoñczeniu bitwy
     if (finished) {
         sf::Font font;
         if (font.openFromFile("alpha_echo.ttf")) {
-            sf::Text resultText(font,"");
-            resultText.setFont(font);
-            resultText.setCharacterSize(36);
-
+            sf::Text resultText(font, "");
             bool teamAAlive = false;
             bool teamBAlive = false;
 
@@ -172,6 +184,7 @@ void Battle::draw(sf::RenderWindow& window) {
         }
     }
 }
+
 
 bool Battle::isFinished() const {
     return finished;

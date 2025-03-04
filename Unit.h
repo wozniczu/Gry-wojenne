@@ -1,10 +1,13 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include <cmath>
+#include <iostream>
 
 class Unit {
 protected:
-    sf::CircleShape shape;
+    sf::Texture unitTexture;
+    sf::Sprite unitSprite;
     float health;
     float damage;
     float speed;
@@ -25,7 +28,7 @@ public:
     sf::Vector2f getPosition() const;
 
     bool isAlive() const;
-    const sf::CircleShape& getShape() const;
+    const sf::Sprite& getShape() const;
 
     bool getTeam() const { return team; };
     float getRange() const { return attackRange; };

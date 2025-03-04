@@ -1,5 +1,6 @@
 #pragma once
 #include "Unit.h"
+#include <iostream>
 
 class Infantry : public Unit {
 public:

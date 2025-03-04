@@ -1,12 +1,22 @@
 #include "Unit.h"
-#include <cmath>
 
 Unit::Unit(float x, float y, bool team, float health, float damage, float speed, float attackRange)
-    : health(health), damage(damage), speed(speed), attackRange(attackRange), attackSpeed(attackSpeed), alive(true), team(team) {
-    shape.setRadius(5.f);
-    shape.setPosition(sf::Vector2f(x, y));
-    shape.setFillColor(team ? sf::Color::Blue : sf::Color::Red);
+    : health(health), damage(damage), speed(speed), attackRange(attackRange), alive(true), team(team), unitSprite(unitTexture) {
+
+    // Wybór ikony w zale¿noœci od dru¿yny
+    std::string texturePath = team ? "infantry_blue.png" : "infantry_red.png";
+
+    if (!unitTexture.loadFromFile(texturePath)) {
+        std::cerr << "Nie mo¿na za³adowaæ tekstury: " << texturePath << std::endl;
+    }
+
+    unitSprite.setTexture(unitTexture);
+    unitSprite.setPosition({ x, y });
+
+    // Skalowanie do odpowiedniego rozmiaru (opcjonalnie)
+    unitSprite.setScale({ 0.5f, 0.5f });
 }
+
 
 void Unit::update(const std::vector<Unit*>& enemies) {
     if (!alive) return;
@@ -29,13 +39,13 @@ void Unit::update(const std::vector<Unit*>& enemies) {
 
     // Poruszanie siê w kierunku przeciwnika
     if (closestEnemy) {
-        sf::Vector2f direction = targetPos - shape.getPosition();
+        sf::Vector2f direction = targetPos - unitSprite.getPosition();
         float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
 
         if (length > 0 && length > getRange()) {
             direction /= length;
             velocity = direction * speed;
-            shape.move(velocity);
+            unitSprite.move(velocity);
         }
 
         // Atak, jeœli w zasiêgu
@@ -53,18 +63,18 @@ void Unit::takeDamage(float dmg) {
 }
 
 float Unit::getDistance(sf::Vector2f otherPos) const {
-    sf::Vector2f diff = otherPos - shape.getPosition();
+    sf::Vector2f diff = otherPos - unitSprite.getPosition();
     return std::sqrt(diff.x * diff.x + diff.y * diff.y);
 }
 
 sf::Vector2f Unit::getPosition() const {
-    return shape.getPosition();
+    return unitSprite.getPosition();
 }
 
 bool Unit::isAlive() const {
     return alive;
 }
 
-const sf::CircleShape& Unit::getShape() const {
-    return shape;
+const sf::Sprite& Unit::getShape() const {
+    return unitSprite;
 }

@@ -1,6 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include <iostream>
+#include <random>
+#include <thread>
 #include "Unit.h"
 #include "Infantry.h"
 #include "Archer.h"
@@ -10,6 +13,8 @@ class Battle {
 private:
     std::vector<Unit*> teamA;
     std::vector<Unit*> teamB;
+    sf::Texture arenaTexture;
+    sf::Sprite arenaSprite;
     bool finished;
 
 public:
