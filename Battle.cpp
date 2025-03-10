@@ -1,11 +1,11 @@
-#include "Battle.h"
+Ôªø#include "Battle.h"
 
 Battle::Battle() : finished(false), arenaSprite(arenaTexture) {
     if (!arenaTexture.loadFromFile("arena.jpg")) {
-        std::cerr << "Nie moøna za≥adowaÊ tekstury areny!" << std::endl;
+        std::cerr << "Nie mo≈ºna za≈Çadowaƒá tekstury areny!" << std::endl;
     }
     arenaSprite.setTexture(arenaTexture, true);
-    // Domyúlna inicjalizacja - 10 jednostek kaødego typu po obu stronach
+    // Domy≈õlna inicjalizacja - 10 jednostek ka≈ºdego typu po obu stronach
     for (int i = 0; i < 10; i++) {
         teamA.push_back(new Infantry(100.f + (i % 5) * 30.f, 100.f + (i / 5) * 30.f, true));
         teamA.push_back(new Archer(100.f + (i % 5) * 30.f, 200.f + (i / 5) * 30.f, true));
@@ -26,17 +26,17 @@ Battle::Battle(int infantryA, int archerA, int cavalryA, int infantryB, int arch
     std::uniform_real_distribution<float> distrib_y(100.f, 700.f);
 
     if (!arenaTexture.loadFromFile("arena.jpg")) {
-        std::cerr << "B≥πd: Nie uda≥o siÍ za≥adowaÊ tekstury!" << std::endl;
+        std::cerr << "B≈Çd: Nie uda≈Ço siƒô za≈Çadowaƒá tekstury!" << std::endl;
     }
 
     arenaSprite.setTexture(arenaTexture, true);
     arenaSprite.setScale({
         1400.f / arenaTexture.getSize().x,
         800.f / arenaTexture.getSize().y
-    });
+        });
 
 
-    // Tworzenie jednostek dla Druøyny A
+    // Tworzenie jednostek dla Dru≈ºyny A
     for (int i = 0; i < infantryA; i++) {
         teamA.push_back(new Infantry(distribA_x(gen), distrib_y(gen), true));
     }
@@ -49,7 +49,7 @@ Battle::Battle(int infantryA, int archerA, int cavalryA, int infantryB, int arch
         teamA.push_back(new Cavalry(distribA_x(gen), distrib_y(gen), true));
     }
 
-    // Tworzenie jednostek dla Druøyny B
+    // Tworzenie jednostek dla Dru≈ºyny B
     for (int i = 0; i < infantryB; i++) {
         teamB.push_back(new Infantry(distribB_x(gen), distrib_y(gen), false));
     }
@@ -76,21 +76,26 @@ Battle::~Battle() {
 }
 
 void Battle::update() {
-    // Aktualizacja jednostek druøyny A
+    // Przygotuj wektor wszystkich jednostek
+    std::vector<Unit*> allUnits;
+    allUnits.insert(allUnits.end(), teamA.begin(), teamA.end());
+    allUnits.insert(allUnits.end(), teamB.begin(), teamB.end());
+
+    // Aktualizacja jednostek dru≈ºyny A
     for (auto& unit : teamA) {
         if (unit->isAlive()) {
-            unit->update(teamB);
+            unit->update(allUnits);
         }
     }
 
-    // Aktualizacja jednostek druøyny B
+    // Aktualizacja jednostek dru≈ºyny B
     for (auto& unit : teamB) {
         if (unit->isAlive()) {
-            unit->update(teamA);
+            unit->update(allUnits);
         }
     }
 
-    // Sprawdzenie, czy bitwa siÍ zakoÒczy≥a
+    // Sprawdzenie, czy bitwa siƒô zako≈Ñczy≈Ça
     bool teamAAlive = false;
     bool teamBAlive = false;
 
@@ -112,13 +117,13 @@ void Battle::update() {
         finished = true;
 
         if (!teamAAlive && !teamBAlive) {
-            std::cout << "Bitwa zakoÒczona remisem!" << std::endl;
+            std::cout << "Bitwa zako≈Ñczona remisem!" << std::endl;
         }
         else if (!teamAAlive) {
-            std::cout << "Druøyna B (Czerwona) wygra≥a bitwÍ!" << std::endl;
+            std::cout << "Dru≈ºyna B (Czerwona) wygra≈Ça bitwƒô!" << std::endl;
         }
         else {
-            std::cout << "Druøyna A (Niebieska) wygra≥a bitwÍ!" << std::endl;
+            std::cout << "Dru≈ºyna A (Niebieska) wygra≈Ça bitwƒô!" << std::endl;
         }
     }
 }
@@ -131,16 +136,24 @@ void Battle::draw(sf::RenderWindow& window) {
     for (const auto& unit : teamA) {
         if (unit->isAlive()) {
             window.draw(unit->getShape());
+            // Rysowanie strza≈Ç dla ≈Çucznik√≥w
+            if (auto archer = dynamic_cast<Archer*>(unit)) {
+                archer->drawArrows(window);
+            }
         }
     }
 
     for (const auto& unit : teamB) {
         if (unit->isAlive()) {
             window.draw(unit->getShape());
+            // Rysowanie strza≈Ç dla ≈Çucznik√≥w
+            if (auto archer = dynamic_cast<Archer*>(unit)) {
+                archer->drawArrows(window);
+            }
         }
     }
 
-    // Rysowanie wyniku po zakoÒczeniu bitwy
+    // Rysowanie wyniku po zako≈Ñczeniu bitwy
     if (finished) {
         sf::Font font;
         if (font.openFromFile("alpha_echo.ttf")) {
@@ -163,7 +176,7 @@ void Battle::draw(sf::RenderWindow& window) {
             }
 
             if (!teamAAlive && !teamBAlive) {
-                resultText.setString("Bitwa zakoÒczona remisem!");
+                resultText.setString("Bitwa zako≈Ñczona remisem!");
                 resultText.setFillColor(sf::Color::Black);
             }
             else if (!teamAAlive) {
@@ -175,7 +188,7 @@ void Battle::draw(sf::RenderWindow& window) {
                 resultText.setFillColor(sf::Color::Blue);
             }
 
-            // Wyúrodkowanie tekstu
+            // Wyrodkowanie tekstu
             sf::FloatRect textRect = resultText.getLocalBounds();
             resultText.setOrigin(textRect.getCenter());
             resultText.setPosition({ 700.f, 400.f });
@@ -206,5 +219,5 @@ void Battle::displayUnitsHealth() const {
         }
     }
 
-    std::cout << "Pozosta≥o jednostek: Druøyna A: " << activeUnitsA << ", Druøyna B: " << activeUnitsB << std::endl;
+    std::cout << "Pozosta≈Ço jednostek: Dru≈ºyna A: " << activeUnitsA << ", Dru≈ºyna B: " << activeUnitsB << std::endl;
 }
