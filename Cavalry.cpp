@@ -37,7 +37,14 @@ void Cavalry::startCharge(const sf::Vector2f& target) {
         float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
         if (length > 0) {
             direction /= length;
-            chargeTarget = target + direction * 300.0f; 
+            chargeTarget = target + direction * 300.0f;
+            
+            // Sprawdź czy punkt docelowy szarży nie wychodzi poza granice pola
+            sf::FloatRect bounds = unitSprite.getGlobalBounds();
+            if (chargeTarget.x < 0) chargeTarget.x = 0;
+            if (chargeTarget.x > 1400 - bounds.size.x) chargeTarget.x = 1400 - bounds.size.x;
+            if (chargeTarget.y < 0) chargeTarget.y = 0;
+            if (chargeTarget.y > 800 - bounds.size.y) chargeTarget.y = 800 - bounds.size.y;
         }
     }
 }
@@ -111,6 +118,14 @@ void Cavalry::update(const std::vector<Unit*>& units) {
                     circlingAngle += 0.02f;
                     float circleX = closestEnemy->getPosition().x + cos(circlingAngle) * circlingRadius;
                     float circleY = closestEnemy->getPosition().y + sin(circlingAngle) * circlingRadius;
+                    
+                    // Sprawdź czy punkt okrążania nie wychodzi poza granice pola
+                    sf::FloatRect bounds = unitSprite.getGlobalBounds();
+                    if (circleX < 0) circleX = 0;
+                    if (circleX > 1400 - bounds.size.x) circleX = 1400 - bounds.size.x;
+                    if (circleY < 0) circleY = 0;
+                    if (circleY > 800 - bounds.size.y) circleY = 800 - bounds.size.y;
+                    
                     sf::Vector2f circlePoint(circleX, circleY);
                     
                     direction = circlePoint - getPosition();

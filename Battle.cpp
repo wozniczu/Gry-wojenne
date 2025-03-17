@@ -115,16 +115,6 @@ void Battle::update() {
 
     if (!teamAAlive || !teamBAlive) {
         finished = true;
-
-        if (!teamAAlive && !teamBAlive) {
-            std::cout << "Bitwa zakończona remisem!" << std::endl;
-        }
-        else if (!teamAAlive) {
-            std::cout << "Drużyna B (Czerwona) wygrała bitwę!" << std::endl;
-        }
-        else {
-            std::cout << "Drużyna A (Niebieska) wygrała bitwę!" << std::endl;
-        }
     }
 }
 
@@ -201,23 +191,4 @@ void Battle::draw(sf::RenderWindow& window) {
 
 bool Battle::isFinished() const {
     return finished;
-}
-
-void Battle::displayUnitsHealth() const {
-    int activeUnitsA = 0;
-    int activeUnitsB = 0;
-
-    for (const auto& unit : teamA) {
-        if (unit->isAlive()) {
-            activeUnitsA++;
-        }
-    }
-
-    for (const auto& unit : teamB) {
-        if (unit->isAlive()) {
-            activeUnitsB++;
-        }
-    }
-
-    std::cout << "Pozostało jednostek: Drużyna A: " << activeUnitsA << ", Drużyna B: " << activeUnitsB << std::endl;
 }

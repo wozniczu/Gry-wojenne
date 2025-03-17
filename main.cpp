@@ -7,21 +7,21 @@
 #include <thread>
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode({ 1400, 800 }), "Symulacja Wojny");
+    sf::RenderWindow window(sf::VideoMode({ 1400, 800 }), "Symulacja Wojny", sf::Style::Close);
     window.setFramerateLimit(60);
 
     // Stany aplikacji
     enum AppState { SETUP, BATTLE };
     AppState currentState = SETUP;
 
-    // £adowanie czcionki
+    // ï¿½adowanie czcionki
     sf::Font font;
     if (!font.openFromFile("Arial.ttf")) {
-        std::cerr << "Nie mo¿na za³adowaæ czcionki!" << std::endl;
+        std::cerr << "Nie moï¿½na zaï¿½adowaï¿½ czcionki!" << std::endl;
         return -1;
     }
 
-    // Tytu³y dla dru¿yn
+    // Tytuï¿½y dla druï¿½yn
     sf::Text teamATitle(font, "");
     teamATitle.setFont(font);
     teamATitle.setString("Niebiescy");
@@ -46,7 +46,7 @@ int main() {
 
     sf::Text labelArcherA(font, "");
     labelArcherA.setFont(font);
-    labelArcherA.setString(L"£ucznicy:");
+    labelArcherA.setString(L"Åucznicy:");
     labelArcherA.setCharacterSize(24);
     labelArcherA.setPosition({ 100, 250 });
     labelArcherA.setFillColor(sf::Color::Black);
@@ -67,7 +67,7 @@ int main() {
 
     sf::Text labelArcherB(font, "");
     labelArcherB.setFont(font);
-    labelArcherB.setString(L"£ucznicy:");
+    labelArcherB.setString(L"Åucznicy:");
     labelArcherB.setCharacterSize(24);
     labelArcherB.setPosition({ 850, 250 });
     labelArcherB.setFillColor(sf::Color::Black);
@@ -79,7 +79,7 @@ int main() {
     labelCavalryB.setPosition({ 850, 350 });
     labelCavalryB.setFillColor(sf::Color::Black);
 
-    // Tworzenie suwaków dla dru¿yny A
+    // Tworzenie suwakï¿½w dla druï¿½yny A
     SliderSFML infantrySliderA(250, 170);
     infantrySliderA.create(0, 50);
     infantrySliderA.setSliderValue(10);
@@ -92,7 +92,7 @@ int main() {
     cavalrySliderA.create(0, 50);
     cavalrySliderA.setSliderValue(10);
 
-    // Tworzenie suwaków dla dru¿yny B
+    // Tworzenie suwakï¿½w dla druï¿½yny B
     SliderSFML infantrySliderB(1000, 170);
     infantrySliderB.create(0, 50);
     infantrySliderB.setSliderValue(10);
@@ -111,7 +111,7 @@ int main() {
     // Przygotowanie symulatora bitwy
     Battle* battle = nullptr;
 
-    // G³ówna pêtla
+    // Gï¿½ï¿½wna pï¿½tla
     bool mouseReleased = true;
 
     while (window.isOpen()) {
@@ -120,7 +120,7 @@ int main() {
                 window.close();
             }
 
-            // Sprawdzenie, czy przycisk myszy zosta³ zwolniony
+            // Sprawdzenie, czy przycisk myszy zostaï¿½ zwolniony
             if (event->is<sf::Event::MouseButtonReleased>()) {
                 if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
                     mouseReleased = true;
@@ -131,7 +131,7 @@ int main() {
         window.clear(sf::Color(240, 240, 240));
 
         if (currentState == SETUP) {
-            // Rysowanie tytu³ów
+            // Rysowanie tytuï¿½ï¿½w
             window.draw(teamATitle);
             window.draw(teamBTitle);
 
@@ -143,7 +143,7 @@ int main() {
             window.draw(labelArcherB);
             window.draw(labelCavalryB);
 
-            // Rysowanie suwaków
+            // Rysowanie suwakï¿½w
             infantrySliderA.draw(window);
             archerSliderA.draw(window);
             cavalrySliderA.draw(window);
@@ -155,7 +155,7 @@ int main() {
             startButton.update(window);
             startButton.draw(window);
 
-            // Obs³uga klikniêcia przycisku Start
+            // Obsï¿½uga klikniï¿½cia przycisku Start
             if (startButton.isClicked(window) && mouseReleased) {
                 mouseReleased = false;
 
@@ -181,11 +181,10 @@ int main() {
             if (battle && !battle->isFinished()) {
                 battle->update();
                 battle->draw(window);
-                battle->displayUnitsHealth();
             }
 
             else if (battle && battle->isFinished()) {
-                // Gdy bitwa siê zakoñczy³a, automatycznie wróæ do ekranu wyboru
+                // Gdy bitwa siï¿½ zakoï¿½czyï¿½a, automatycznie wrï¿½ï¿½ do ekranu wyboru
                 battle->draw(window);
                 std::this_thread::sleep_for(std::chrono::seconds(3));
                 currentState = SETUP;
@@ -200,7 +199,7 @@ int main() {
         window.display();
     }
 
-    // Zwolnienie pamiêci
+    // Zwolnienie pamiï¿½ci
     if (battle) {
         delete battle;
     }

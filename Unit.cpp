@@ -15,7 +15,7 @@ Unit::Unit(float x, float y, bool team, float health, float damage, float speed,
     unitSprite.setTexture(unitTexture);
     unitSprite.setPosition({ x, y });
 
-    // Skalowanie do odpowiedniego rozmiaru (opcjonalnie)
+    // Skalowanie do odpowiedniego rozmiaru
     unitSprite.setScale({ 0.5f, 0.5f });
 
     velocity = sf::Vector2f(0.f, 0.f);
@@ -97,6 +97,26 @@ sf::Vector2f Unit::resolveCollision(const std::vector<Unit*>& units, const sf::V
                 finalPosition = otherPos + sf::Vector2f(cos(angle), sin(angle)) * minDistance;
             }
         }
+    }
+
+    // Sprawdź granice okna (1400x800)
+    sf::FloatRect bounds = unitSprite.getGlobalBounds();
+    
+    // Lewa granica
+    if (finalPosition.x < 0) {
+        finalPosition.x = 0;
+    }
+    // Prawa granica
+    if (finalPosition.x > 1400 - bounds.size.x) {
+        finalPosition.x = 1400 - bounds.size.x;
+    }
+    // Górna granica
+    if (finalPosition.y < 0) {
+        finalPosition.y = 0;
+    }
+    // Dolna granica
+    if (finalPosition.y > 800 - bounds.size.y) {
+        finalPosition.y = 800 - bounds.size.y;
     }
     
     // Zwróć wektor przesunięcia

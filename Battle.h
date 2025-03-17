@@ -35,5 +35,4 @@ public:
     
     // Metody pomocnicze
     bool isFinished() const;
-    void displayUnitsHealth() const;
 };
