@@ -9,7 +9,7 @@ Archer::Archer(float x, float y, bool team)
           0.4f,       // attackSpeed
           0.95f,      // hitChance
           0.1f),      // defense
-    arrowSpeed(5.f) {
+    arrowSpeed(20.f) {
     std::string texturePath = team ? "archer_blue.png" : "archer_red.png";
 
     if (!unitTexture.loadFromFile(texturePath)) {

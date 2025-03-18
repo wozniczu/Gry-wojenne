@@ -1,0 +1,74 @@
+@startuml
+
+class SliderSFML {
+  - slider: RectangleShape
+  - knob: CircleShape
+  - value: float
+  - minValue: float
+  - maxValue: float
+  - isDragging: bool
+  - position: Vector2f
+  + SliderSFML(x: float, y: float)
+  + create(min: float, max: float)
+  + setSliderValue(value: float)
+  + getSliderValue(): float
+  + draw(window: RenderWindow)
+  + handleEvent(event: Event, window: RenderWindow)
+  - updateKnobPosition()
+}
+
+class ButtonSFML {
+  - button: RectangleShape
+  - text: Text
+  - isHovered: bool
+  + ButtonSFML(x: float, y: float, width: float, height: float, text: string, font: Font)
+  + draw(window: RenderWindow)
+  + isClicked(window: RenderWindow): bool
+  + handleEvent(event: Event, window: RenderWindow)
+}
+
+class GameState {
+  <<enumeration>>
+  SETUP
+  BATTLE
+}
+
+class Battle {
+  - teamA: vector<Unit*>
+  - teamB: vector<Unit*>
+  - arenaTexture: Texture
+  - arenaSprite: Sprite
+  - finished: bool
+  + Battle()
+  + Battle(infantryA: int, archerA: int, cavalryA: int, infantryB: int, archerB: int, cavalryB: int)
+  + ~Battle()
+  + update()
+  + draw(window: RenderWindow)
+  + isFinished(): bool
+}
+
+class MainWindow {
+  - window: RenderWindow
+  - font: Font
+  - currentState: GameState
+  - battle: Battle*
+  - infantrySliderA: SliderSFML
+  - archerSliderA: SliderSFML
+  - cavalrySliderA: SliderSFML
+  - infantrySliderB: SliderSFML
+  - archerSliderB: SliderSFML
+  - cavalrySliderB: SliderSFML
+  - startButton: ButtonSFML
+  - mouseReleased: bool
+  + run()
+  - handleSetupState(window: RenderWindow)
+  - handleBattleState(window: RenderWindow)
+  - drawSetupScreen(window: RenderWindow)
+}
+
+MainWindow o-- SliderSFML
+MainWindow o-- ButtonSFML
+MainWindow o-- Battle
+MainWindow o-- GameState
+
+@enduml 

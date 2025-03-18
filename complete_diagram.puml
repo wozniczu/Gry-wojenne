@@ -1,0 +1,165 @@
+@startuml
+
+' Klasy UI
+class MainWindow {
+  - window: RenderWindow
+  - font: Font
+  - currentState: GameState
+  - battle: Battle*
+  - infantrySliderA: SliderSFML
+  - archerSliderA: SliderSFML
+  - cavalrySliderA: SliderSFML
+  - infantrySliderB: SliderSFML
+  - archerSliderB: SliderSFML
+  - cavalrySliderB: SliderSFML
+  - startButton: ButtonSFML
+  - mouseReleased: bool
+  + MainWindow()
+  + ~MainWindow()
+  + run()
+  - handleSetupState()
+  - handleBattleState()
+  - drawSetupScreen()
+  - initializeUI()
+}
+
+class SliderSFML {
+  - slider: RectangleShape
+  - knob: CircleShape
+  - value: float
+  - minValue: float
+  - maxValue: float
+  - isDragging: bool
+  - position: Vector2f
+  + SliderSFML(x: float, y: float)
+  + create(min: float, max: float)
+  + setSliderValue(value: float)
+  + getSliderValue(): float
+  + draw(window: RenderWindow)
+  + handleEvent(event: Event, window: RenderWindow)
+  - updateKnobPosition()
+}
+
+class ButtonSFML {
+  - button: RectangleShape
+  - text: Text
+  - isHovered: bool
+  + ButtonSFML(x: float, y: float, width: float, height: float, text: string, font: Font)
+  + draw(window: RenderWindow)
+  + isClicked(window: RenderWindow): bool
+  + handleEvent(event: Event, window: RenderWindow)
+}
+
+' Klasy logiki gry
+class Unit {
+  # health: float
+  # damage: float
+  # speed: float
+  # attackRange: float
+  # attackSpeed: float
+  # attackCooldown: float
+  # hitChance: float
+  # defense: float
+  # velocity: Vector2f
+  # alive: bool
+  # team: bool
+  # unitTexture: Texture
+  # unitSprite: Sprite
+  + Unit(x: float, y: float, team: bool, health: float, damage: float, speed: float, attackRange: float, attackSpeed: float, hitChance: float, defense: float)
+  + {abstract} update(units: vector<Unit*>)
+  + takeDamage(dmg: float)
+  + canAttack(): bool
+  + tryHit(): bool
+  + resetAttackCooldown()
+  + updateAttackCooldown(deltaTime: float)
+  + getDistance(otherPos: Vector2f): float
+  + getPosition(): Vector2f
+  + setPosition(pos: Vector2f)
+  + checkCollision(other: Unit*): bool
+  + resolveCollision(units: vector<Unit*>, proposedMove: Vector2f): Vector2f
+  + getCollisionRadius(): float
+  + isAlive(): bool
+  + getTeam(): bool
+  + getRange(): float
+  + getHealth(): float
+  + getHitChance(): float
+  + getDefense(): float
+  + setDefense(newDefense: float)
+  + getAttackSpeed(): float
+  + getShape(): Sprite
+}
+
+class Infantry {
+  - FORMATION_RADIUS: float
+  - MAX_DEFENSE_BONUS: float
+  - baseDefense: float
+  + Infantry(x: float, y: float, team: bool)
+  + update(units: vector<Unit*>)
+  - calculateDefenseBonus(units: vector<Unit*>): float
+  - calculateFormationMove(units: vector<Unit*>, currentMove: Vector2f): Vector2f
+}
+
+class Archer {
+  - arrows: list<Arrow>
+  - arrowSpeed: float
+  + Archer(x: float, y: float, team: bool)
+  + update(units: vector<Unit*>)
+  + drawArrows(window: RenderWindow)
+  + shoot(targetPos: Vector2f)
+}
+
+class Cavalry {
+  - isCharging: bool
+  - chargeSpeed: float
+  - chargeCooldown: float
+  - maxChargeCooldown: float
+  - chargeTarget: Vector2f
+  - circlingRadius: float
+  - circlingAngle: float
+  + Cavalry(x: float, y: float, team: bool)
+  + update(units: vector<Unit*>)
+  + startCharge(target: Vector2f)
+  + updateCharge()
+}
+
+class Battle {
+  - teamA: vector<Unit*>
+  - teamB: vector<Unit*>
+  - arenaTexture: Texture
+  - arenaSprite: Sprite
+  - finished: bool
+  + Battle()
+  + Battle(infantryA: int, archerA: int, cavalryA: int, infantryB: int, archerB: int, cavalryB: int)
+  + ~Battle()
+  + update()
+  + draw(window: RenderWindow)
+  + isFinished(): bool
+}
+
+class Arrow {
+  + position: Vector2f
+  + velocity: Vector2f
+  + speed: float
+  + active: bool
+  + shape: RectangleShape
+  + Arrow(pos: Vector2f, vel: Vector2f, spd: float)
+}
+
+enum GameState {
+  SETUP
+  BATTLE
+}
+
+' Relacje
+MainWindow o-- SliderSFML
+MainWindow o-- ButtonSFML
+MainWindow o-- Battle
+MainWindow o-- GameState
+
+Unit <|-- Infantry
+Unit <|-- Archer
+Unit <|-- Cavalry
+Battle o-- Unit
+Archer o-- Arrow
+
+@enduml 

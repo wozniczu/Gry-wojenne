@@ -141,6 +141,7 @@
     <ClInclude Include="ButtonSFML.h" />
     <ClInclude Include="Cavalry.h" />
     <ClInclude Include="Infantry.h" />
+    <ClInclude Include="MainWindow.h" />
     <ClInclude Include="Unit.h" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +152,7 @@
     <ClCompile Include="Cavalry.cpp" />
     <ClCompile Include="Infantry.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="Unit.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
