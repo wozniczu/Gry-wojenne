@@ -1,0 +1,72 @@
+\doxysection{C\+:/\+Users/bartu/source/repos/projekt/\+Main\+Window.h}
+\hypertarget{_main_window_8h_source}{}\label{_main_window_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SFML/System.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Window.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SFML/Audio.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SFML/Network.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}SliderSFML.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}ButtonSFML.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Battle.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{enum\ class}\ GameState\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ SETUP,\ \ }
+\DoxyCodeLine{00021\ \ \ \ \ BATTLE\ \ }
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window_a34c4b4207b46d11a4100c9b19f0e81bb}{MainWindow}}\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ sf::RenderWindow\ window;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ sf::Font\ font;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ GameState\ currentState;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_battle}{Battle}}*\ battle;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Suwaki\ dla\ drużyny\ A}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_slider_s_f_m_l}{SliderSFML}}\ infantrySliderA;\ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_slider_s_f_m_l}{SliderSFML}}\ archerSliderA;\ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_slider_s_f_m_l}{SliderSFML}}\ cavalrySliderA;\ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Suwaki\ dla\ drużyny\ B}}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_slider_s_f_m_l}{SliderSFML}}\ infantrySliderB;\ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_slider_s_f_m_l}{SliderSFML}}\ archerSliderB;\ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_slider_s_f_m_l}{SliderSFML}}\ cavalrySliderB;\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Przycisk\ startu}}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_button_s_f_m_l}{ButtonSFML}}\ startButton;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Teksty\ dla\ etykiet}}
+\DoxyCodeLine{00052\ \ \ \ \ sf::Text\ teamATitle;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ sf::Text\ teamBTitle;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ sf::Text\ labelInfantryA;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ sf::Text\ labelArcherA;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ sf::Text\ labelCavalryA;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ sf::Text\ labelInfantryB;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ sf::Text\ labelArcherB;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ sf::Text\ labelCavalryB;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ mouseReleased;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ handleSetupState();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ handleBattleState();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ drawSetupScreen();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ initializeUI();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{class_main_window_a34c4b4207b46d11a4100c9b19f0e81bb}{MainWindow}}();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aa506f7b11499c888e70d2cb9bf5a1f6a}{run}}();}
+\DoxyCodeLine{00098\ \};\ }
+
+\end{DoxyCode}

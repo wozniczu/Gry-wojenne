@@ -1,0 +1,25 @@
+\doxysection{C\+:/\+Users/bartu/source/repos/projekt/\+Infantry.h}
+\hypertarget{_infantry_8h_source}{}\label{_infantry_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Unit.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_infantry_ab634aa71d41447433421fc8a10bc9730}{Infantry}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_unit_ad720c7ca85bfdeaec9d299abf3f8306c}{Unit}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ Stałe\ konfiguracyjne}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ FORMATION\_RADIUS\ =\ 20.0f;\ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ MAX\_DEFENSE\_BONUS\ =\ 0.3f;\ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ baseDefense;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{float}\ calculateDefenseBonus(\textcolor{keyword}{const}\ std::vector<Unit*>\&\ units);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00032\ \ \ \ \ sf::Vector2f\ calculateFormationMove(\textcolor{keyword}{const}\ std::vector<Unit*>\&\ units,\ \textcolor{keyword}{const}\ sf::Vector2f\&\ currentMove);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_infantry_ab634aa71d41447433421fc8a10bc9730}{Infantry}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_a4b9d451613243183d23626ff65065816}{team}});}
+\DoxyCodeLine{00042\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_infantry_a30352b232e43f7d11023d90c93eb5304}{update}}(\textcolor{keyword}{const}\ std::vector<Unit*>\&\ units)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00048\ \};}
+
+\end{DoxyCode}

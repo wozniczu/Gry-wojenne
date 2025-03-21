@@ -1,0 +1,99 @@
+\doxysection{Battle Class Reference}
+\hypertarget{class_battle}{}\label{class_battle}\index{Battle@{Battle}}
+
+
+Klasa zarządzająca przebiegiem bitwy.  
+
+
+
+
+{\ttfamily \#include $<$Battle.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_battle_abecc253b23b71da260445e4bdc8522e2}\label{class_battle_abecc253b23b71da260445e4bdc8522e2} 
+{\bfseries Battle} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor domyślny. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_battle_a37b963ccce2f2f365b581233e8cc6d7a}{Battle}} (int infantryA, int archerA, int cavalryA, int infantryB, int archerB, int cavalryB)
+\begin{DoxyCompactList}\small\item\em Konstruktor z określoną liczbą jednostek. \end{DoxyCompactList}\item 
+\Hypertarget{class_battle_ae44141e587836ba84243cad46b17c228}\label{class_battle_ae44141e587836ba84243cad46b17c228} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Battle} ()
+\begin{DoxyCompactList}\small\item\em Destruktor. \end{DoxyCompactList}\item 
+\Hypertarget{class_battle_a287a76405834c59d33856ac56e0c93d9}\label{class_battle_a287a76405834c59d33856ac56e0c93d9} 
+void {\bfseries update} ()
+\begin{DoxyCompactList}\small\item\em Aktualizuje stan bitwy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_battle_aa20d3c604153cf07db612c7798469912}{draw}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Rysuje bitwę w oknie. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_battle_a18002879421fee98e0d8dec5a9d40660}{is\+Finished}} () const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy bitwa się zakończyła. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa zarządzająca przebiegiem bitwy. 
+
+Klasa odpowiedzialna za zarządzanie przebiegiem bitwy, tworzenie i aktualizację jednostek obu drużyn, sprawdzanie warunków zakończenia bitwy oraz zarządzanie stanem areny. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_battle_a37b963ccce2f2f365b581233e8cc6d7a}\index{Battle@{Battle}!Battle@{Battle}}
+\index{Battle@{Battle}!Battle@{Battle}}
+\doxysubsubsection{\texorpdfstring{Battle()}{Battle()}}
+{\footnotesize\ttfamily \label{class_battle_a37b963ccce2f2f365b581233e8cc6d7a} 
+Battle\+::\+Battle (\begin{DoxyParamCaption}\item[{int}]{infantryA}{, }\item[{int}]{archerA}{, }\item[{int}]{cavalryA}{, }\item[{int}]{infantryB}{, }\item[{int}]{archerB}{, }\item[{int}]{cavalryB}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor z określoną liczbą jednostek. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em infantryA} & Liczba piechoty drużyny A \\
+\hline
+{\em archerA} & Liczba łuczników drużyny A \\
+\hline
+{\em cavalryA} & Liczba kawalerii drużyny A \\
+\hline
+{\em infantryB} & Liczba piechoty drużyny B \\
+\hline
+{\em archerB} & Liczba łuczników drużyny B \\
+\hline
+{\em cavalryB} & Liczba kawalerii drużyny B \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_battle_aa20d3c604153cf07db612c7798469912}\index{Battle@{Battle}!draw@{draw}}
+\index{draw@{draw}!Battle@{Battle}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_battle_aa20d3c604153cf07db612c7798469912} 
+void Battle\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Rysuje bitwę w oknie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Okno do narysowania \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_battle_a18002879421fee98e0d8dec5a9d40660}\index{Battle@{Battle}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!Battle@{Battle}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}}
+{\footnotesize\ttfamily \label{class_battle_a18002879421fee98e0d8dec5a9d40660} 
+bool Battle\+::is\+Finished (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Sprawdza czy bitwa się zakończyła. 
+
+\begin{DoxyReturn}{Returns}
+true jeśli bitwa się zakończyła 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/bartu/source/repos/projekt/Battle.\+h\item 
+C\+:/\+Users/bartu/source/repos/projekt/Battle.\+cpp\end{DoxyCompactItemize}

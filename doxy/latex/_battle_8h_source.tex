@@ -1,0 +1,46 @@
+\doxysection{C\+:/\+Users/bartu/source/repos/projekt/\+Battle.h}
+\hypertarget{_battle_8h_source}{}\label{_battle_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Unit.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Infantry.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Archer.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Cavalry.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_battle_abecc253b23b71da260445e4bdc8522e2}{Battle}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Drużyny}}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<Unit*>\ teamA;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<Unit*>\ teamB;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Zasoby\ graficzne}}
+\DoxyCodeLine{00027\ \ \ \ \ sf::Texture\ arenaTexture;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ sf::Sprite\ arenaSprite;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Stan\ bitwy}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ finished;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_battle_abecc253b23b71da260445e4bdc8522e2}{Battle}}();\ \ \textcolor{comment}{//\ Konstruktor\ domyślny}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_battle_abecc253b23b71da260445e4bdc8522e2}{Battle}}(\textcolor{keywordtype}{int}\ infantryA,\ \textcolor{keywordtype}{int}\ archerA,\ \textcolor{keywordtype}{int}\ cavalryA,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ infantryB,\ \textcolor{keywordtype}{int}\ archerB,\ \textcolor{keywordtype}{int}\ cavalryB);\ \ \textcolor{comment}{//\ Konstruktor\ z\ parametrami}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_battle_ae44141e587836ba84243cad46b17c228}{\string~Battle}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ Główne\ metody}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_battle_a287a76405834c59d33856ac56e0c93d9}{update}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_battle_aa20d3c604153cf07db612c7798469912}{draw}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00067\ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ Metody\ pomocnicze}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_battle_a18002879421fee98e0d8dec5a9d40660}{isFinished}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ \};}
+
+\end{DoxyCode}

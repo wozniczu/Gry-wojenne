@@ -1,0 +1,50 @@
+\doxysection{C\+:/\+Users/bartu/source/repos/projekt/\+Slider\+SFML.h}
+\hypertarget{_slider_s_f_m_l_8h_source}{}\label{_slider_s_f_m_l_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_slider_s_f_m_l_ab2348bb4ae158af4ef2ae111efb4febb}{SliderSFML}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ sf::RectangleShape\ slider;\ \ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ sf::RectangleShape\ axis;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ sf::Font\ font;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ sf::Text\ text;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ minValue;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ maxValue;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ xCord;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ yCord;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ axisWidth;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ axisHeight;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ sliderWidth;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ sliderHeight;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{float}\ sliderValue;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ isDragging;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ sf::Vector2f\ position;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ updateKnobPosition();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_slider_s_f_m_l_ab2348bb4ae158af4ef2ae111efb4febb}{SliderSFML}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00052\ \ \ \ \ sf::Text\ \mbox{\hyperlink{class_slider_s_f_m_l_aedc4b09bd748ab4fc4060a5a4b8a9c31}{returnText}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ std::string\ z,\ \textcolor{keywordtype}{int}\ fontSize);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_slider_s_f_m_l_a7277b32e952a71cb7da261ec8fdd507f}{create}}(\textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_slider_s_f_m_l_a51eb022d51d0c86981e07455bac10bc6}{logic}}(sf::RenderWindow\ \&window);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_slider_s_f_m_l_ac36ec710eb0918925a8c3b755ec0ebf9}{getSliderValue}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_slider_s_f_m_l_a628720dc95c076823cad32621fcdecc1}{setSliderValue}}(\textcolor{keywordtype}{float}\ newValue);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_slider_s_f_m_l_abf8badc4bcdfb9c159c48415884db197}{setSliderPercentValue}}(\textcolor{keywordtype}{float}\ newPercentValue);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_slider_s_f_m_l_a0383284019ba6cd9bbdde86b198c36e1}{draw}}(sf::RenderWindow\ \&\ window);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_slider_s_f_m_l_a7b99f7265f95ce2c47dc63c4ab5acdf3}{handleEvent}}(\textcolor{keyword}{const}\ sf::Event\&\ event,\ sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00097\ \};}
+\DoxyCodeLine{00098\ }
+
+\end{DoxyCode}

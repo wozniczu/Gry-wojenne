@@ -1,0 +1,32 @@
+\doxysection{C\+:/\+Users/bartu/source/repos/projekt/\+Cavalry.h}
+\hypertarget{_cavalry_8h_source}{}\label{_cavalry_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Unit.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cavalry_a759d27532a1d220404f3150edf0deb97}{Cavalry}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_unit_ad720c7ca85bfdeaec9d299abf3f8306c}{Unit}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ Parametry\ szarży}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{bool}\ isCharging;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ chargeSpeed;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ chargeCooldown;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ maxChargeCooldown;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ sf::Vector2f\ chargeTarget;\ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Parametry\ okrążania}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ circlingRadius;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{float}\ circlingAngle;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ returningFromCharge;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ startCharge(\textcolor{keyword}{const}\ sf::Vector2f\&\ target);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ updateCharge();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_cavalry_a759d27532a1d220404f3150edf0deb97}{Cavalry}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_a4b9d451613243183d23626ff65065816}{team}});}
+\DoxyCodeLine{00045\ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cavalry_a40c9d84b0c9571c7f457674d1acca527}{update}}(\textcolor{keyword}{const}\ std::vector<Unit*>\&\ units)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ \};}
+
+\end{DoxyCode}

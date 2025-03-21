@@ -1,0 +1,52 @@
+\doxysection{C\+:/\+Users/bartu/source/repos/projekt/\+Battle\+Setup\+UI.h}
+\hypertarget{_battle_setup_u_i_8h_source}{}\label{_battle_setup_u_i_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}SliderSFML.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ButtonSFML.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }BattleSetupUI\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{comment}{//\ Elementy\ interfejsu}}
+\DoxyCodeLine{00009\ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00010\ \ \ \ \ sf::Text\ teamATitle;}
+\DoxyCodeLine{00011\ \ \ \ \ sf::Text\ teamBTitle;}
+\DoxyCodeLine{00012\ \ \ \ \ sf::Text\ labelInfantryA;}
+\DoxyCodeLine{00013\ \ \ \ \ sf::Text\ labelArcherA;}
+\DoxyCodeLine{00014\ \ \ \ \ sf::Text\ labelCavalryA;}
+\DoxyCodeLine{00015\ \ \ \ \ sf::Text\ labelInfantryB;}
+\DoxyCodeLine{00016\ \ \ \ \ sf::Text\ labelArcherB;}
+\DoxyCodeLine{00017\ \ \ \ \ sf::Text\ labelCavalryB;}
+\DoxyCodeLine{00018\ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Suwaki\ dla\ drużyny\ A}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_slider_s_f_m_l}{SliderSFML}}\ infantrySliderA;}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_slider_s_f_m_l}{SliderSFML}}\ archerSliderA;}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_slider_s_f_m_l}{SliderSFML}}\ cavalrySliderA;}
+\DoxyCodeLine{00023\ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Suwaki\ dla\ drużyny\ B}}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_slider_s_f_m_l}{SliderSFML}}\ infantrySliderB;}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_slider_s_f_m_l}{SliderSFML}}\ archerSliderB;}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_slider_s_f_m_l}{SliderSFML}}\ cavalrySliderB;}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Przycisk\ Start}}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_button_s_f_m_l}{ButtonSFML}}\ startButton;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ BattleSetupUI();}
+\DoxyCodeLine{00034\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Metody\ do\ aktualizacji\ i\ rysowania}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ update(sf::RenderWindow\&\ window,\ \textcolor{keywordtype}{bool}\&\ mouseReleased);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Metody\ do\ pobierania\ wartości}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ isStartClicked(sf::RenderWindow\&\ window,\ \textcolor{keywordtype}{bool}\&\ mouseReleased)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ getInfantryA()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ getArcherA()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ getCavalryA()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ getInfantryB()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ getArcherB()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ getCavalryB()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \};\ }
+
+\end{DoxyCode}

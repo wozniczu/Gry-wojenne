@@ -1,0 +1,195 @@
+\doxysection{Archer Class Reference}
+\hypertarget{class_archer}{}\label{class_archer}\index{Archer@{Archer}}
+
+
+Klasa reprezentująca jednostki łuczników.  
+
+
+
+
+{\ttfamily \#include $<$Archer.\+h$>$}
+
+Inheritance diagram for Archer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_archer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_archer_afdd0db2325a32371d73c6c06aab841c8}{Archer}} (float x, float y, bool \mbox{\hyperlink{class_unit_a4b9d451613243183d23626ff65065816}{team}})
+\begin{DoxyCompactList}\small\item\em Konstruktor łucznika. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_archer_a779ac18b250b7a49f55efcc12d9abe24}{update}} (const std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&units) override
+\begin{DoxyCompactList}\small\item\em Aktualizuje stan łucznika. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_archer_ac0d482463dc53eb31d789bba94835386}{draw\+Arrows}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Rysuje strzały w oknie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_archer_afe5ba88290ffb883e2be28736034f2c4}{shoot}} (const sf\+::\+Vector2f \&target\+Pos)
+\begin{DoxyCompactList}\small\item\em Wystrzeliwuje strzałę w kierunku celu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_unit}{Unit}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_unit_ad720c7ca85bfdeaec9d299abf3f8306c}{Unit}} (float x, float y, bool \mbox{\hyperlink{class_unit_a4b9d451613243183d23626ff65065816}{team}}, float \mbox{\hyperlink{class_unit_a4c2e8c51fa9a37ad37ac8fa1095124e6}{health}}, float \mbox{\hyperlink{class_unit_a972e7aa7cecdf17e5d58e597ec02c447}{damage}}, float \mbox{\hyperlink{class_unit_a4ae442a477d0db0cb74841ba4c949422}{speed}}, float \mbox{\hyperlink{class_unit_afa18cdbac1694dd45d722e16dd82aa6e}{attack\+Range}}, float \mbox{\hyperlink{class_unit_a0093af7ad6fc620390ad396355cf00a8}{attack\+Speed}}, float \mbox{\hyperlink{class_unit_ac98286257c23c0324859abae437d0cde}{hit\+Chance}}, float \mbox{\hyperlink{class_unit_a28e93d218bd5bdc3eee21e7345e14764}{defense}})
+\begin{DoxyCompactList}\small\item\em Konstruktor jednostki. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Unit} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_unit_afffcf41a53a9464464b35c739723b95f}{take\+Damage}} (float dmg)
+\begin{DoxyCompactList}\small\item\em Obsługuje otrzymanie obrażeń \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_unit_aeee249661c19826096fa05b2fcc32387}{can\+Attack}} () const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy jednostka może atakować \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_unit_a0a75f6f1f02ac5b1ba9885d2e2ff4da3}{try\+Hit}} () const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy atak trafił przeciwnika. \end{DoxyCompactList}\item 
+void {\bfseries reset\+Attack\+Cooldown} ()
+\begin{DoxyCompactList}\small\item\em Resetuje cooldown ataku. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_unit_acd17186c63e5af77cd588f919541b4a5}{update\+Attack\+Cooldown}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Aktualizuje cooldown ataku. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_unit_ada4ed01849fd437197a14a3dd0692045}{get\+Distance}} (sf\+::\+Vector2f other\+Pos) const
+\begin{DoxyCompactList}\small\item\em Oblicza odległość do innej pozycji. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera aktualną pozycję jednostki. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_unit_a1cd85f2618580b3ab84e2c3270900b0d}{set\+Position}} (const sf\+::\+Vector2f \&pos)
+\begin{DoxyCompactList}\small\item\em Ustawia pozycję jednostki. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_unit_a4224814c192f5465286eaf477ee3cb2c}{check\+Collision}} (const \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*}other) const
+\begin{DoxyCompactList}\small\item\em Sprawdza kolizję z inną jednostką \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a28593c073e8914f62f1266e3f822dcfb}{resolve\+Collision}} (const std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&units, const sf\+::\+Vector2f \&proposed\+Move)
+\begin{DoxyCompactList}\small\item\em Rozwiązuje kolizję z innymi jednostkami. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_unit_a191a4a0a3f0a23842171a0fc889e2135}{get\+Collision\+Radius}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera promień kolizji jednostki. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_unit_ad9245732ec5afbdb44b9942ae8ea98cc}{is\+Alive}} () const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy jednostka żyje. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_unit_af4ad723e41c62303cf535ebb3742934b}{get\+Team}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera przynależność do drużyny. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_unit_aa5b146a83e01560c14f459f99e3850ba}{get\+Range}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera zasięg ataku. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_unit_a5f2ed821fbdf910a3c51112ee1be880f}{get\+Health}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera aktualne zdrowie. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_unit_a7d4a6cd53e0d6e93b08e6097e3232348}{get\+Hit\+Chance}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera szansę na trafienie. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_unit_a4c3e44f37d8c13b3bfafa51cba6f0f04}{get\+Defense}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera wartość obrony. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_unit_ad3f439458e70ae3d4e8a331e8adc0bb6}{set\+Defense}} (float new\+Defense)
+\begin{DoxyCompactList}\small\item\em Ustawia wartość obrony. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_unit_a8f4dd3c378f8ce769eef53787d166149}{get\+Attack\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera szybkość ataku. \end{DoxyCompactList}\item 
+const sf\+::\+Sprite \& \mbox{\hyperlink{class_unit_a37888064d55619800f2ec2e3d36b752f}{get\+Shape}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera sprite jednostki. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_unit}{Unit}}}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries health}
+\begin{DoxyCompactList}\small\item\em Aktualne zdrowie jednostki. \end{DoxyCompactList}\item 
+float {\bfseries damage}
+\begin{DoxyCompactList}\small\item\em Obrażenia zadawane przez jednostkę \end{DoxyCompactList}\item 
+float {\bfseries speed}
+\begin{DoxyCompactList}\small\item\em Prędkość poruszania się jednostki. \end{DoxyCompactList}\item 
+float {\bfseries attack\+Range}
+\begin{DoxyCompactList}\small\item\em Zasięg ataku jednostki. \end{DoxyCompactList}\item 
+float {\bfseries attack\+Speed}
+\begin{DoxyCompactList}\small\item\em Szybkość ataku jednostki. \end{DoxyCompactList}\item 
+float {\bfseries attack\+Cooldown}
+\begin{DoxyCompactList}\small\item\em Czas oczekiwania między atakami. \end{DoxyCompactList}\item 
+float {\bfseries hit\+Chance}
+\begin{DoxyCompactList}\small\item\em Szansa na trafienie przeciwnika. \end{DoxyCompactList}\item 
+float {\bfseries defense}
+\begin{DoxyCompactList}\small\item\em Wartość obrony jednostki. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f {\bfseries velocity}
+\begin{DoxyCompactList}\small\item\em Wektor prędkości jednostki. \end{DoxyCompactList}\item 
+bool {\bfseries alive}
+\begin{DoxyCompactList}\small\item\em Flaga określająca czy jednostka żyje. \end{DoxyCompactList}\item 
+bool {\bfseries team}
+\begin{DoxyCompactList}\small\item\em Flaga określająca przynależność do drużyny. \end{DoxyCompactList}\item 
+sf\+::\+Texture {\bfseries unit\+Texture}
+\begin{DoxyCompactList}\small\item\em Tekstura jednostki. \end{DoxyCompactList}\item 
+sf\+::\+Sprite {\bfseries unit\+Sprite}
+\begin{DoxyCompactList}\small\item\em Sprite jednostki. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_unit}{Unit}}}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr float {\bfseries COLLISION\+\_\+\+RADIUS} = 5.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa reprezentująca jednostki łuczników. 
+
+Klasa implementująca specyficzne zachowania jednostek łuczników. Charakteryzuje się atakami dystansowymi poprzez wystrzeliwanie strzał, jest jednak słaba w walce wręcz. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_archer_afdd0db2325a32371d73c6c06aab841c8}\index{Archer@{Archer}!Archer@{Archer}}
+\index{Archer@{Archer}!Archer@{Archer}}
+\doxysubsubsection{\texorpdfstring{Archer()}{Archer()}}
+{\footnotesize\ttfamily \label{class_archer_afdd0db2325a32371d73c6c06aab841c8} 
+Archer\+::\+Archer (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{bool}]{team}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor łucznika. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Pozycja X jednostki \\
+\hline
+{\em y} & Pozycja Y jednostki \\
+\hline
+{\em team} & Przynależność do drużyny \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_archer_ac0d482463dc53eb31d789bba94835386}\index{Archer@{Archer}!drawArrows@{drawArrows}}
+\index{drawArrows@{drawArrows}!Archer@{Archer}}
+\doxysubsubsection{\texorpdfstring{drawArrows()}{drawArrows()}}
+{\footnotesize\ttfamily \label{class_archer_ac0d482463dc53eb31d789bba94835386} 
+void Archer\+::draw\+Arrows (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Rysuje strzały w oknie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Okno do narysowania \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_archer_afe5ba88290ffb883e2be28736034f2c4}\index{Archer@{Archer}!shoot@{shoot}}
+\index{shoot@{shoot}!Archer@{Archer}}
+\doxysubsubsection{\texorpdfstring{shoot()}{shoot()}}
+{\footnotesize\ttfamily \label{class_archer_afe5ba88290ffb883e2be28736034f2c4} 
+void Archer\+::shoot (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{target\+Pos}{}\end{DoxyParamCaption})}
+
+
+
+Wystrzeliwuje strzałę w kierunku celu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Pos} & Pozycja celu \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_archer_a779ac18b250b7a49f55efcc12d9abe24}\index{Archer@{Archer}!update@{update}}
+\index{update@{update}!Archer@{Archer}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_archer_a779ac18b250b7a49f55efcc12d9abe24} 
+void Archer\+::update (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&}]{units}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Aktualizuje stan łucznika. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & Lista wszystkich jednostek \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_unit_ae609e432af1261b1cdf8e804950e03b5}{Unit}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/bartu/source/repos/projekt/Archer.\+h\item 
+C\+:/\+Users/bartu/source/repos/projekt/Archer.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,26 @@
+\doxysection{C\+:/\+Users/bartu/source/repos/projekt/\+Archer.h}
+\hypertarget{_archer_8h_source}{}\label{_archer_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Unit.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Arrow.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_archer_afdd0db2325a32371d73c6c06aab841c8}{Archer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_unit_ad720c7ca85bfdeaec9d299abf3f8306c}{Unit}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Zmienne\ członkowskie}}
+\DoxyCodeLine{00017\ \ \ \ \ std::list<Arrow>\ arrows;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ arrowSpeed;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_archer_afdd0db2325a32371d73c6c06aab841c8}{Archer}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unit_a4b9d451613243183d23626ff65065816}{team}});}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_archer_a779ac18b250b7a49f55efcc12d9abe24}{update}}(\textcolor{keyword}{const}\ std::vector<Unit*>\&\ units)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_archer_ac0d482463dc53eb31d789bba94835386}{drawArrows}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_archer_afe5ba88290ffb883e2be28736034f2c4}{shoot}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ targetPos);}
+\DoxyCodeLine{00046\ \};}
+
+\end{DoxyCode}

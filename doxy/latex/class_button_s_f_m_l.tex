@@ -1,0 +1,151 @@
+\doxysection{Button\+SFML Class Reference}
+\hypertarget{class_button_s_f_m_l}{}\label{class_button_s_f_m_l}\index{ButtonSFML@{ButtonSFML}}
+
+
+Klasa reprezentująca przycisk w interfejsie SFML.  
+
+
+
+
+{\ttfamily \#include $<$Button\+SFML.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_button_s_f_m_l_a288950ebd4aba6d0d916cea87b977959}{Button\+SFML}} (float x, float y, float width, float height, const std\+::string \&text, const sf\+::\+Font \&font)
+\begin{DoxyCompactList}\small\item\em Konstruktor przycisku. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_s_f_m_l_ad3bdbf722886bf0702bf7c277f9b2a3f}{draw}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Rysuje przycisk w oknie. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_s_f_m_l_a8757e2e8d9379e4bf3810e8339c9a307}{is\+Clicked}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Sprawdza czy przycisk został kliknięty. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_s_f_m_l_a30dacc09845f78a321ae3a354da7b650}{handle\+Event}} (const sf\+::\+Event \&event, sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Obsługuje zdarzenia myszy dla przycisku. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_s_f_m_l_aba8945a92c4a5b87524479b2b5fa8c18}{is\+Mouse\+Over}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Sprawdza czy mysz znajduje się nad przyciskiem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_s_f_m_l_a33153a0a28228be196f4e075c7bc94ab}{update}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Aktualizuje stan przycisku. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa reprezentująca przycisk w interfejsie SFML. 
+
+Klasa odpowiedzialna za tworzenie i obsługę przycisku w interfejsie użytkownika. Obsługuje interakcje kliknięcia oraz efekt najechania myszką, zawiera logikę rysowania przycisku i wizualnego feedbacku dla użytkownika. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_button_s_f_m_l_a288950ebd4aba6d0d916cea87b977959}\index{ButtonSFML@{ButtonSFML}!ButtonSFML@{ButtonSFML}}
+\index{ButtonSFML@{ButtonSFML}!ButtonSFML@{ButtonSFML}}
+\doxysubsubsection{\texorpdfstring{ButtonSFML()}{ButtonSFML()}}
+{\footnotesize\ttfamily \label{class_button_s_f_m_l_a288950ebd4aba6d0d916cea87b977959} 
+Button\+SFML\+::\+Button\+SFML (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{width}{, }\item[{float}]{height}{, }\item[{const std\+::string \&}]{text}{, }\item[{const sf\+::\+Font \&}]{font}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor przycisku. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Pozycja X przycisku \\
+\hline
+{\em y} & Pozycja Y przycisku \\
+\hline
+{\em width} & Szerokość przycisku \\
+\hline
+{\em height} & Wysokość przycisku \\
+\hline
+{\em text} & Tekst przycisku \\
+\hline
+{\em font} & Czcionka do użycia \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_button_s_f_m_l_ad3bdbf722886bf0702bf7c277f9b2a3f}\index{ButtonSFML@{ButtonSFML}!draw@{draw}}
+\index{draw@{draw}!ButtonSFML@{ButtonSFML}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_button_s_f_m_l_ad3bdbf722886bf0702bf7c277f9b2a3f} 
+void Button\+SFML\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Rysuje przycisk w oknie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Okno do narysowania \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_button_s_f_m_l_a30dacc09845f78a321ae3a354da7b650}\index{ButtonSFML@{ButtonSFML}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!ButtonSFML@{ButtonSFML}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}}
+{\footnotesize\ttfamily \label{class_button_s_f_m_l_a30dacc09845f78a321ae3a354da7b650} 
+void Button\+SFML\+::handle\+Event (\begin{DoxyParamCaption}\item[{const sf\+::\+Event \&}]{event}{, }\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Obsługuje zdarzenia myszy dla przycisku. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Zdarzenie do obsługi \\
+\hline
+{\em window} & Okno, w którym wystąpiło zdarzenie \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_button_s_f_m_l_a8757e2e8d9379e4bf3810e8339c9a307}\index{ButtonSFML@{ButtonSFML}!isClicked@{isClicked}}
+\index{isClicked@{isClicked}!ButtonSFML@{ButtonSFML}}
+\doxysubsubsection{\texorpdfstring{isClicked()}{isClicked()}}
+{\footnotesize\ttfamily \label{class_button_s_f_m_l_a8757e2e8d9379e4bf3810e8339c9a307} 
+bool Button\+SFML\+::is\+Clicked (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Sprawdza czy przycisk został kliknięty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Okno, w którym sprawdzane jest kliknięcie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true jeśli przycisk został kliknięty 
+\end{DoxyReturn}
+\Hypertarget{class_button_s_f_m_l_aba8945a92c4a5b87524479b2b5fa8c18}\index{ButtonSFML@{ButtonSFML}!isMouseOver@{isMouseOver}}
+\index{isMouseOver@{isMouseOver}!ButtonSFML@{ButtonSFML}}
+\doxysubsubsection{\texorpdfstring{isMouseOver()}{isMouseOver()}}
+{\footnotesize\ttfamily \label{class_button_s_f_m_l_aba8945a92c4a5b87524479b2b5fa8c18} 
+bool Button\+SFML\+::is\+Mouse\+Over (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Sprawdza czy mysz znajduje się nad przyciskiem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Okno, w którym sprawdzana jest pozycja myszy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true jeśli mysz jest nad przyciskiem 
+\end{DoxyReturn}
+\Hypertarget{class_button_s_f_m_l_a33153a0a28228be196f4e075c7bc94ab}\index{ButtonSFML@{ButtonSFML}!update@{update}}
+\index{update@{update}!ButtonSFML@{ButtonSFML}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_button_s_f_m_l_a33153a0a28228be196f4e075c7bc94ab} 
+void Button\+SFML\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Aktualizuje stan przycisku. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Okno, w którym znajduje się przycisk \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/bartu/source/repos/projekt/Button\+SFML.\+h\item 
+C\+:/\+Users/bartu/source/repos/projekt/Button\+SFML.\+cpp\end{DoxyCompactItemize}
