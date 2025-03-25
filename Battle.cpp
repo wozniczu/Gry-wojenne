@@ -1,7 +1,7 @@
 ﻿#include "Battle.h"
 
 Battle::Battle() : finished(false), arenaSprite(arenaTexture) {
-    if (!arenaTexture.loadFromFile("arena.jpg")) {
+    if (!arenaTexture.loadFromFile("textures/arena.jpg")) {
         std::cerr << "Nie można załadować tekstury areny!" << std::endl;
     }
     arenaSprite.setTexture(arenaTexture, true);
@@ -25,7 +25,7 @@ Battle::Battle(int infantryA, int archerA, int cavalryA, int infantryB, int arch
     std::uniform_real_distribution<float> distribB_x(1000.f, 1350.f);
     std::uniform_real_distribution<float> distrib_y(100.f, 700.f);
 
-    if (!arenaTexture.loadFromFile("arena.jpg")) {
+    if (!arenaTexture.loadFromFile("textures/arena.jpg")) {
         std::cerr << "Błd: Nie udało się załadować tekstury!" << std::endl;
     }
 
@@ -146,7 +146,7 @@ void Battle::draw(sf::RenderWindow& window) {
     // Rysowanie wyniku po zakończeniu bitwy
     if (finished) {
         sf::Font font;
-        if (font.openFromFile("alpha_echo.ttf")) {
+        if (font.openFromFile("fonts/alpha_echo.ttf")) {
             sf::Text resultText(font, "");
             bool teamAAlive = false;
             bool teamBAlive = false;

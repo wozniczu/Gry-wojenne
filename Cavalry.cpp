@@ -16,7 +16,7 @@ Cavalry::Cavalry(float x, float y, bool team)
     maxChargeCooldown(3.0f),     // 3 sekundy cooldownu na szarżę
     circlingRadius(150.0f),      // promień okrążania
     circlingAngle(0.0f) {        // Początkowy kąt okrążania
-    std::string texturePath = team ? "cavalry_blue.png" : "cavalry_red.png";
+    std::string texturePath = team ? "textures/cavalry_blue.png" : "textures/cavalry_red.png";
     if (!unitTexture.loadFromFile(texturePath)) {
         std::cerr << "Nie można załadować tekstury: " << texturePath << std::endl;
     }

@@ -6,7 +6,7 @@ Unit::Unit(float x, float y, bool team, float health, float damage, float speed,
     attackCooldown(0.f), hitChance(hitChance), defense(defense), alive(true), team(team), unitSprite(unitTexture) {
 
     // Wybór ikony w zależności od drużyny
-    std::string texturePath = team ? "infantry_blue.png" : "infantry_red.png";
+    std::string texturePath = team ? "textures/infantry_blue.png" : "textures/infantry_red.png";
 
     if (!unitTexture.loadFromFile(texturePath)) {
         std::cerr << "Nie można załadować tekstury: " << texturePath << std::endl;
@@ -35,12 +35,24 @@ void Unit::updateAttackCooldown(float deltaTime) {
     }
 }
 
-void Unit::takeDamage(float dmg) {
-    float reducedDamage = dmg * (1.0f - defense);
+template<typename T>
+void Unit::takeDamage(T dmg) {
+    float reducedDamage = static_cast<float>(dmg) * (1.0f - defense);
     health -= reducedDamage;
     if (health <= 0) {
         health = 0;
         alive = false;
+    }
+}
+
+template<>
+void Unit::takeDamage<std::string>(std::string dmgStr) {
+    try {
+        float dmg = std::stof(dmgStr);
+        takeDamage(dmg); // użycie wersji float
+    } catch (...) {
+        // Domyślne obrażenia jeśli konwersja się nie uda
+        takeDamage(0.0f);
     }
 }
 

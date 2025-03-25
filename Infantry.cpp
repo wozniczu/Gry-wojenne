@@ -11,7 +11,7 @@ Infantry::Infantry(float x, float y, bool team)
           0.2f),      // defense - bazowa wartość obrony
     baseDefense(defense) // zapisujemy bazową wartość obrony
 {
-    std::string texturePath = team ? "infantry_blue.png" : "infantry_red.png";
+    std::string texturePath = team ? "textures/infantry_blue.png" : "textures/infantry_red.png";
     if (!unitTexture.loadFromFile(texturePath)) {
         std::cerr << "Nie można załadować tekstury: " << texturePath << std::endl;
     }

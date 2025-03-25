@@ -135,17 +135,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Downloads\SliderSFML.h" />
     <ClInclude Include="Archer.h" />
     <ClInclude Include="Battle.h" />
     <ClInclude Include="ButtonSFML.h" />
     <ClInclude Include="Cavalry.h" />
     <ClInclude Include="Infantry.h" />
     <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="SliderSFML.h" />
     <ClInclude Include="Unit.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Downloads\SliderSFML.cpp" />
     <ClCompile Include="Archer.cpp" />
     <ClCompile Include="Battle.cpp" />
     <ClCompile Include="ButtonSFML.cpp" />
@@ -153,6 +152,7 @@
     <ClCompile Include="Infantry.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="SliderSFML.cpp" />
     <ClCompile Include="Unit.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

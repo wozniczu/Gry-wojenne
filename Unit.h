@@ -57,9 +57,18 @@ public:
 
     /**
      * @brief Obsługuje otrzymanie obrażeń
+     * @tparam T Typ wartości obrażeń (int, float, string)
      * @param dmg Wartość otrzymanych obrażeń
      */
-    void takeDamage(float dmg);
+    template<typename T>
+    void takeDamage(T dmg);
+
+    /**
+     * @brief Specjalizacja dla obsługi string jako obrażeń
+     * @param dmgStr String zawierający wartość obrażeń
+     */
+    template<>
+    void takeDamage<std::string>(std::string dmgStr);
 
     /**
      * @brief Sprawdza czy jednostka może atakować
@@ -178,4 +187,3 @@ public:
      */
     const sf::Sprite& getShape() const { return unitSprite; }
 };
-

@@ -1,0 +1,110 @@
+@startuml
+
+package "Logika gry" {
+    abstract class Unit {
+        #health: float
+        #damage: float
+        #speed: float
+        #attackRange: float
+        #attackSpeed: float
+        #attackCooldown: float
+        #hitChance: float
+        #defense: float
+        #velocity: sf::Vector2f
+        #alive: bool
+        #team: bool
+        #unitTexture: sf::Texture
+        #unitSprite: sf::Sprite
+        +COLLISION_RADIUS: static constexpr float
+        +Unit(x: float, y: float, team: bool)
+        +virtual ~Unit()
+        +update(units: std::vector<Unit*>&): void
+        +takeDamage(damage: float): void
+        +canAttack(): bool
+        +tryHit(): bool
+        +resetAttackCooldown(): void
+        +updateAttackCooldown(deltaTime: float): void
+        +getDistance(otherPos: sf::Vector2f): float
+        +getPosition(): sf::Vector2f
+        +setPosition(pos: sf::Vector2f): void
+        +checkCollision(other: Unit*): bool
+        +resolveCollision(units: std::vector<Unit*>&, proposedMove: sf::Vector2f): sf::Vector2f
+        +getCollisionRadius(): float
+        +isAlive(): bool
+        +getTeam(): bool
+        +getRange(): float
+        +getHealth(): float
+        +getHitChance(): float
+        +getDefense(): float
+        +setDefense(newDefense: float): void
+        +getAttackSpeed(): float
+        +getShape(): const sf::Sprite&
+    }
+
+    class Infantry {
+        +FORMATION_RADIUS: static constexpr float
+        +MAX_DEFENSE_BONUS: static constexpr float
+        -baseDefense: float
+        -calculateDefenseBonus(units: std::vector<Unit*>&): float
+        -calculateFormationMove(units: std::vector<Unit*>&, currentMove: sf::Vector2f): sf::Vector2f
+        +Infantry(x: float, y: float, team: bool)
+        +~Infantry()
+        +update(units: std::vector<Unit*>&): void
+    }
+
+    class Archer {
+        -arrows: std::list<Arrow>
+        -arrowSpeed: float
+        +Archer(x: float, y: float, team: bool)
+        +~Archer()
+        +update(units: std::vector<Unit*>&): void
+        +drawArrows(window: sf::RenderWindow&): void
+        +shoot(targetPos: sf::Vector2f): void
+    }
+
+    class Cavalry {
+        -isCharging: bool
+        -chargeSpeed: float
+        -chargeCooldown: float
+        -maxChargeCooldown: float
+        -chargeTarget: sf::Vector2f
+        -circlingRadius: float
+        -circlingAngle: float
+        -returningFromCharge: bool
+        -startCharge(target: sf::Vector2f): void
+        -updateCharge(): void
+        +Cavalry(x: float, y: float, team: bool)
+        +~Cavalry()
+        +update(units: std::vector<Unit*>&): void
+    }
+
+    class Battle {
+        -teamA: std::vector<Unit*>
+        -teamB: std::vector<Unit*>
+        -arenaTexture: sf::Texture
+        -arenaSprite: sf::Sprite
+        -finished: bool
+        +Battle()
+        +~Battle()
+        +update(): void
+        +draw(window: sf::RenderWindow&): void
+        +isFinished(): bool
+    }
+
+    class Arrow {
+        +position: sf::Vector2f
+        +velocity: sf::Vector2f
+        +speed: float
+        +active: bool
+        +shape: sf::RectangleShape
+        +Arrow(pos: sf::Vector2f, vel: sf::Vector2f, spd: float)
+    }
+
+    Unit <|-- Infantry
+    Unit <|-- Archer
+    Unit <|-- Cavalry
+    Battle --> Unit
+    Archer --> Arrow
+}
+
+@enduml 

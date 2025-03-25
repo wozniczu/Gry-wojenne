@@ -10,7 +10,7 @@ Archer::Archer(float x, float y, bool team)
           0.95f,      // hitChance
           0.1f),      // defense
     arrowSpeed(20.f) {
-    std::string texturePath = team ? "archer_blue.png" : "archer_red.png";
+    std::string texturePath = team ? "textures/archer_blue.png" : "textures/archer_red.png";
 
     if (!unitTexture.loadFromFile(texturePath)) {
         std::cerr << "Nie można załadować tekstury łucznika!" << std::endl;

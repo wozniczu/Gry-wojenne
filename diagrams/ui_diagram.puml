@@ -1,0 +1,82 @@
+@startuml
+
+package "Interfejs użytkownika" {
+    class MainWindow {
+        -window: sf::RenderWindow
+        -font: sf::Font
+        -currentState: GameState
+        -battle: Battle*
+        -infantrySliderA: SliderSFML
+        -archerSliderA: SliderSFML
+        -cavalrySliderA: SliderSFML
+        -infantrySliderB: SliderSFML
+        -archerSliderB: SliderSFML
+        -cavalrySliderB: SliderSFML
+        -startButton: ButtonSFML
+        -teamATitle: sf::Text
+        -teamBTitle: sf::Text
+        -labelInfantryA: sf::Text
+        -labelArcherA: sf::Text
+        -labelCavalryA: sf::Text
+        -labelInfantryB: sf::Text
+        -labelArcherB: sf::Text
+        -labelCavalryB: sf::Text
+        -mouseReleased: bool
+        -handleSetupState(): void
+        -handleBattleState(): void
+        -drawSetupScreen(): void
+        -initializeUI(): void
+        +MainWindow()
+        +~MainWindow()
+        +run(): void
+    }
+
+    class SliderSFML {
+        -slider: sf::RectangleShape
+        -axis: sf::RectangleShape
+        -font: sf::Font
+        -text: sf::Text
+        -minValue: int
+        -maxValue: int
+        -xCord: int
+        -yCord: int
+        -axisWidth: int
+        -axisHeight: int
+        -sliderWidth: int
+        -sliderHeight: int
+        -sliderValue: float
+        -isDragging: bool
+        -position: sf::Vector2f
+        +SliderSFML(x: int, y: int)
+        +returnText(x: int, y: int, z: std::string, fontSize: int): sf::Text
+        +create(min: int, max: int): void
+        +logic(window: sf::RenderWindow&): void
+        +getSliderValue(): float
+        +setSliderValue(newValue: float): void
+        +setSliderPercentValue(newPercentValue: float): void
+        +draw(window: sf::RenderWindow&): void
+    }
+
+    class ButtonSFML {
+        -shape: sf::RectangleShape
+        -text: sf::Text
+        -font: sf::Font
+        -isHovered: bool
+        +ButtonSFML(x: float, y: float, width: float, height: float, text: std::string&, font: sf::Font&)
+        +draw(window: sf::RenderWindow&): void
+        +isClicked(window: sf::RenderWindow&): bool
+        +isMouseOver(window: sf::RenderWindow&): bool
+        +update(window: sf::RenderWindow&): void
+    }
+
+    enum GameState {
+        SETUP
+        BATTLE
+    }
+
+    MainWindow --> GameState
+    MainWindow --> SliderSFML
+    MainWindow --> ButtonSFML
+}
+
+@enduml 

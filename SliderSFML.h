@@ -28,11 +28,6 @@ private:
 	bool isDragging;                ///< Flaga określająca czy suwak jest przeciągany
 	sf::Vector2f position;          ///< Aktualna pozycja suwaka
 
-	/**
-	 * @brief Aktualizuje pozycję uchwytu suwaka
-	 */
-	void updateKnobPosition();
-
 public:
 	/**
 	 * @brief Konstruktor suwaka
@@ -87,12 +82,4 @@ public:
 	 * @param window Okno do narysowania
 	 */
 	void draw(sf::RenderWindow & window);
-
-	/**
-	 * @brief Obsługuje zdarzenia myszy dla suwaka
-	 * @param event Zdarzenie do obsługi
-	 * @param window Okno, w którym wystąpiło zdarzenie
-	 */
-	void handleEvent(const sf::Event& event, sf::RenderWindow& window);
 };
-

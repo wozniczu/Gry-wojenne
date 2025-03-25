@@ -22,7 +22,7 @@ MainWindow::MainWindow()
       labelCavalryB(font, "Kawaleria:"),
       mouseReleased(true)
 {
-    if (!font.openFromFile("arial.ttf")) {
+    if (!font.openFromFile("fonts/arial.ttf")) {
         std::cerr << "Nie można załadować czcionki!" << std::endl;
     }
 
