@@ -77,13 +77,6 @@ void Unit::setPosition(const sf::Vector2f& pos) {
     unitSprite.setPosition(pos);
 }
 
-bool Unit::checkCollision(const Unit* other) const {
-    if (other == this) return false;
-    
-    float distance = getDistance(other->getPosition());
-    return distance < (COLLISION_RADIUS + other->getCollisionRadius());
-}
-
 sf::Vector2f Unit::resolveCollision(const std::vector<Unit*>& units, const sf::Vector2f& proposedMove) {
     sf::Vector2f finalPosition = getPosition() + proposedMove;
     

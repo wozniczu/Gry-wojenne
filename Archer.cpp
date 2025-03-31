@@ -71,6 +71,13 @@ void Archer::update(const std::vector<Unit*>& units) {
         // Zastosuj system kolizji do proponowanego ruchu, uwzględniając wszystkie jednostki
         sf::Vector2f actualMove = resolveCollision(units, proposedMove);
         setPosition(getPosition() + actualMove);
+        
+        // Ustaw kierunek sprite'a w zależności od kierunku ruchu
+        float scale_sign = ((closestEnemy->getPosition().x - getPosition().x) >= 0) ? 1.f : -1.f;
+        if (unitSprite.getScale().x * scale_sign < 0)
+        {
+            unitSprite.setScale({ unitSprite.getScale().x * scale_sign, unitSprite.getScale().y });
+        }
     }
 
     // Aktualizacja strzał

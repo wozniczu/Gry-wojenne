@@ -25,7 +25,7 @@ protected:
     bool team;                      ///< Flaga określająca przynależność do drużyny
     sf::Texture unitTexture;        ///< Tekstura jednostki
     sf::Sprite unitSprite;          ///< Sprite jednostki
-    static constexpr float COLLISION_RADIUS = 5.0f; // Promień kolizji jednostki
+    static constexpr float COLLISION_RADIUS = 10.0f; // Promień kolizji jednostki
 
 public:
     /**
@@ -111,13 +111,6 @@ public:
      * @param pos Nowa pozycja
      */
     void setPosition(const sf::Vector2f& pos);
-
-    /**
-     * @brief Sprawdza kolizję z inną jednostką
-     * @param other Inna jednostka
-     * @return true jeśli występuje kolizja
-     */
-    bool checkCollision(const Unit* other) const;
 
     /**
      * @brief Rozwiązuje kolizję z innymi jednostkami
