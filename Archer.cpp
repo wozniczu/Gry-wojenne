@@ -16,7 +16,7 @@ Archer::Archer(float x, float y, bool team)
         std::cerr << "Nie można załadować tekstury łucznika!" << std::endl;
     }
     unitSprite.setTexture(unitTexture, true);
-    unitSprite.setScale({ 1.f, 1.f });
+    unitSprite.setScale({ 0.05f, 0.05f });
 }
 
 void Archer::update(const std::vector<Unit*>& units) {

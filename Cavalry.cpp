@@ -21,7 +21,7 @@ Cavalry::Cavalry(float x, float y, bool team)
         std::cerr << "Nie można załadować tekstury: " << texturePath << std::endl;
     }
     unitSprite.setTexture(unitTexture, true);
-    unitSprite.setScale({ 1.f, 1.f });
+    unitSprite.setScale({ 0.07f, 0.07f });
     
     // Losowy początkowy kierunek ruchu
     float angle = static_cast<float>(rand()) / RAND_MAX * 2 * 3.14159f;

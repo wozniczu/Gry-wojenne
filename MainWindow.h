@@ -32,6 +32,8 @@ class MainWindow {
 private:
     sf::RenderWindow window;        ///< Okno aplikacji SFML
     sf::Font font;                  ///< Czcionka używana w interfejsie
+    sf::Texture menuTexture;       ///< Tekstura menu
+    sf::Sprite menuSprite;         ///< Sprite menu
     GameState currentState;         ///< Aktualny stan gry
     Battle* battle;                 ///< Wskaźnik do aktualnej bitwy
     
@@ -45,8 +47,9 @@ private:
     SliderSFML archerSliderB;      ///< Suwak wyboru liczby łuczników dla drużyny B
     SliderSFML cavalrySliderB;     ///< Suwak wyboru liczby kawalerii dla drużyny B
     
-    // Przycisk startu
+    // Przyciski
     ButtonSFML startButton;        ///< Przycisk rozpoczęcia bitwy
+    ButtonSFML exitButton;         ///< Przycisk wyjścia z aplikacji
     
     // Teksty dla etykiet
     sf::Text teamATitle;           ///< Tytuł drużyny A
@@ -95,4 +98,4 @@ public:
      * @brief Uruchamia główną pętlę aplikacji
      */
     void run();
-}; 
+};

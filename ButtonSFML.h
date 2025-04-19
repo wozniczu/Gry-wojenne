@@ -41,13 +41,6 @@ public:
     bool isClicked(sf::RenderWindow& window);
 
     /**
-     * @brief Obsługuje zdarzenia myszy dla przycisku
-     * @param event Zdarzenie do obsługi
-     * @param window Okno, w którym wystąpiło zdarzenie
-     */
-    void handleEvent(const sf::Event& event, sf::RenderWindow& window);
-
-    /**
      * @brief Sprawdza czy mysz znajduje się nad przyciskiem
      * @param window Okno, w którym sprawdzana jest pozycja myszy
      * @return true jeśli mysz jest nad przyciskiem

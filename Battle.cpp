@@ -25,7 +25,7 @@ Battle::Battle(int infantryA, int archerA, int cavalryA, int infantryB, int arch
     std::uniform_real_distribution<float> distribB_x(1000.f, 1350.f);
     std::uniform_real_distribution<float> distrib_y(100.f, 700.f);
 
-    if (!arenaTexture.loadFromFile("textures/arena.jpg")) {
+    if (!arenaTexture.loadFromFile("textures/arena.png")) {
         std::cerr << "Błd: Nie udało się załadować tekstury!" << std::endl;
     }
 

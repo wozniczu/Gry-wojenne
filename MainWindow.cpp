@@ -11,7 +11,8 @@ MainWindow::MainWindow()
       infantrySliderB(1000, 170),
       archerSliderB(1000, 270),
       cavalrySliderB(1000, 370),
-      startButton(600, 600, 200, 80, "START", font),
+      startButton(700, 600, 200, 80, "START", font),
+      exitButton(700, 700, 200, 80, "WYJDŹ", font),
       teamATitle(font, "Niebiescy"),
       teamBTitle(font, "Czerwoni"),
       labelInfantryA(font, "Piechota:"),
@@ -20,15 +21,23 @@ MainWindow::MainWindow()
       labelInfantryB(font, "Piechota:"),
       labelArcherB(font, "Łucznicy:"),
       labelCavalryB(font, "Kawaleria:"),
-      mouseReleased(true)
+      mouseReleased(true),
+      menuSprite(menuTexture)
 {
     if (!font.openFromFile("fonts/arial.ttf")) {
         std::cerr << "Nie można załadować czcionki!" << std::endl;
     }
-
+    if (!menuTexture.loadFromFile("textures/menu.png")) {
+        std::cerr << "Nie można załadować tekstury menu!" << std::endl;
+    }
+    menuSprite.setTexture(menuTexture, true);
+    menuSprite.setScale({
+        1400.f / menuTexture.getSize().x,
+        800.f / menuTexture.getSize().y
+        });
     initializeUI();
 }
-
+   
 MainWindow::~MainWindow() {
     if (battle) {
         delete battle;
@@ -106,7 +115,7 @@ void MainWindow::initializeUI() {
 
 void MainWindow::drawSetupScreen() {
     window.clear(sf::Color::White);
-
+    window.draw(menuSprite);
     // Rysowanie tytułów drużyn
     window.draw(teamATitle);
     window.draw(teamBTitle);
@@ -127,9 +136,10 @@ void MainWindow::drawSetupScreen() {
     archerSliderB.draw(window);
     cavalrySliderB.draw(window);
 
-    // Rysowanie przycisku startu
+    // Rysowanie przycisków
     startButton.draw(window);
-
+    exitButton.draw(window);
+    
     window.display();
 }
 
@@ -139,6 +149,11 @@ void MainWindow::handleSetupState() {
             window.close();
         }
 
+        // Obsługa przycisku wyjścia
+        if (exitButton.isClicked(window)) {
+            window.close();
+        }
+        
         // Obsługa przycisku startu
         if (startButton.isClicked(window) && mouseReleased) {
             mouseReleased = false;
@@ -197,4 +212,4 @@ void MainWindow::run() {
             handleBattleState();
         }
     }
-} 
+}

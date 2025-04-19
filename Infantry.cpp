@@ -16,7 +16,7 @@ Infantry::Infantry(float x, float y, bool team)
         std::cerr << "Nie można załadować tekstury: " << texturePath << std::endl;
     }
     unitSprite.setTexture(unitTexture, true);
-    unitSprite.setScale({0.7f, 0.7f});
+    unitSprite.setScale({0.054f, 0.054f});
 }
 
 float Infantry::calculateDefenseBonus(const std::vector<Unit*>& units) {
