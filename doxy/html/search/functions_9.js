@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['resetattackcooldown_0',['resetAttackCooldown',['../class_unit.html#aa49bd889402ee7dffbcb7ca4cf315329',1,'Unit']]],
-  ['resolvecollision_1',['resolveCollision',['../class_unit.html#a28593c073e8914f62f1266e3f822dcfb',1,'Unit']]],
-  ['returntext_2',['returnText',['../class_slider_s_f_m_l.html#aedc4b09bd748ab4fc4060a5a4b8a9c31',1,'SliderSFML']]],
-  ['run_3',['run',['../class_main_window.html#aa506f7b11499c888e70d2cb9bf5a1f6a',1,'MainWindow']]]
+  ['setdefense_0',['setDefense',['../class_unit.html#ad3f439458e70ae3d4e8a331e8adc0bb6',1,'Unit']]],
+  ['setposition_1',['setPosition',['../class_unit.html#a1cd85f2618580b3ab84e2c3270900b0d',1,'Unit']]],
+  ['setsliderpercentvalue_2',['setSliderPercentValue',['../class_slider_s_f_m_l.html#a1931e57da10e1f0ad02f7e6177164067',1,'SliderSFML']]],
+  ['setslidervalue_3',['setSliderValue',['../class_slider_s_f_m_l.html#a69fc306042ab5cc5d3c9ff5063325eff',1,'SliderSFML']]],
+  ['shoot_4',['shoot',['../class_archer.html#afe5ba88290ffb883e2be28736034f2c4',1,'Archer']]],
+  ['slidersfml_5',['SliderSFML',['../class_slider_s_f_m_l.html#a92c2541f70115ad193f8b56ed4519fb3',1,'SliderSFML']]]
 ];

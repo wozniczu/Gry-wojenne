@@ -12,9 +12,9 @@ Klasa reprezentująca suwak w interfejsie SFML.
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_slider_s_f_m_l_ab2348bb4ae158af4ef2ae111efb4febb}{Slider\+SFML}} (int x, int y)
+\mbox{\hyperlink{class_slider_s_f_m_l_a92c2541f70115ad193f8b56ed4519fb3}{Slider\+SFML}} (float x, float y)
 \begin{DoxyCompactList}\small\item\em Konstruktor suwaka. \end{DoxyCompactList}\item 
-sf\+::\+Text \mbox{\hyperlink{class_slider_s_f_m_l_aedc4b09bd748ab4fc4060a5a4b8a9c31}{return\+Text}} (int x, int y, std\+::string z, int font\+Size)
+sf\+::\+Text \mbox{\hyperlink{class_slider_s_f_m_l_a981d97834d9d8eef6fc9d7d6b966de11}{return\+Text}} (float x, float y, std\+::string z, float font\+Size)
 \begin{DoxyCompactList}\small\item\em Tworzy tekst dla suwaka. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_slider_s_f_m_l_a7277b32e952a71cb7da261ec8fdd507f}{create}} (int min, int max)
 \begin{DoxyCompactList}\small\item\em Inicjalizuje suwak z określonym zakresem wartości. \end{DoxyCompactList}\item 
@@ -22,14 +22,12 @@ void \mbox{\hyperlink{class_slider_s_f_m_l_a51eb022d51d0c86981e07455bac10bc6}{lo
 \begin{DoxyCompactList}\small\item\em Aktualizuje logikę suwaka. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_slider_s_f_m_l_ac36ec710eb0918925a8c3b755ec0ebf9}{get\+Slider\+Value}} ()
 \begin{DoxyCompactList}\small\item\em Pobiera aktualną wartość suwaka. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_slider_s_f_m_l_a628720dc95c076823cad32621fcdecc1}{set\+Slider\+Value}} (float new\+Value)
+void \mbox{\hyperlink{class_slider_s_f_m_l_a69fc306042ab5cc5d3c9ff5063325eff}{set\+Slider\+Value}} (int new\+Value)
 \begin{DoxyCompactList}\small\item\em Ustawia wartość suwaka. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_slider_s_f_m_l_abf8badc4bcdfb9c159c48415884db197}{set\+Slider\+Percent\+Value}} (float new\+Percent\+Value)
+void \mbox{\hyperlink{class_slider_s_f_m_l_a1931e57da10e1f0ad02f7e6177164067}{set\+Slider\+Percent\+Value}} (int new\+Percent\+Value)
 \begin{DoxyCompactList}\small\item\em Ustawia wartość suwaka jako procent zakresu. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_slider_s_f_m_l_a0383284019ba6cd9bbdde86b198c36e1}{draw}} (sf\+::\+Render\+Window \&window)
-\begin{DoxyCompactList}\small\item\em Rysuje suwak w oknie. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_slider_s_f_m_l_a7b99f7265f95ce2c47dc63c4ab5acdf3}{handle\+Event}} (const sf\+::\+Event \&event, sf\+::\+Render\+Window \&window)
-\begin{DoxyCompactList}\small\item\em Obsługuje zdarzenia myszy dla suwaka. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Rysuje suwak w oknie. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -38,21 +36,32 @@ Klasa reprezentująca suwak w interfejsie SFML.
 Klasa odpowiedzialna za tworzenie i obsługę suwaka w interfejsie użytkownika. Umożliwia wybór wartości poprzez interakcję z myszką, zawiera logikę rysowania suwaka oraz aktualizacji jego wartości. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_slider_s_f_m_l_ab2348bb4ae158af4ef2ae111efb4febb}\index{SliderSFML@{SliderSFML}!SliderSFML@{SliderSFML}}
+\Hypertarget{class_slider_s_f_m_l_a92c2541f70115ad193f8b56ed4519fb3}\index{SliderSFML@{SliderSFML}!SliderSFML@{SliderSFML}}
 \index{SliderSFML@{SliderSFML}!SliderSFML@{SliderSFML}}
 \doxysubsubsection{\texorpdfstring{SliderSFML()}{SliderSFML()}}
-{\footnotesize\ttfamily \label{class_slider_s_f_m_l_ab2348bb4ae158af4ef2ae111efb4febb} 
-Slider\+SFML\+::\+Slider\+SFML (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_slider_s_f_m_l_a92c2541f70115ad193f8b56ed4519fb3} 
+Slider\+SFML\+::\+Slider\+SFML (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})}
 
 
 
 Konstruktor suwaka. 
 
+Konstruktor klasy \doxylink{class_slider_s_f_m_l}{Slider\+SFML}.
+
 
 \begin{DoxyParams}{Parameters}
 {\em x} & Pozycja X suwaka \\
 \hline
-{\em y} & Pozycja Y suwaka \\
+{\em y} & Pozycja Y suwaka\\
+\hline
+\end{DoxyParams}
+Inicjalizuje suwak z podanymi współrzędnymi i domyślnymi parametrami. Ładuje czcionkę, konfiguruje kształt osi i suwaka.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Pozycja X lewego krańca suwaka \\
+\hline
+{\em y} & Pozycja Y środka suwaka \\
 \hline
 \end{DoxyParams}
 
@@ -68,11 +77,17 @@ void Slider\+SFML\+::create (\begin{DoxyParamCaption}\item[{int}]{min}{, }\item[
 
 Inicjalizuje suwak z określonym zakresem wartości. 
 
+Inicjalizuje zakres wartości suwaka.
+
 
 \begin{DoxyParams}{Parameters}
 {\em min} & Minimalna wartość \\
 \hline
-{\em max} & Maksymalna wartość \\
+{\em max} & Maksymalna wartość\\
+\hline
+{\em min} & Minimalna wartość suwaka \\
+\hline
+{\em max} & Maksymalna wartość suwaka \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_slider_s_f_m_l_a0383284019ba6cd9bbdde86b198c36e1}\index{SliderSFML@{SliderSFML}!draw@{draw}}
@@ -87,7 +102,19 @@ Rysuje suwak w oknie.
 
 
 \begin{DoxyParams}{Parameters}
-{\em window} & Okno do narysowania \\
+{\em window} & Okno do narysowania\\
+\hline
+\end{DoxyParams}
+Metoda odpowiedzialna za\+:
+\begin{DoxyItemize}
+\item Aktualizację logiki suwaka
+\item Rysowanie osi i suwaka
+\item Wyświetlanie etykiet wartości
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Okno, w którym rysowany jest suwak \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_slider_s_f_m_l_ac36ec710eb0918925a8c3b755ec0ebf9}\index{SliderSFML@{SliderSFML}!getSliderValue@{getSliderValue}}
@@ -101,25 +128,10 @@ float Slider\+SFML\+::get\+Slider\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyP
 Pobiera aktualną wartość suwaka. 
 
 \begin{DoxyReturn}{Returns}
-Aktualna wartość 
+Aktualna wartość
+
+float Aktualna wartość suwaka 
 \end{DoxyReturn}
-\Hypertarget{class_slider_s_f_m_l_a7b99f7265f95ce2c47dc63c4ab5acdf3}\index{SliderSFML@{SliderSFML}!handleEvent@{handleEvent}}
-\index{handleEvent@{handleEvent}!SliderSFML@{SliderSFML}}
-\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}}
-{\footnotesize\ttfamily \label{class_slider_s_f_m_l_a7b99f7265f95ce2c47dc63c4ab5acdf3} 
-void Slider\+SFML\+::handle\+Event (\begin{DoxyParamCaption}\item[{const sf\+::\+Event \&}]{event}{, }\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption})}
-
-
-
-Obsługuje zdarzenia myszy dla suwaka. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em event} & Zdarzenie do obsługi \\
-\hline
-{\em window} & Okno, w którym wystąpiło zdarzenie \\
-\hline
-\end{DoxyParams}
 \Hypertarget{class_slider_s_f_m_l_a51eb022d51d0c86981e07455bac10bc6}\index{SliderSFML@{SliderSFML}!logic@{logic}}
 \index{logic@{logic}!SliderSFML@{SliderSFML}}
 \doxysubsubsection{\texorpdfstring{logic()}{logic()}}
@@ -130,20 +142,36 @@ void Slider\+SFML\+::logic (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Windo
 
 Aktualizuje logikę suwaka. 
 
+Obsługuje logikę przeciągania suwaka.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Okno, w którym znajduje się suwak\\
+\hline
+\end{DoxyParams}
+Metoda odpowiedzialna za\+:
+\begin{DoxyItemize}
+\item Wykrywanie kliknięcia na suwak
+\item Przeciąganie suwaka myszą
+\item Obliczanie aktualnej wartości na podstawie pozycji
+\end{DoxyItemize}
+
 
 \begin{DoxyParams}{Parameters}
 {\em window} & Okno, w którym znajduje się suwak \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_slider_s_f_m_l_aedc4b09bd748ab4fc4060a5a4b8a9c31}\index{SliderSFML@{SliderSFML}!returnText@{returnText}}
+\Hypertarget{class_slider_s_f_m_l_a981d97834d9d8eef6fc9d7d6b966de11}\index{SliderSFML@{SliderSFML}!returnText@{returnText}}
 \index{returnText@{returnText}!SliderSFML@{SliderSFML}}
 \doxysubsubsection{\texorpdfstring{returnText()}{returnText()}}
-{\footnotesize\ttfamily \label{class_slider_s_f_m_l_aedc4b09bd748ab4fc4060a5a4b8a9c31} 
-sf\+::\+Text Slider\+SFML\+::return\+Text (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{std\+::string}]{z}{, }\item[{int}]{font\+Size}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_slider_s_f_m_l_a981d97834d9d8eef6fc9d7d6b966de11} 
+sf\+::\+Text Slider\+SFML\+::return\+Text (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{std\+::string}]{z}{, }\item[{float}]{font\+Size}{}\end{DoxyParamCaption})}
 
 
 
 Tworzy tekst dla suwaka. 
+
+Tworzy obiekt tekstu dla suwaka.
 
 
 \begin{DoxyParams}{Parameters}
@@ -157,13 +185,27 @@ Tworzy tekst dla suwaka.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Utworzony obiekt tekstu 
+Utworzony obiekt tekstu
 \end{DoxyReturn}
-\Hypertarget{class_slider_s_f_m_l_abf8badc4bcdfb9c159c48415884db197}\index{SliderSFML@{SliderSFML}!setSliderPercentValue@{setSliderPercentValue}}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Pozycja X tekstu \\
+\hline
+{\em y} & Pozycja Y tekstu \\
+\hline
+{\em z} & Treść tekstu \\
+\hline
+{\em font\+Size} & Rozmiar czcionki \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sf\+::\+Text Gotowy obiekt tekstu 
+\end{DoxyReturn}
+\Hypertarget{class_slider_s_f_m_l_a1931e57da10e1f0ad02f7e6177164067}\index{SliderSFML@{SliderSFML}!setSliderPercentValue@{setSliderPercentValue}}
 \index{setSliderPercentValue@{setSliderPercentValue}!SliderSFML@{SliderSFML}}
 \doxysubsubsection{\texorpdfstring{setSliderPercentValue()}{setSliderPercentValue()}}
-{\footnotesize\ttfamily \label{class_slider_s_f_m_l_abf8badc4bcdfb9c159c48415884db197} 
-void Slider\+SFML\+::set\+Slider\+Percent\+Value (\begin{DoxyParamCaption}\item[{float}]{new\+Percent\+Value}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_slider_s_f_m_l_a1931e57da10e1f0ad02f7e6177164067} 
+void Slider\+SFML\+::set\+Slider\+Percent\+Value (\begin{DoxyParamCaption}\item[{int}]{new\+Percent\+Value}{}\end{DoxyParamCaption})}
 
 
 
@@ -171,14 +213,16 @@ Ustawia wartość suwaka jako procent zakresu.
 
 
 \begin{DoxyParams}{Parameters}
-{\em new\+Percent\+Value} & Nowa wartość procentowa \\
+{\em new\+Percent\+Value} & Nowa wartość procentowa\\
+\hline
+{\em new\+Percent\+Value} & Nowa wartość procentowa (0-\/100) \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_slider_s_f_m_l_a628720dc95c076823cad32621fcdecc1}\index{SliderSFML@{SliderSFML}!setSliderValue@{setSliderValue}}
+\Hypertarget{class_slider_s_f_m_l_a69fc306042ab5cc5d3c9ff5063325eff}\index{SliderSFML@{SliderSFML}!setSliderValue@{setSliderValue}}
 \index{setSliderValue@{setSliderValue}!SliderSFML@{SliderSFML}}
 \doxysubsubsection{\texorpdfstring{setSliderValue()}{setSliderValue()}}
-{\footnotesize\ttfamily \label{class_slider_s_f_m_l_a628720dc95c076823cad32621fcdecc1} 
-void Slider\+SFML\+::set\+Slider\+Value (\begin{DoxyParamCaption}\item[{float}]{new\+Value}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_slider_s_f_m_l_a69fc306042ab5cc5d3c9ff5063325eff} 
+void Slider\+SFML\+::set\+Slider\+Value (\begin{DoxyParamCaption}\item[{int}]{new\+Value}{}\end{DoxyParamCaption})}
 
 
 
@@ -186,12 +230,14 @@ Ustawia wartość suwaka.
 
 
 \begin{DoxyParams}{Parameters}
-{\em new\+Value} & Nowa wartość \\
+{\em new\+Value} & Nowa wartość\\
+\hline
+{\em new\+Value} & Nowa wartość (musi być w zakresie min-\/max) \\
 \hline
 \end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/bartu/source/repos/projekt/Slider\+SFML.\+h\item 
-C\+:/\+Users/bartu/source/repos/projekt/Slider\+SFML.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/bartu/source/repos/projekt/include/Slider\+SFML.\+h\item 
+C\+:/\+Users/bartu/source/repos/projekt/src/Slider\+SFML.\+cpp\end{DoxyCompactItemize}

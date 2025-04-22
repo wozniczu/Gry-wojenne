@@ -25,7 +25,7 @@ public:
      * @param text Tekst przycisku
      * @param font Czcionka do użycia
      */
-    ButtonSFML(float x, float y, float width, float height, const std::string& text, const sf::Font& font);
+    ButtonSFML(float x, float y, float width, float height, const wchar_t* text, const sf::Font& font);
 
     /**
      * @brief Rysuje przycisk w oknie

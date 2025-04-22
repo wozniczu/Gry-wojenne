@@ -104,8 +104,8 @@ $(function(){initNavTree('class_unit.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_unit-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Unit Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
@@ -139,9 +139,14 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Unit</b> ()=defau
 <tr class="memitem:ae609e432af1261b1cdf8e804950e03b5" id="r_ae609e432af1261b1cdf8e804950e03b5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae609e432af1261b1cdf8e804950e03b5">update</a> (const std::vector&lt; <a class="el" href="class_unit.html">Unit</a> * &gt; &amp;units)=0</td></tr>
 <tr class="memdesc:ae609e432af1261b1cdf8e804950e03b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje stan jednostki.  <br /></td></tr>
 <tr class="separator:ae609e432af1261b1cdf8e804950e03b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afffcf41a53a9464464b35c739723b95f" id="r_afffcf41a53a9464464b35c739723b95f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afffcf41a53a9464464b35c739723b95f">takeDamage</a> (float dmg)</td></tr>
-<tr class="memdesc:afffcf41a53a9464464b35c739723b95f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje otrzymanie obrażeń  <br /></td></tr>
-<tr class="separator:afffcf41a53a9464464b35c739723b95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a171389d8acb6c180acca61adfbbe3fb5" id="r_a171389d8acb6c180acca61adfbbe3fb5"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a171389d8acb6c180acca61adfbbe3fb5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a171389d8acb6c180acca61adfbbe3fb5">takeDamage</a> (T dmg)</td></tr>
+<tr class="memdesc:a171389d8acb6c180acca61adfbbe3fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje otrzymanie obrażeń  <br /></td></tr>
+<tr class="separator:a171389d8acb6c180acca61adfbbe3fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02d254391fc797a2cdcd8d150253226f" id="r_a02d254391fc797a2cdcd8d150253226f"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
+<tr class="memitem:a02d254391fc797a2cdcd8d150253226f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a02d254391fc797a2cdcd8d150253226f">takeDamage</a> (std::string dmgStr)</td></tr>
+<tr class="memdesc:a02d254391fc797a2cdcd8d150253226f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specjalizacja dla obsługi string jako obrażeń  <br /></td></tr>
+<tr class="separator:a02d254391fc797a2cdcd8d150253226f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeee249661c19826096fa05b2fcc32387" id="r_aeee249661c19826096fa05b2fcc32387"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeee249661c19826096fa05b2fcc32387">canAttack</a> () const</td></tr>
 <tr class="memdesc:aeee249661c19826096fa05b2fcc32387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza czy jednostka może atakować  <br /></td></tr>
 <tr class="separator:aeee249661c19826096fa05b2fcc32387"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,9 +169,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetAttackCooldown</
 <tr class="memitem:a1cd85f2618580b3ab84e2c3270900b0d" id="r_a1cd85f2618580b3ab84e2c3270900b0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cd85f2618580b3ab84e2c3270900b0d">setPosition</a> (const sf::Vector2f &amp;pos)</td></tr>
 <tr class="memdesc:a1cd85f2618580b3ab84e2c3270900b0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia pozycję jednostki.  <br /></td></tr>
 <tr class="separator:a1cd85f2618580b3ab84e2c3270900b0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4224814c192f5465286eaf477ee3cb2c" id="r_a4224814c192f5465286eaf477ee3cb2c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4224814c192f5465286eaf477ee3cb2c">checkCollision</a> (const <a class="el" href="class_unit.html">Unit</a> *other) const</td></tr>
-<tr class="memdesc:a4224814c192f5465286eaf477ee3cb2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza kolizję z inną jednostką  <br /></td></tr>
-<tr class="separator:a4224814c192f5465286eaf477ee3cb2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28593c073e8914f62f1266e3f822dcfb" id="r_a28593c073e8914f62f1266e3f822dcfb"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28593c073e8914f62f1266e3f822dcfb">resolveCollision</a> (const std::vector&lt; <a class="el" href="class_unit.html">Unit</a> * &gt; &amp;units, const sf::Vector2f &amp;proposedMove)</td></tr>
 <tr class="memdesc:a28593c073e8914f62f1266e3f822dcfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rozwiązuje kolizję z innymi jednostkami.  <br /></td></tr>
 <tr class="separator:a28593c073e8914f62f1266e3f822dcfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,9 +202,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetAttackCooldown</
 <tr class="memitem:a37888064d55619800f2ec2e3d36b752f" id="r_a37888064d55619800f2ec2e3d36b752f"><td class="memItemLeft" align="right" valign="top">const sf::Sprite &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37888064d55619800f2ec2e3d36b752f">getShape</a> () const</td></tr>
 <tr class="memdesc:a37888064d55619800f2ec2e3d36b752f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera sprite jednostki.  <br /></td></tr>
 <tr class="separator:a37888064d55619800f2ec2e3d36b752f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4343f3f64705956c4d35e07074ef50b" id="r_ae4343f3f64705956c4d35e07074ef50b"><td class="memItemLeft" align="right" valign="top">const sf::Vector2f &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4343f3f64705956c4d35e07074ef50b">getVelocity</a> () const</td></tr>
+<tr class="memdesc:ae4343f3f64705956c4d35e07074ef50b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera wektor prędkości jednostki.  <br /></td></tr>
+<tr class="separator:ae4343f3f64705956c4d35e07074ef50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
 <tr class="memitem:a4c2e8c51fa9a37ad37ac8fa1095124e6" id="r_a4c2e8c51fa9a37ad37ac8fa1095124e6"><td class="memItemLeft" align="right" valign="top"><a id="a4c2e8c51fa9a37ad37ac8fa1095124e6" name="a4c2e8c51fa9a37ad37ac8fa1095124e6"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>health</b></td></tr>
 <tr class="memdesc:a4c2e8c51fa9a37ad37ac8fa1095124e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualne zdrowie jednostki. <br /></td></tr>
@@ -256,10 +261,10 @@ sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>unitSprite</b><
 <tr class="memdesc:acd2d2f2a04222eebe72425c04685a2cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite jednostki. <br /></td></tr>
 <tr class="separator:acd2d2f2a04222eebe72425c04685a2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
-Static Protected Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
 <tr class="memitem:ac103081831def33a886d728d8087ee50" id="r_ac103081831def33a886d728d8087ee50"><td class="memItemLeft" align="right" valign="top"><a id="ac103081831def33a886d728d8087ee50" name="ac103081831def33a886d728d8087ee50"></a>
-static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COLLISION_RADIUS</b> = 5.0f</td></tr>
+static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COLLISION_RADIUS</b> = 10.0f</td></tr>
 <tr class="separator:ac103081831def33a886d728d8087ee50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -326,6 +331,7 @@ static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COL
 </div><div class="memdoc">
 
 <p>Konstruktor jednostki. </p>
+<p>Konstruktor klasy <a class="el" href="class_unit.html" title="Bazowa klasa abstrakcyjna dla wszystkich jednostek w grze.">Unit</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>Pozycja X jednostki </td></tr>
@@ -334,6 +340,22 @@ static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COL
     <tr><td class="paramname">health</td><td>Zdrowie jednostki </td></tr>
     <tr><td class="paramname">damage</td><td>Obrażenia jednostki </td></tr>
     <tr><td class="paramname">speed</td><td>Prędkość jednostki </td></tr>
+    <tr><td class="paramname">attackRange</td><td>Zasięg ataku </td></tr>
+    <tr><td class="paramname">attackSpeed</td><td>Szybkość ataku </td></tr>
+    <tr><td class="paramname">hitChance</td><td>Szansa na trafienie </td></tr>
+    <tr><td class="paramname">defense</td><td>Wartość obrony</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Inicjalizuje jednostkę z podanymi parametrami i ładuje odpowiednią teksturę.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Pozycja początkowa X jednostki </td></tr>
+    <tr><td class="paramname">y</td><td>Pozycja początkowa Y jednostki </td></tr>
+    <tr><td class="paramname">team</td><td>Przynależność do drużyny (true - niebieska, false - czerwona) </td></tr>
+    <tr><td class="paramname">health</td><td>Początkowa wartość zdrowia </td></tr>
+    <tr><td class="paramname">damage</td><td>Zadawane obrażenia </td></tr>
+    <tr><td class="paramname">speed</td><td>Prędkość poruszania </td></tr>
     <tr><td class="paramname">attackRange</td><td>Zasięg ataku </td></tr>
     <tr><td class="paramname">attackSpeed</td><td>Szybkość ataku </td></tr>
     <tr><td class="paramname">hitChance</td><td>Szansa na trafienie </td></tr>
@@ -362,32 +384,6 @@ static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COL
 
 <p>Sprawdza czy jednostka może atakować </p>
 <dl class="section return"><dt>Returns</dt><dd>true jeśli jednostka może atakować </dd></dl>
-
-</div>
-</div>
-<a id="a4224814c192f5465286eaf477ee3cb2c" name="a4224814c192f5465286eaf477ee3cb2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4224814c192f5465286eaf477ee3cb2c">&#9670;&#160;</a></span>checkCollision()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Unit::checkCollision </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_unit.html">Unit</a> *</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sprawdza kolizję z inną jednostką </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">other</td><td>Inna jednostka </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true jeśli występuje kolizja </dd></dl>
 
 </div>
 </div>
@@ -661,6 +657,34 @@ static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COL
 
 </div>
 </div>
+<a id="ae4343f3f64705956c4d35e07074ef50b" name="ae4343f3f64705956c4d35e07074ef50b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4343f3f64705956c4d35e07074ef50b">&#9670;&#160;</a></span>getVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const sf::Vector2f &amp; Unit::getVelocity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pobiera wektor prędkości jednostki. </p>
+<dl class="section return"><dt>Returns</dt><dd>Wektor prędkości </dd></dl>
+
+</div>
+</div>
 <a id="ad9245732ec5afbdb44b9942ae8ea98cc" name="ad9245732ec5afbdb44b9942ae8ea98cc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad9245732ec5afbdb44b9942ae8ea98cc">&#9670;&#160;</a></span>isAlive()</h2>
 
@@ -709,6 +733,7 @@ static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COL
 </div><div class="memdoc">
 
 <p>Rozwiązuje kolizję z innymi jednostkami. </p>
+<p>Rozwiązuje kolizje jednostki z innymi obiektami.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">units</td><td>Lista wszystkich jednostek </td></tr>
@@ -716,7 +741,19 @@ static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COL
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Końcowa pozycja po rozwiązaniu kolizji </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Końcowa pozycja po rozwiązaniu kolizji</dd></dl>
+<p>Oblicza końcową pozycję uwzględniając:</p><ul>
+<li>Kolizje z innymi jednostkami (odpychanie)</li>
+<li>Granice mapy (1400x800)</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>Lista wszystkich jednostek na mapie </td></tr>
+    <tr><td class="paramname">proposedMove</td><td>Proponowany wektor ruchu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Skorygowany wektor ruchu uwzględniający kolizje </dd></dl>
 
 </div>
 </div>
@@ -778,22 +815,71 @@ static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COL
 
 </div>
 </div>
-<a id="afffcf41a53a9464464b35c739723b95f" name="afffcf41a53a9464464b35c739723b95f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afffcf41a53a9464464b35c739723b95f">&#9670;&#160;</a></span>takeDamage()</h2>
+<a id="a02d254391fc797a2cdcd8d150253226f" name="a02d254391fc797a2cdcd8d150253226f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02d254391fc797a2cdcd8d150253226f">&#9670;&#160;</a></span>takeDamage() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void Unit::takeDamage </td>
           <td>(</td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dmg</em></span></td><td>)</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>dmgStr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Specjalizacja dla obsługi string jako obrażeń </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dmgStr</td><td>String zawierający wartość obrażeń </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a171389d8acb6c180acca61adfbbe3fb5" name="a171389d8acb6c180acca61adfbbe3fb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a171389d8acb6c180acca61adfbbe3fb5">&#9670;&#160;</a></span>takeDamage() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Unit::takeDamage </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>dmg</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Obsługuje otrzymanie obrażeń </p>
+<p>Oblicza i aplikuje obrażenia do jednostki.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Typ wartości obrażeń (int, float, string) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dmg</td><td>Wartość otrzymanych obrażeń</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Redukuje otrzymane obrażenia o wartość obrony i odejmuje od zdrowia. Jeśli zdrowie spadnie do 0, oznacza jednostkę jako martwą.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Typ wartości obrażeń (int, float) </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dmg</td><td>Wartość otrzymanych obrażeń </td></tr>
@@ -819,7 +905,9 @@ static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COL
 </div><div class="memdoc">
 
 <p>Sprawdza czy atak trafił przeciwnika. </p>
-<dl class="section return"><dt>Returns</dt><dd>true jeśli atak trafił </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true jeśli atak trafił</dd></dl>
+<p>Generuje losową wartość i porównuje z szansą na trafienie.</p>
+<dl class="section return"><dt>Returns</dt><dd>true jeśli atak trafił, false w przeciwnym wypadku </dd></dl>
 
 </div>
 </div>
@@ -884,8 +972,8 @@ static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COL
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/bartu/source/repos/projekt/<a class="el" href="_unit_8h_source.html">Unit.h</a></li>
-<li>C:/Users/bartu/source/repos/projekt/<b>Unit.cpp</b></li>
+<li>C:/Users/bartu/source/repos/projekt/include/<a class="el" href="_unit_8h_source.html">Unit.h</a></li>
+<li>C:/Users/bartu/source/repos/projekt/src/<b>Unit.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

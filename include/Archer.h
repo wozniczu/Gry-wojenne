@@ -1,8 +1,8 @@
 #pragma once
 #include "Unit.h"
 #include "Arrow.h"
-#include <iostream>
 #include <list>
+#include <iostream>
 
 /**
  * @brief Klasa reprezentująca jednostki łuczników

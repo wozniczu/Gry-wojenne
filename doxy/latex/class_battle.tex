@@ -12,16 +12,13 @@ Klasa zarządzająca przebiegiem bitwy.
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_battle_abecc253b23b71da260445e4bdc8522e2}\label{class_battle_abecc253b23b71da260445e4bdc8522e2} 
-{\bfseries Battle} ()
+\mbox{\hyperlink{class_battle_abecc253b23b71da260445e4bdc8522e2}{Battle}} ()
 \begin{DoxyCompactList}\small\item\em Konstruktor domyślny. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_battle_a37b963ccce2f2f365b581233e8cc6d7a}{Battle}} (int infantryA, int archerA, int cavalryA, int infantryB, int archerB, int cavalryB)
 \begin{DoxyCompactList}\small\item\em Konstruktor z określoną liczbą jednostek. \end{DoxyCompactList}\item 
-\Hypertarget{class_battle_ae44141e587836ba84243cad46b17c228}\label{class_battle_ae44141e587836ba84243cad46b17c228} 
-{\bfseries \texorpdfstring{$\sim$}{\string~}\+Battle} ()
+\mbox{\hyperlink{class_battle_ae44141e587836ba84243cad46b17c228}{\texorpdfstring{$\sim$}{\string~}\+Battle}} ()
 \begin{DoxyCompactList}\small\item\em Destruktor. \end{DoxyCompactList}\item 
-\Hypertarget{class_battle_a287a76405834c59d33856ac56e0c93d9}\label{class_battle_a287a76405834c59d33856ac56e0c93d9} 
-void {\bfseries update} ()
+void \mbox{\hyperlink{class_battle_a287a76405834c59d33856ac56e0c93d9}{update}} ()
 \begin{DoxyCompactList}\small\item\em Aktualizuje stan bitwy. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_battle_aa20d3c604153cf07db612c7798469912}{draw}} (sf\+::\+Render\+Window \&window)
 \begin{DoxyCompactList}\small\item\em Rysuje bitwę w oknie. \end{DoxyCompactList}\item 
@@ -35,15 +32,55 @@ Klasa zarządzająca przebiegiem bitwy.
 Klasa odpowiedzialna za zarządzanie przebiegiem bitwy, tworzenie i aktualizację jednostek obu drużyn, sprawdzanie warunków zakończenia bitwy oraz zarządzanie stanem areny. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_battle_a37b963ccce2f2f365b581233e8cc6d7a}\index{Battle@{Battle}!Battle@{Battle}}
+\Hypertarget{class_battle_abecc253b23b71da260445e4bdc8522e2}\index{Battle@{Battle}!Battle@{Battle}}
 \index{Battle@{Battle}!Battle@{Battle}}
-\doxysubsubsection{\texorpdfstring{Battle()}{Battle()}}
+\doxysubsubsection{\texorpdfstring{Battle()}{Battle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_battle_abecc253b23b71da260445e4bdc8522e2} 
+Battle\+::\+Battle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor domyślny. 
+
+Konstruktor domyślny klasy \doxylink{class_battle}{Battle}.
+
+Inicjalizuje bitwę z domyślnymi parametrami\+:
+\begin{DoxyItemize}
+\item Ładuje teksturę areny
+\item Tworzy 10 jednostek każdego typu dla obu drużyn
+\item Ustawia jednostki w uporządkowanych formacjach 
+\end{DoxyItemize}\Hypertarget{class_battle_a37b963ccce2f2f365b581233e8cc6d7a}\index{Battle@{Battle}!Battle@{Battle}}
+\index{Battle@{Battle}!Battle@{Battle}}
+\doxysubsubsection{\texorpdfstring{Battle()}{Battle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{class_battle_a37b963ccce2f2f365b581233e8cc6d7a} 
 Battle\+::\+Battle (\begin{DoxyParamCaption}\item[{int}]{infantryA}{, }\item[{int}]{archerA}{, }\item[{int}]{cavalryA}{, }\item[{int}]{infantryB}{, }\item[{int}]{archerB}{, }\item[{int}]{cavalryB}{}\end{DoxyParamCaption})}
 
 
 
 Konstruktor z określoną liczbą jednostek. 
+
+Konstruktor parametryczny klasy \doxylink{class_battle}{Battle}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em infantryA} & Liczba piechoty drużyny A \\
+\hline
+{\em archerA} & Liczba łuczników drużyny A \\
+\hline
+{\em cavalryA} & Liczba kawalerii drużyny A \\
+\hline
+{\em infantryB} & Liczba piechoty drużyny B \\
+\hline
+{\em archerB} & Liczba łuczników drużyny B \\
+\hline
+{\em cavalryB} & Liczba kawalerii drużyny B\\
+\hline
+\end{DoxyParams}
+Inicjalizuje bitwę z określoną liczbą jednostek\+:
+\begin{DoxyItemize}
+\item Ładuje teksturę areny i skaluje ją
+\item Tworzy jednostki w losowych pozycjach
+\end{DoxyItemize}
 
 
 \begin{DoxyParams}{Parameters}
@@ -60,7 +97,19 @@ Konstruktor z określoną liczbą jednostek.
 {\em cavalryB} & Liczba kawalerii drużyny B \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_battle_ae44141e587836ba84243cad46b17c228}\index{Battle@{Battle}!````~Battle@{\texorpdfstring{$\sim$}{\string~}Battle}}
+\index{````~Battle@{\texorpdfstring{$\sim$}{\string~}Battle}!Battle@{Battle}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Battle()}{\string~Battle()}}
+{\footnotesize\ttfamily \label{class_battle_ae44141e587836ba84243cad46b17c228} 
+Battle\+::\texorpdfstring{$\sim$}{\string~}\+Battle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Destruktor. 
+
+Destruktor klasy \doxylink{class_battle}{Battle}.
+
+Zwalnia pamięć zajmowaną przez jednostki obu drużyn i czyści wektory jednostek 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_battle_aa20d3c604153cf07db612c7798469912}\index{Battle@{Battle}!draw@{draw}}
@@ -75,7 +124,20 @@ Rysuje bitwę w oknie.
 
 
 \begin{DoxyParams}{Parameters}
-{\em window} & Okno do narysowania \\
+{\em window} & Okno do narysowania\\
+\hline
+\end{DoxyParams}
+Metoda odpowiedzialna za\+:
+\begin{DoxyItemize}
+\item Rysowanie areny
+\item Rysowanie żywych jednostek obu drużyn
+\item Rysowanie strzał łuczników
+\item Wyświetlanie wyniku po zakończeniu bitwy
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Okno, w którym rysowana jest bitwa \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_battle_a18002879421fee98e0d8dec5a9d40660}\index{Battle@{Battle}!isFinished@{isFinished}}
@@ -89,11 +151,30 @@ bool Battle\+::is\+Finished (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})
 Sprawdza czy bitwa się zakończyła. 
 
 \begin{DoxyReturn}{Returns}
-true jeśli bitwa się zakończyła 
-\end{DoxyReturn}
+true jeśli bitwa się zakończyła
 
+true jeśli bitwa się zakończyła (jedna z drużyn nie ma żywych jednostek) 
+
+false jeśli bitwa trwa nadal 
+\end{DoxyReturn}
+\Hypertarget{class_battle_a287a76405834c59d33856ac56e0c93d9}\index{Battle@{Battle}!update@{update}}
+\index{update@{update}!Battle@{Battle}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_battle_a287a76405834c59d33856ac56e0c93d9} 
+void Battle\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Aktualizuje stan bitwy. 
+
+Metoda odpowiedzialna za\+:
+\begin{DoxyItemize}
+\item Aktualizację stanu wszystkich jednostek
+\item Sprawdzenie warunków zakończenia bitwy
+\item Ustawienie flagi finished jeśli bitwa się zakończyła 
+\end{DoxyItemize}
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/bartu/source/repos/projekt/Battle.\+h\item 
-C\+:/\+Users/bartu/source/repos/projekt/Battle.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/bartu/source/repos/projekt/include/Battle.\+h\item 
+C\+:/\+Users/bartu/source/repos/projekt/src/Battle.\+cpp\end{DoxyCompactItemize}

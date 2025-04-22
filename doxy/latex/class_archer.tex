@@ -33,8 +33,10 @@ void \mbox{\hyperlink{class_archer_afe5ba88290ffb883e2be28736034f2c4}{shoot}} (c
 \begin{DoxyCompactList}\small\item\em Konstruktor jednostki. \end{DoxyCompactList}\item 
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Unit} ()=default
 \begin{DoxyCompactList}\small\item\em Wirtualny destruktor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_unit_afffcf41a53a9464464b35c739723b95f}{take\+Damage}} (float dmg)
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{class_unit_a171389d8acb6c180acca61adfbbe3fb5}{take\+Damage}} (T dmg)
 \begin{DoxyCompactList}\small\item\em Obsługuje otrzymanie obrażeń \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{class_unit_a02d254391fc797a2cdcd8d150253226f}{take\+Damage}} (std\+::string dmg\+Str)
+\begin{DoxyCompactList}\small\item\em Specjalizacja dla obsługi string jako obrażeń \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_unit_aeee249661c19826096fa05b2fcc32387}{can\+Attack}} () const
 \begin{DoxyCompactList}\small\item\em Sprawdza czy jednostka może atakować \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_unit_a0a75f6f1f02ac5b1ba9885d2e2ff4da3}{try\+Hit}} () const
@@ -49,8 +51,6 @@ sf\+::\+Vector2f \mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{
 \begin{DoxyCompactList}\small\item\em Pobiera aktualną pozycję jednostki. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_unit_a1cd85f2618580b3ab84e2c3270900b0d}{set\+Position}} (const sf\+::\+Vector2f \&pos)
 \begin{DoxyCompactList}\small\item\em Ustawia pozycję jednostki. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_unit_a4224814c192f5465286eaf477ee3cb2c}{check\+Collision}} (const \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*}other) const
-\begin{DoxyCompactList}\small\item\em Sprawdza kolizję z inną jednostką \end{DoxyCompactList}\item 
 sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a28593c073e8914f62f1266e3f822dcfb}{resolve\+Collision}} (const std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&units, const sf\+::\+Vector2f \&proposed\+Move)
 \begin{DoxyCompactList}\small\item\em Rozwiązuje kolizję z innymi jednostkami. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_unit_a191a4a0a3f0a23842171a0fc889e2135}{get\+Collision\+Radius}} () const
@@ -72,9 +72,11 @@ void \mbox{\hyperlink{class_unit_ad3f439458e70ae3d4e8a331e8adc0bb6}{set\+Defense
 float \mbox{\hyperlink{class_unit_a8f4dd3c378f8ce769eef53787d166149}{get\+Attack\+Speed}} () const
 \begin{DoxyCompactList}\small\item\em Pobiera szybkość ataku. \end{DoxyCompactList}\item 
 const sf\+::\+Sprite \& \mbox{\hyperlink{class_unit_a37888064d55619800f2ec2e3d36b752f}{get\+Shape}} () const
-\begin{DoxyCompactList}\small\item\em Pobiera sprite jednostki. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Pobiera sprite jednostki. \end{DoxyCompactList}\item 
+const sf\+::\+Vector2f \& \mbox{\hyperlink{class_unit_ae4343f3f64705956c4d35e07074ef50b}{get\+Velocity}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera wektor prędkości jednostki. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_unit}{Unit}}}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_unit}{Unit}}}
 \begin{DoxyCompactItemize}
 \item 
 float {\bfseries health}
@@ -103,10 +105,10 @@ sf\+::\+Texture {\bfseries unit\+Texture}
 \begin{DoxyCompactList}\small\item\em Tekstura jednostki. \end{DoxyCompactList}\item 
 sf\+::\+Sprite {\bfseries unit\+Sprite}
 \begin{DoxyCompactList}\small\item\em Sprite jednostki. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_unit}{Unit}}}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_unit}{Unit}}}
 \begin{DoxyCompactItemize}
 \item 
-static constexpr float {\bfseries COLLISION\+\_\+\+RADIUS} = 5.\+0f
+static constexpr float {\bfseries COLLISION\+\_\+\+RADIUS} = 10.\+0f
 \end{DoxyCompactItemize}
 
 
@@ -126,13 +128,26 @@ Archer\+::\+Archer (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{
 
 Konstruktor łucznika. 
 
+Konstruktor klasy \doxylink{class_archer}{Archer}.
+
 
 \begin{DoxyParams}{Parameters}
 {\em x} & Pozycja X jednostki \\
 \hline
 {\em y} & Pozycja Y jednostki \\
 \hline
-{\em team} & Przynależność do drużyny \\
+{\em team} & Przynależność do drużyny\\
+\hline
+\end{DoxyParams}
+Inicjalizuje łucznika z podanymi parametrami i ładuje odpowiednią teksturę.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Pozycja początkowa X łucznika \\
+\hline
+{\em y} & Pozycja początkowa Y łucznika \\
+\hline
+{\em team} & Przynależność do drużyny (true -\/ niebieska, false -\/ czerwona) \\
 \hline
 \end{DoxyParams}
 
@@ -148,9 +163,18 @@ void Archer\+::draw\+Arrows (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Wind
 
 Rysuje strzały w oknie. 
 
+Rysuje wszystkie aktywne strzały w oknie gry.
+
 
 \begin{DoxyParams}{Parameters}
-{\em window} & Okno do narysowania \\
+{\em window} & Okno do narysowania\\
+\hline
+\end{DoxyParams}
+Iteruje przez listę strzał i rysuje tylko te, które są aktywne. Strzały są usuwane z listy po trafieniu w cel lub wyjściu poza mapę.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Referencja do okna renderowania SFML \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_archer_afe5ba88290ffb883e2be28736034f2c4}\index{Archer@{Archer}!shoot@{shoot}}
@@ -165,7 +189,14 @@ Wystrzeliwuje strzałę w kierunku celu.
 
 
 \begin{DoxyParams}{Parameters}
-{\em target\+Pos} & Pozycja celu \\
+{\em target\+Pos} & Pozycja celu\\
+\hline
+\end{DoxyParams}
+Tworzy nową strzałę z obliczonym wektorem kierunku i dodaje ją do listy aktywnych strzał. Strzała będzie poruszać się w kierunku celu z zadaną prędkością (arrow\+Speed).
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Pos} & Docelowa pozycja strzały (pozycja przeciwnika) \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_archer_a779ac18b250b7a49f55efcc12d9abe24}\index{Archer@{Archer}!update@{update}}
@@ -178,9 +209,25 @@ void Archer\+::update (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mb
 
 Aktualizuje stan łucznika. 
 
+Aktualizuje stan łucznika w każdej klatce gry.
+
 
 \begin{DoxyParams}{Parameters}
-{\em units} & Lista wszystkich jednostek \\
+{\em units} & Lista wszystkich jednostek\\
+\hline
+\end{DoxyParams}
+Metoda odpowiedzialna za\+:
+\begin{DoxyItemize}
+\item Znajdowanie najbliższego przeciwnika
+\item Podejmowanie decyzji o ruchu (zbliżanie/oddalanie)
+\item Strzelanie do przeciwników w zasięgu
+\item Obsługę obracania sprite\textquotesingle{}a w kierunku przeciwnika
+\item Aktualizację pozycji strzał
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & Vector zawierający wszystkie jednostki na mapie \\
 \hline
 \end{DoxyParams}
 
@@ -191,5 +238,5 @@ Implements \mbox{\hyperlink{class_unit_ae609e432af1261b1cdf8e804950e03b5}{Unit}}
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/bartu/source/repos/projekt/Archer.\+h\item 
-C\+:/\+Users/bartu/source/repos/projekt/Archer.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/bartu/source/repos/projekt/include/Archer.\+h\item 
+C\+:/\+Users/bartu/source/repos/projekt/src/Archer.\+cpp\end{DoxyCompactItemize}

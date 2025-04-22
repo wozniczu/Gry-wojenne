@@ -1,10 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <vector>
-#include <iostream>
 #include <random>
 #include <thread>
 #include <memory>
+#include <iostream>
 #include "Unit.h"
 #include "Infantry.h"
 #include "Archer.h"
@@ -20,8 +20,8 @@
 class Battle {
 private:
     // Drużyny
-    std::vector<Unit*> teamA;       ///< Lista jednostek drużyny A
-    std::vector<Unit*> teamB;       ///< Lista jednostek drużyny B
+    std::vector<Unit*> teamA;       ///< Wektor jednostek drużyny A
+    std::vector<Unit*> teamB;       ///< Wektor jednostek drużyny B
     
     // Zasoby graficzne
     sf::Texture arenaTexture;       ///< Tekstura areny

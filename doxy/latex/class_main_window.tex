@@ -12,14 +12,11 @@ Główna klasa okna aplikacji.
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_main_window_a34c4b4207b46d11a4100c9b19f0e81bb}\label{class_main_window_a34c4b4207b46d11a4100c9b19f0e81bb} 
-{\bfseries Main\+Window} ()
+\mbox{\hyperlink{class_main_window_a34c4b4207b46d11a4100c9b19f0e81bb}{Main\+Window}} ()
 \begin{DoxyCompactList}\small\item\em Konstruktor głównego okna. \end{DoxyCompactList}\item 
-\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7} 
-{\bfseries \texorpdfstring{$\sim$}{\string~}\+Main\+Window} ()
+\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\texorpdfstring{$\sim$}{\string~}\+Main\+Window}} ()
 \begin{DoxyCompactList}\small\item\em Destruktor głównego okna. \end{DoxyCompactList}\item 
-\Hypertarget{class_main_window_aa506f7b11499c888e70d2cb9bf5a1f6a}\label{class_main_window_aa506f7b11499c888e70d2cb9bf5a1f6a} 
-void {\bfseries run} ()
+void \mbox{\hyperlink{class_main_window_aa506f7b11499c888e70d2cb9bf5a1f6a}{run}} ()
 \begin{DoxyCompactList}\small\item\em Uruchamia główną pętlę aplikacji. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -28,7 +25,52 @@ Główna klasa okna aplikacji.
 
 Klasa odpowiedzialna za zarządzanie oknem aplikacji, obsługę interfejsu użytkownika oraz przejścia między stanami gry. Inicjalizuje i zarządza komponentami UI, obsługuje zdarzenia oraz przejścia między stanami gry. 
 
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_main_window_a34c4b4207b46d11a4100c9b19f0e81bb}\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily \label{class_main_window_a34c4b4207b46d11a4100c9b19f0e81bb} 
+Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor głównego okna. 
+
+Konstruktor głównego okna aplikacji.
+
+Inicjalizuje okno aplikacji, ładuje zasoby (czcionki, tekstury), tworzy i konfiguruje elementy interfejsu użytkownika (suwaki, przyciski, etykiety). Ustawia początkowy stan gry na SETUP (ekran konfiguracji). \Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\index{MainWindow@{MainWindow}!````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}}
+\index{````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MainWindow()}{\string~MainWindow()}}
+{\footnotesize\ttfamily \label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7} 
+Main\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Main\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destruktor głównego okna. 
+
+Destruktor głównego okna aplikacji.
+
+Zwalnia pamięć zajmowaną przez obiekt bitwy (jeśli istnieje) 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_window_aa506f7b11499c888e70d2cb9bf5a1f6a}\index{MainWindow@{MainWindow}!run@{run}}
+\index{run@{run}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{class_main_window_aa506f7b11499c888e70d2cb9bf5a1f6a} 
+void Main\+Window\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Uruchamia główną pętlę aplikacji. 
+
+Metoda odpowiedzialna za\+:
+\begin{DoxyItemize}
+\item Główną pętlę gry
+\item Wybór odpowiedniej metody obsługi w zależności od stanu gry
+\item Zarządzanie przejściami między stanami SETUP i BATTLE 
+\end{DoxyItemize}
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/bartu/source/repos/projekt/Main\+Window.\+h\item 
-C\+:/\+Users/bartu/source/repos/projekt/Main\+Window.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/bartu/source/repos/projekt/include/Main\+Window.\+h\item 
+C\+:/\+Users/bartu/source/repos/projekt/src/Main\+Window.\+cpp\end{DoxyCompactItemize}

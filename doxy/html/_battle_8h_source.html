@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Gry-Wojenne: C:/Users/bartu/source/repos/projekt/Battle.h Source File</title>
+<title>Gry-Wojenne: C:/Users/bartu/source/repos/projekt/include/Battle.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,16 +102,16 @@ $(function(){initNavTree('_battle_8h_source.html',''); initResizable(true); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">C:/Users/bartu/source/repos/projekt/Battle.h</div></div>
+  <div class="headertitle"><div class="title">Battle.h</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;random&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;thread&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;random&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;Unit.h&quot;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;Infantry.h&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;Archer.h&quot;</span></div>
@@ -135,7 +135,7 @@ $(function(){initNavTree('_battle_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="class_battle.html#abecc253b23b71da260445e4bdc8522e2">Battle</a>();  <span class="comment">// Konstruktor domyślny</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_function" href="class_battle.html#abecc253b23b71da260445e4bdc8522e2">Battle</a>(<span class="keywordtype">int</span> infantryA, <span class="keywordtype">int</span> archerA, <span class="keywordtype">int</span> cavalryA,</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>           <span class="keywordtype">int</span> infantryB, <span class="keywordtype">int</span> archerB, <span class="keywordtype">int</span> cavalryB);  <span class="comment">// Konstruktor z parametrami</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>           <span class="keywordtype">int</span> infantryB, <span class="keywordtype">int</span> archerB, <span class="keywordtype">int</span> cavalryB);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_function" href="class_battle.html#ae44141e587836ba84243cad46b17c228">~Battle</a>();</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
@@ -148,17 +148,17 @@ $(function(){initNavTree('_battle_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_battle.html#a18002879421fee98e0d8dec5a9d40660">isFinished</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>};</div>
 </div>
-<div class="ttc" id="aclass_battle_html_a18002879421fee98e0d8dec5a9d40660"><div class="ttname"><a href="class_battle.html#a18002879421fee98e0d8dec5a9d40660">Battle::isFinished</a></div><div class="ttdeci">bool isFinished() const</div><div class="ttdoc">Sprawdza czy bitwa się zakończyła.</div><div class="ttdef"><b>Definition</b> Battle.cpp:192</div></div>
-<div class="ttc" id="aclass_battle_html_a287a76405834c59d33856ac56e0c93d9"><div class="ttname"><a href="class_battle.html#a287a76405834c59d33856ac56e0c93d9">Battle::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Aktualizuje stan bitwy.</div><div class="ttdef"><b>Definition</b> Battle.cpp:78</div></div>
-<div class="ttc" id="aclass_battle_html_aa20d3c604153cf07db612c7798469912"><div class="ttname"><a href="class_battle.html#aa20d3c604153cf07db612c7798469912">Battle::draw</a></div><div class="ttdeci">void draw(sf::RenderWindow &amp;window)</div><div class="ttdoc">Rysuje bitwę w oknie.</div><div class="ttdef"><b>Definition</b> Battle.cpp:121</div></div>
-<div class="ttc" id="aclass_battle_html_abecc253b23b71da260445e4bdc8522e2"><div class="ttname"><a href="class_battle.html#abecc253b23b71da260445e4bdc8522e2">Battle::Battle</a></div><div class="ttdeci">Battle()</div><div class="ttdoc">Konstruktor domyślny.</div><div class="ttdef"><b>Definition</b> Battle.cpp:3</div></div>
-<div class="ttc" id="aclass_battle_html_ae44141e587836ba84243cad46b17c228"><div class="ttname"><a href="class_battle.html#ae44141e587836ba84243cad46b17c228">Battle::~Battle</a></div><div class="ttdeci">~Battle()</div><div class="ttdoc">Destruktor.</div><div class="ttdef"><b>Definition</b> Battle.cpp:66</div></div>
+<div class="ttc" id="aclass_battle_html_a18002879421fee98e0d8dec5a9d40660"><div class="ttname"><a href="class_battle.html#a18002879421fee98e0d8dec5a9d40660">Battle::isFinished</a></div><div class="ttdeci">bool isFinished() const</div><div class="ttdoc">Sprawdza czy bitwa się zakończyła.</div><div class="ttdef"><b>Definition</b> Battle.cpp:245</div></div>
+<div class="ttc" id="aclass_battle_html_a287a76405834c59d33856ac56e0c93d9"><div class="ttname"><a href="class_battle.html#a287a76405834c59d33856ac56e0c93d9">Battle::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Aktualizuje stan bitwy.</div><div class="ttdef"><b>Definition</b> Battle.cpp:114</div></div>
+<div class="ttc" id="aclass_battle_html_aa20d3c604153cf07db612c7798469912"><div class="ttname"><a href="class_battle.html#aa20d3c604153cf07db612c7798469912">Battle::draw</a></div><div class="ttdeci">void draw(sf::RenderWindow &amp;window)</div><div class="ttdoc">Rysuje bitwę w oknie.</div><div class="ttdef"><b>Definition</b> Battle.cpp:168</div></div>
+<div class="ttc" id="aclass_battle_html_abecc253b23b71da260445e4bdc8522e2"><div class="ttname"><a href="class_battle.html#abecc253b23b71da260445e4bdc8522e2">Battle::Battle</a></div><div class="ttdeci">Battle()</div><div class="ttdoc">Konstruktor domyślny.</div><div class="ttdef"><b>Definition</b> Battle.cpp:11</div></div>
+<div class="ttc" id="aclass_battle_html_ae44141e587836ba84243cad46b17c228"><div class="ttname"><a href="class_battle.html#ae44141e587836ba84243cad46b17c228">Battle::~Battle</a></div><div class="ttdeci">~Battle()</div><div class="ttdoc">Destruktor.</div><div class="ttdef"><b>Definition</b> Battle.cpp:94</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>Battle.h</b></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>Battle.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

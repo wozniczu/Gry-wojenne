@@ -139,9 +139,14 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Unit</b> ()=default</td></tr>
 <tr class="memdesc:a33361af029acdb5177052f40e6d4b18f inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wirtualny destruktor. <br /></td></tr>
 <tr class="separator:a33361af029acdb5177052f40e6d4b18f inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afffcf41a53a9464464b35c739723b95f inherit pub_methods_class_unit" id="r_afffcf41a53a9464464b35c739723b95f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#afffcf41a53a9464464b35c739723b95f">takeDamage</a> (float dmg)</td></tr>
-<tr class="memdesc:afffcf41a53a9464464b35c739723b95f inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje otrzymanie obrażeń  <br /></td></tr>
-<tr class="separator:afffcf41a53a9464464b35c739723b95f inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a171389d8acb6c180acca61adfbbe3fb5 inherit pub_methods_class_unit" id="r_a171389d8acb6c180acca61adfbbe3fb5"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a171389d8acb6c180acca61adfbbe3fb5 inherit pub_methods_class_unit"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_unit.html#a171389d8acb6c180acca61adfbbe3fb5">takeDamage</a> (T dmg)</td></tr>
+<tr class="memdesc:a171389d8acb6c180acca61adfbbe3fb5 inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje otrzymanie obrażeń  <br /></td></tr>
+<tr class="separator:a171389d8acb6c180acca61adfbbe3fb5 inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02d254391fc797a2cdcd8d150253226f inherit pub_methods_class_unit" id="r_a02d254391fc797a2cdcd8d150253226f"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
+<tr class="memitem:a02d254391fc797a2cdcd8d150253226f inherit pub_methods_class_unit"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_unit.html#a02d254391fc797a2cdcd8d150253226f">takeDamage</a> (std::string dmgStr)</td></tr>
+<tr class="memdesc:a02d254391fc797a2cdcd8d150253226f inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specjalizacja dla obsługi string jako obrażeń  <br /></td></tr>
+<tr class="separator:a02d254391fc797a2cdcd8d150253226f inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeee249661c19826096fa05b2fcc32387 inherit pub_methods_class_unit" id="r_aeee249661c19826096fa05b2fcc32387"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#aeee249661c19826096fa05b2fcc32387">canAttack</a> () const</td></tr>
 <tr class="memdesc:aeee249661c19826096fa05b2fcc32387 inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza czy jednostka może atakować  <br /></td></tr>
 <tr class="separator:aeee249661c19826096fa05b2fcc32387 inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,9 +169,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetAttackCooldown</
 <tr class="memitem:a1cd85f2618580b3ab84e2c3270900b0d inherit pub_methods_class_unit" id="r_a1cd85f2618580b3ab84e2c3270900b0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a1cd85f2618580b3ab84e2c3270900b0d">setPosition</a> (const sf::Vector2f &amp;pos)</td></tr>
 <tr class="memdesc:a1cd85f2618580b3ab84e2c3270900b0d inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia pozycję jednostki.  <br /></td></tr>
 <tr class="separator:a1cd85f2618580b3ab84e2c3270900b0d inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4224814c192f5465286eaf477ee3cb2c inherit pub_methods_class_unit" id="r_a4224814c192f5465286eaf477ee3cb2c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a4224814c192f5465286eaf477ee3cb2c">checkCollision</a> (const <a class="el" href="class_unit.html">Unit</a> *other) const</td></tr>
-<tr class="memdesc:a4224814c192f5465286eaf477ee3cb2c inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza kolizję z inną jednostką  <br /></td></tr>
-<tr class="separator:a4224814c192f5465286eaf477ee3cb2c inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28593c073e8914f62f1266e3f822dcfb inherit pub_methods_class_unit" id="r_a28593c073e8914f62f1266e3f822dcfb"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a28593c073e8914f62f1266e3f822dcfb">resolveCollision</a> (const std::vector&lt; <a class="el" href="class_unit.html">Unit</a> * &gt; &amp;units, const sf::Vector2f &amp;proposedMove)</td></tr>
 <tr class="memdesc:a28593c073e8914f62f1266e3f822dcfb inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rozwiązuje kolizję z innymi jednostkami.  <br /></td></tr>
 <tr class="separator:a28593c073e8914f62f1266e3f822dcfb inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,66 +202,69 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetAttackCooldown</
 <tr class="memitem:a37888064d55619800f2ec2e3d36b752f inherit pub_methods_class_unit" id="r_a37888064d55619800f2ec2e3d36b752f"><td class="memItemLeft" align="right" valign="top">const sf::Sprite &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a37888064d55619800f2ec2e3d36b752f">getShape</a> () const</td></tr>
 <tr class="memdesc:a37888064d55619800f2ec2e3d36b752f inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera sprite jednostki.  <br /></td></tr>
 <tr class="separator:a37888064d55619800f2ec2e3d36b752f inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4343f3f64705956c4d35e07074ef50b inherit pub_methods_class_unit" id="r_ae4343f3f64705956c4d35e07074ef50b"><td class="memItemLeft" align="right" valign="top">const sf::Vector2f &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#ae4343f3f64705956c4d35e07074ef50b">getVelocity</a> () const</td></tr>
+<tr class="memdesc:ae4343f3f64705956c4d35e07074ef50b inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera wektor prędkości jednostki.  <br /></td></tr>
+<tr class="separator:ae4343f3f64705956c4d35e07074ef50b inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_attribs_class_unit"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_unit')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_unit.html">Unit</a></td></tr>
-<tr class="memitem:a4c2e8c51fa9a37ad37ac8fa1095124e6 inherit pro_attribs_class_unit" id="r_a4c2e8c51fa9a37ad37ac8fa1095124e6"><td class="memItemLeft" align="right" valign="top">
+<tr class="inherit_header pub_attribs_class_unit"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_class_unit')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_unit.html">Unit</a></td></tr>
+<tr class="memitem:a4c2e8c51fa9a37ad37ac8fa1095124e6 inherit pub_attribs_class_unit" id="r_a4c2e8c51fa9a37ad37ac8fa1095124e6"><td class="memItemLeft" align="right" valign="top">
 float&#160;</td><td class="memItemRight" valign="bottom"><b>health</b></td></tr>
-<tr class="memdesc:a4c2e8c51fa9a37ad37ac8fa1095124e6 inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualne zdrowie jednostki. <br /></td></tr>
-<tr class="separator:a4c2e8c51fa9a37ad37ac8fa1095124e6 inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a972e7aa7cecdf17e5d58e597ec02c447 inherit pro_attribs_class_unit" id="r_a972e7aa7cecdf17e5d58e597ec02c447"><td class="memItemLeft" align="right" valign="top">
+<tr class="memdesc:a4c2e8c51fa9a37ad37ac8fa1095124e6 inherit pub_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualne zdrowie jednostki. <br /></td></tr>
+<tr class="separator:a4c2e8c51fa9a37ad37ac8fa1095124e6 inherit pub_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a972e7aa7cecdf17e5d58e597ec02c447 inherit pub_attribs_class_unit" id="r_a972e7aa7cecdf17e5d58e597ec02c447"><td class="memItemLeft" align="right" valign="top">
 float&#160;</td><td class="memItemRight" valign="bottom"><b>damage</b></td></tr>
-<tr class="memdesc:a972e7aa7cecdf17e5d58e597ec02c447 inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obrażenia zadawane przez jednostkę <br /></td></tr>
-<tr class="separator:a972e7aa7cecdf17e5d58e597ec02c447 inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ae442a477d0db0cb74841ba4c949422 inherit pro_attribs_class_unit" id="r_a4ae442a477d0db0cb74841ba4c949422"><td class="memItemLeft" align="right" valign="top">
+<tr class="memdesc:a972e7aa7cecdf17e5d58e597ec02c447 inherit pub_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obrażenia zadawane przez jednostkę <br /></td></tr>
+<tr class="separator:a972e7aa7cecdf17e5d58e597ec02c447 inherit pub_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ae442a477d0db0cb74841ba4c949422 inherit pub_attribs_class_unit" id="r_a4ae442a477d0db0cb74841ba4c949422"><td class="memItemLeft" align="right" valign="top">
 float&#160;</td><td class="memItemRight" valign="bottom"><b>speed</b></td></tr>
-<tr class="memdesc:a4ae442a477d0db0cb74841ba4c949422 inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prędkość poruszania się jednostki. <br /></td></tr>
-<tr class="separator:a4ae442a477d0db0cb74841ba4c949422 inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa18cdbac1694dd45d722e16dd82aa6e inherit pro_attribs_class_unit" id="r_afa18cdbac1694dd45d722e16dd82aa6e"><td class="memItemLeft" align="right" valign="top">
+<tr class="memdesc:a4ae442a477d0db0cb74841ba4c949422 inherit pub_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prędkość poruszania się jednostki. <br /></td></tr>
+<tr class="separator:a4ae442a477d0db0cb74841ba4c949422 inherit pub_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa18cdbac1694dd45d722e16dd82aa6e inherit pub_attribs_class_unit" id="r_afa18cdbac1694dd45d722e16dd82aa6e"><td class="memItemLeft" align="right" valign="top">
 float&#160;</td><td class="memItemRight" valign="bottom"><b>attackRange</b></td></tr>
-<tr class="memdesc:afa18cdbac1694dd45d722e16dd82aa6e inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zasięg ataku jednostki. <br /></td></tr>
-<tr class="separator:afa18cdbac1694dd45d722e16dd82aa6e inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0093af7ad6fc620390ad396355cf00a8 inherit pro_attribs_class_unit" id="r_a0093af7ad6fc620390ad396355cf00a8"><td class="memItemLeft" align="right" valign="top">
+<tr class="memdesc:afa18cdbac1694dd45d722e16dd82aa6e inherit pub_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zasięg ataku jednostki. <br /></td></tr>
+<tr class="separator:afa18cdbac1694dd45d722e16dd82aa6e inherit pub_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0093af7ad6fc620390ad396355cf00a8 inherit pub_attribs_class_unit" id="r_a0093af7ad6fc620390ad396355cf00a8"><td class="memItemLeft" align="right" valign="top">
 float&#160;</td><td class="memItemRight" valign="bottom"><b>attackSpeed</b></td></tr>
-<tr class="memdesc:a0093af7ad6fc620390ad396355cf00a8 inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Szybkość ataku jednostki. <br /></td></tr>
-<tr class="separator:a0093af7ad6fc620390ad396355cf00a8 inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9b1abba8d6ce40a6c2b3d59dfaad060 inherit pro_attribs_class_unit" id="r_af9b1abba8d6ce40a6c2b3d59dfaad060"><td class="memItemLeft" align="right" valign="top">
+<tr class="memdesc:a0093af7ad6fc620390ad396355cf00a8 inherit pub_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Szybkość ataku jednostki. <br /></td></tr>
+<tr class="separator:a0093af7ad6fc620390ad396355cf00a8 inherit pub_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9b1abba8d6ce40a6c2b3d59dfaad060 inherit pub_attribs_class_unit" id="r_af9b1abba8d6ce40a6c2b3d59dfaad060"><td class="memItemLeft" align="right" valign="top">
 float&#160;</td><td class="memItemRight" valign="bottom"><b>attackCooldown</b></td></tr>
-<tr class="memdesc:af9b1abba8d6ce40a6c2b3d59dfaad060 inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Czas oczekiwania między atakami. <br /></td></tr>
-<tr class="separator:af9b1abba8d6ce40a6c2b3d59dfaad060 inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac98286257c23c0324859abae437d0cde inherit pro_attribs_class_unit" id="r_ac98286257c23c0324859abae437d0cde"><td class="memItemLeft" align="right" valign="top">
+<tr class="memdesc:af9b1abba8d6ce40a6c2b3d59dfaad060 inherit pub_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Czas oczekiwania między atakami. <br /></td></tr>
+<tr class="separator:af9b1abba8d6ce40a6c2b3d59dfaad060 inherit pub_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac98286257c23c0324859abae437d0cde inherit pub_attribs_class_unit" id="r_ac98286257c23c0324859abae437d0cde"><td class="memItemLeft" align="right" valign="top">
 float&#160;</td><td class="memItemRight" valign="bottom"><b>hitChance</b></td></tr>
-<tr class="memdesc:ac98286257c23c0324859abae437d0cde inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Szansa na trafienie przeciwnika. <br /></td></tr>
-<tr class="separator:ac98286257c23c0324859abae437d0cde inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28e93d218bd5bdc3eee21e7345e14764 inherit pro_attribs_class_unit" id="r_a28e93d218bd5bdc3eee21e7345e14764"><td class="memItemLeft" align="right" valign="top">
+<tr class="memdesc:ac98286257c23c0324859abae437d0cde inherit pub_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Szansa na trafienie przeciwnika. <br /></td></tr>
+<tr class="separator:ac98286257c23c0324859abae437d0cde inherit pub_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28e93d218bd5bdc3eee21e7345e14764 inherit pub_attribs_class_unit" id="r_a28e93d218bd5bdc3eee21e7345e14764"><td class="memItemLeft" align="right" valign="top">
 float&#160;</td><td class="memItemRight" valign="bottom"><b>defense</b></td></tr>
-<tr class="memdesc:a28e93d218bd5bdc3eee21e7345e14764 inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wartość obrony jednostki. <br /></td></tr>
-<tr class="separator:a28e93d218bd5bdc3eee21e7345e14764 inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a230b71eb286b5ead603bb409737a7884 inherit pro_attribs_class_unit" id="r_a230b71eb286b5ead603bb409737a7884"><td class="memItemLeft" align="right" valign="top">
+<tr class="memdesc:a28e93d218bd5bdc3eee21e7345e14764 inherit pub_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wartość obrony jednostki. <br /></td></tr>
+<tr class="separator:a28e93d218bd5bdc3eee21e7345e14764 inherit pub_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a230b71eb286b5ead603bb409737a7884 inherit pub_attribs_class_unit" id="r_a230b71eb286b5ead603bb409737a7884"><td class="memItemLeft" align="right" valign="top">
 sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><b>velocity</b></td></tr>
-<tr class="memdesc:a230b71eb286b5ead603bb409737a7884 inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wektor prędkości jednostki. <br /></td></tr>
-<tr class="separator:a230b71eb286b5ead603bb409737a7884 inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf3246465f330ed286269a9d5bf0e53c inherit pro_attribs_class_unit" id="r_acf3246465f330ed286269a9d5bf0e53c"><td class="memItemLeft" align="right" valign="top">
+<tr class="memdesc:a230b71eb286b5ead603bb409737a7884 inherit pub_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wektor prędkości jednostki. <br /></td></tr>
+<tr class="separator:a230b71eb286b5ead603bb409737a7884 inherit pub_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf3246465f330ed286269a9d5bf0e53c inherit pub_attribs_class_unit" id="r_acf3246465f330ed286269a9d5bf0e53c"><td class="memItemLeft" align="right" valign="top">
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>alive</b></td></tr>
-<tr class="memdesc:acf3246465f330ed286269a9d5bf0e53c inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flaga określająca czy jednostka żyje. <br /></td></tr>
-<tr class="separator:acf3246465f330ed286269a9d5bf0e53c inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b9d451613243183d23626ff65065816 inherit pro_attribs_class_unit" id="r_a4b9d451613243183d23626ff65065816"><td class="memItemLeft" align="right" valign="top">
+<tr class="memdesc:acf3246465f330ed286269a9d5bf0e53c inherit pub_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flaga określająca czy jednostka żyje. <br /></td></tr>
+<tr class="separator:acf3246465f330ed286269a9d5bf0e53c inherit pub_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b9d451613243183d23626ff65065816 inherit pub_attribs_class_unit" id="r_a4b9d451613243183d23626ff65065816"><td class="memItemLeft" align="right" valign="top">
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>team</b></td></tr>
-<tr class="memdesc:a4b9d451613243183d23626ff65065816 inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flaga określająca przynależność do drużyny. <br /></td></tr>
-<tr class="separator:a4b9d451613243183d23626ff65065816 inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2e301805c3f075ff1f9f2ba1277a44f inherit pro_attribs_class_unit" id="r_ad2e301805c3f075ff1f9f2ba1277a44f"><td class="memItemLeft" align="right" valign="top">
+<tr class="memdesc:a4b9d451613243183d23626ff65065816 inherit pub_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flaga określająca przynależność do drużyny. <br /></td></tr>
+<tr class="separator:a4b9d451613243183d23626ff65065816 inherit pub_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2e301805c3f075ff1f9f2ba1277a44f inherit pub_attribs_class_unit" id="r_ad2e301805c3f075ff1f9f2ba1277a44f"><td class="memItemLeft" align="right" valign="top">
 sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><b>unitTexture</b></td></tr>
-<tr class="memdesc:ad2e301805c3f075ff1f9f2ba1277a44f inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura jednostki. <br /></td></tr>
-<tr class="separator:ad2e301805c3f075ff1f9f2ba1277a44f inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd2d2f2a04222eebe72425c04685a2cd inherit pro_attribs_class_unit" id="r_acd2d2f2a04222eebe72425c04685a2cd"><td class="memItemLeft" align="right" valign="top">
+<tr class="memdesc:ad2e301805c3f075ff1f9f2ba1277a44f inherit pub_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura jednostki. <br /></td></tr>
+<tr class="separator:ad2e301805c3f075ff1f9f2ba1277a44f inherit pub_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd2d2f2a04222eebe72425c04685a2cd inherit pub_attribs_class_unit" id="r_acd2d2f2a04222eebe72425c04685a2cd"><td class="memItemLeft" align="right" valign="top">
 sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>unitSprite</b></td></tr>
-<tr class="memdesc:acd2d2f2a04222eebe72425c04685a2cd inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite jednostki. <br /></td></tr>
-<tr class="separator:acd2d2f2a04222eebe72425c04685a2cd inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_static_attribs_class_unit"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_static_attribs_class_unit')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="class_unit.html">Unit</a></td></tr>
-<tr class="memitem:ac103081831def33a886d728d8087ee50 inherit pro_static_attribs_class_unit" id="r_ac103081831def33a886d728d8087ee50"><td class="memItemLeft" align="right" valign="top">
-static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COLLISION_RADIUS</b> = 5.0f</td></tr>
-<tr class="separator:ac103081831def33a886d728d8087ee50 inherit pro_static_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:acd2d2f2a04222eebe72425c04685a2cd inherit pub_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite jednostki. <br /></td></tr>
+<tr class="separator:acd2d2f2a04222eebe72425c04685a2cd inherit pub_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_attribs_class_unit"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_class_unit')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="class_unit.html">Unit</a></td></tr>
+<tr class="memitem:ac103081831def33a886d728d8087ee50 inherit pub_static_attribs_class_unit" id="r_ac103081831def33a886d728d8087ee50"><td class="memItemLeft" align="right" valign="top">
+static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COLLISION_RADIUS</b> = 10.0f</td></tr>
+<tr class="separator:ac103081831def33a886d728d8087ee50 inherit pub_static_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Klasa reprezentująca jednostki piechoty. </p>
@@ -290,11 +295,21 @@ static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COL
 </div><div class="memdoc">
 
 <p>Konstruktor piechura. </p>
+<p>Konstruktor klasy <a class="el" href="class_infantry.html" title="Klasa reprezentująca jednostki piechoty.">Infantry</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>Pozycja X jednostki </td></tr>
     <tr><td class="paramname">y</td><td>Pozycja Y jednostki </td></tr>
-    <tr><td class="paramname">team</td><td>Przynależność do drużyny </td></tr>
+    <tr><td class="paramname">team</td><td>Przynależność do drużyny</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Inicjalizuje piechura z podanymi parametrami i ładuje odpowiednią teksturę. Piechur ma zwiększoną wytrzymałość i obronę w porównaniu do innych jednostek.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Pozycja początkowa X jednostki </td></tr>
+    <tr><td class="paramname">y</td><td>Pozycja początkowa Y jednostki </td></tr>
+    <tr><td class="paramname">team</td><td>Przynależność do drużyny (true - niebieska, false - czerwona) </td></tr>
   </table>
   </dd>
 </dl>
@@ -326,9 +341,22 @@ static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COL
 </div><div class="memdoc">
 
 <p>Aktualizuje stan piechura. </p>
+<p>Aktualizuje stan piechura w każdej klatce gry.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">units</td><td>Lista wszystkich jednostek </td></tr>
+    <tr><td class="paramname">units</td><td>Lista wszystkich jednostek</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Metoda odpowiedzialna za:</p><ul>
+<li>Aktualizację bonusu do obrony w formacji</li>
+<li>Znajdowanie i atakowanie najbliższego wroga</li>
+<li>Poruszanie się z uwzględnieniem formacji</li>
+<li>Obsługę obracania sprite'a</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>Lista wszystkich jednostek na mapie </td></tr>
   </table>
   </dd>
 </dl>
@@ -338,8 +366,8 @@ static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>COL
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/bartu/source/repos/projekt/<a class="el" href="_infantry_8h_source.html">Infantry.h</a></li>
-<li>C:/Users/bartu/source/repos/projekt/<b>Infantry.cpp</b></li>
+<li>C:/Users/bartu/source/repos/projekt/include/<a class="el" href="_infantry_8h_source.html">Infantry.h</a></li>
+<li>C:/Users/bartu/source/repos/projekt/src/<b>Infantry.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

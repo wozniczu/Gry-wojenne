@@ -1,6 +1,21 @@
 #include "Unit.h"
-#include <random>
 
+/**
+ * @brief Konstruktor klasy Unit
+ * 
+ * Inicjalizuje jednostkę z podanymi parametrami i ładuje odpowiednią teksturę.
+ * 
+ * @param x Pozycja początkowa X jednostki
+ * @param y Pozycja początkowa Y jednostki
+ * @param team Przynależność do drużyny (true - niebieska, false - czerwona)
+ * @param health Początkowa wartość zdrowia
+ * @param damage Zadawane obrażenia
+ * @param speed Prędkość poruszania
+ * @param attackRange Zasięg ataku
+ * @param attackSpeed Szybkość ataku
+ * @param hitChance Szansa na trafienie
+ * @param defense Wartość obrony
+ */
 Unit::Unit(float x, float y, bool team, float health, float damage, float speed, float attackRange, float attackSpeed, float hitChance, float defense)
     : health(health), damage(damage), speed(speed), attackRange(attackRange), attackSpeed(attackSpeed),
     attackCooldown(0.f), hitChance(hitChance), defense(defense), alive(true), team(team), unitSprite(unitTexture) {
@@ -35,6 +50,15 @@ void Unit::updateAttackCooldown(float deltaTime) {
     }
 }
 
+/**
+ * @brief Oblicza i aplikuje obrażenia do jednostki
+ * 
+ * Redukuje otrzymane obrażenia o wartość obrony i odejmuje od zdrowia.
+ * Jeśli zdrowie spadnie do 0, oznacza jednostkę jako martwą.
+ * 
+ * @tparam T Typ wartości obrażeń (int, float)
+ * @param dmg Wartość otrzymanych obrażeń
+ */
 template<typename T>
 void Unit::takeDamage(T dmg) {
     float reducedDamage = static_cast<float>(dmg) * (1.0f - defense);
@@ -45,6 +69,14 @@ void Unit::takeDamage(T dmg) {
     }
 }
 
+/**
+ * @brief Specjalizacja metody takeDamage dla typu string
+ * 
+ * Próbuje przekonwertować string na float i zastosować obrażenia.
+ * W przypadku błędu konwersji stosuje domyślne obrażenia (0).
+ * 
+ * @param dmgStr String zawierający wartość obrażeń
+ */
 template<>
 void Unit::takeDamage<std::string>(std::string dmgStr) {
     try {
@@ -56,6 +88,13 @@ void Unit::takeDamage<std::string>(std::string dmgStr) {
     }
 }
 
+/**
+ * @brief Sprawdza czy atak trafił przeciwnika
+ * 
+ * Generuje losową wartość i porównuje z szansą na trafienie.
+ * 
+ * @return true jeśli atak trafił, false w przeciwnym wypadku
+ */
 bool Unit::tryHit() const {
     static std::random_device rd;
     static std::mt19937 gen(rd());
@@ -77,6 +116,17 @@ void Unit::setPosition(const sf::Vector2f& pos) {
     unitSprite.setPosition(pos);
 }
 
+/**
+ * @brief Rozwiązuje kolizje jednostki z innymi obiektami
+ * 
+ * Oblicza końcową pozycję uwzględniając:
+ * - Kolizje z innymi jednostkami (odpychanie)
+ * - Granice mapy (1400x800)
+ * 
+ * @param units Lista wszystkich jednostek na mapie
+ * @param proposedMove Proponowany wektor ruchu
+ * @return Skorygowany wektor ruchu uwzględniający kolizje
+ */
 sf::Vector2f Unit::resolveCollision(const std::vector<Unit*>& units, const sf::Vector2f& proposedMove) {
     sf::Vector2f finalPosition = getPosition() + proposedMove;
     

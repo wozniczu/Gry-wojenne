@@ -25,8 +25,10 @@ virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Unit} ()=default
 \begin{DoxyCompactList}\small\item\em Wirtualny destruktor. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_unit_ae609e432af1261b1cdf8e804950e03b5}{update}} (const std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&units)=0
 \begin{DoxyCompactList}\small\item\em Aktualizuje stan jednostki. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_unit_afffcf41a53a9464464b35c739723b95f}{take\+Damage}} (float dmg)
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{class_unit_a171389d8acb6c180acca61adfbbe3fb5}{take\+Damage}} (T dmg)
 \begin{DoxyCompactList}\small\item\em Obsługuje otrzymanie obrażeń \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{class_unit_a02d254391fc797a2cdcd8d150253226f}{take\+Damage}} (std\+::string dmg\+Str)
+\begin{DoxyCompactList}\small\item\em Specjalizacja dla obsługi string jako obrażeń \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_unit_aeee249661c19826096fa05b2fcc32387}{can\+Attack}} () const
 \begin{DoxyCompactList}\small\item\em Sprawdza czy jednostka może atakować \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_unit_a0a75f6f1f02ac5b1ba9885d2e2ff4da3}{try\+Hit}} () const
@@ -42,8 +44,6 @@ sf\+::\+Vector2f \mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{
 \begin{DoxyCompactList}\small\item\em Pobiera aktualną pozycję jednostki. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_unit_a1cd85f2618580b3ab84e2c3270900b0d}{set\+Position}} (const sf\+::\+Vector2f \&pos)
 \begin{DoxyCompactList}\small\item\em Ustawia pozycję jednostki. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_unit_a4224814c192f5465286eaf477ee3cb2c}{check\+Collision}} (const \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*}other) const
-\begin{DoxyCompactList}\small\item\em Sprawdza kolizję z inną jednostką \end{DoxyCompactList}\item 
 sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a28593c073e8914f62f1266e3f822dcfb}{resolve\+Collision}} (const std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&units, const sf\+::\+Vector2f \&proposed\+Move)
 \begin{DoxyCompactList}\small\item\em Rozwiązuje kolizję z innymi jednostkami. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_unit_a191a4a0a3f0a23842171a0fc889e2135}{get\+Collision\+Radius}} () const
@@ -65,8 +65,10 @@ void \mbox{\hyperlink{class_unit_ad3f439458e70ae3d4e8a331e8adc0bb6}{set\+Defense
 float \mbox{\hyperlink{class_unit_a8f4dd3c378f8ce769eef53787d166149}{get\+Attack\+Speed}} () const
 \begin{DoxyCompactList}\small\item\em Pobiera szybkość ataku. \end{DoxyCompactList}\item 
 const sf\+::\+Sprite \& \mbox{\hyperlink{class_unit_a37888064d55619800f2ec2e3d36b752f}{get\+Shape}} () const
-\begin{DoxyCompactList}\small\item\em Pobiera sprite jednostki. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactList}\small\item\em Pobiera sprite jednostki. \end{DoxyCompactList}\item 
+const sf\+::\+Vector2f \& \mbox{\hyperlink{class_unit_ae4343f3f64705956c4d35e07074ef50b}{get\+Velocity}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera wektor prędkości jednostki. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_unit_a4c2e8c51fa9a37ad37ac8fa1095124e6}\label{class_unit_a4c2e8c51fa9a37ad37ac8fa1095124e6} 
@@ -108,11 +110,11 @@ sf\+::\+Texture {\bfseries unit\+Texture}
 \Hypertarget{class_unit_acd2d2f2a04222eebe72425c04685a2cd}\label{class_unit_acd2d2f2a04222eebe72425c04685a2cd} 
 sf\+::\+Sprite {\bfseries unit\+Sprite}
 \begin{DoxyCompactList}\small\item\em Sprite jednostki. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Static Protected Attributes}
+\doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_unit_ac103081831def33a886d728d8087ee50}\label{class_unit_ac103081831def33a886d728d8087ee50} 
-static constexpr float {\bfseries COLLISION\+\_\+\+RADIUS} = 5.\+0f
+static constexpr float {\bfseries COLLISION\+\_\+\+RADIUS} = 10.\+0f
 \end{DoxyCompactItemize}
 
 
@@ -132,6 +134,8 @@ Unit\+::\+Unit (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{,
 
 Konstruktor jednostki. 
 
+Konstruktor klasy \doxylink{class_unit}{Unit}.
+
 
 \begin{DoxyParams}{Parameters}
 {\em x} & Pozycja X jednostki \\
@@ -145,6 +149,31 @@ Konstruktor jednostki.
 {\em damage} & Obrażenia jednostki \\
 \hline
 {\em speed} & Prędkość jednostki \\
+\hline
+{\em attack\+Range} & Zasięg ataku \\
+\hline
+{\em attack\+Speed} & Szybkość ataku \\
+\hline
+{\em hit\+Chance} & Szansa na trafienie \\
+\hline
+{\em defense} & Wartość obrony\\
+\hline
+\end{DoxyParams}
+Inicjalizuje jednostkę z podanymi parametrami i ładuje odpowiednią teksturę.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Pozycja początkowa X jednostki \\
+\hline
+{\em y} & Pozycja początkowa Y jednostki \\
+\hline
+{\em team} & Przynależność do drużyny (true -\/ niebieska, false -\/ czerwona) \\
+\hline
+{\em health} & Początkowa wartość zdrowia \\
+\hline
+{\em damage} & Zadawane obrażenia \\
+\hline
+{\em speed} & Prędkość poruszania \\
 \hline
 {\em attack\+Range} & Zasięg ataku \\
 \hline
@@ -170,24 +199,6 @@ Sprawdza czy jednostka może atakować
 
 \begin{DoxyReturn}{Returns}
 true jeśli jednostka może atakować 
-\end{DoxyReturn}
-\Hypertarget{class_unit_a4224814c192f5465286eaf477ee3cb2c}\index{Unit@{Unit}!checkCollision@{checkCollision}}
-\index{checkCollision@{checkCollision}!Unit@{Unit}}
-\doxysubsubsection{\texorpdfstring{checkCollision()}{checkCollision()}}
-{\footnotesize\ttfamily \label{class_unit_a4224814c192f5465286eaf477ee3cb2c} 
-bool Unit\+::check\+Collision (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*}}]{other}{}\end{DoxyParamCaption}) const}
-
-
-
-Sprawdza kolizję z inną jednostką 
-
-
-\begin{DoxyParams}{Parameters}
-{\em other} & Inna jednostka \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-true jeśli występuje kolizja 
 \end{DoxyReturn}
 \Hypertarget{class_unit_a8f4dd3c378f8ce769eef53787d166149}\index{Unit@{Unit}!getAttackSpeed@{getAttackSpeed}}
 \index{getAttackSpeed@{getAttackSpeed}!Unit@{Unit}}
@@ -324,6 +335,19 @@ Pobiera przynależność do drużyny.
 \begin{DoxyReturn}{Returns}
 true jeśli jednostka należy do drużyny 
 \end{DoxyReturn}
+\Hypertarget{class_unit_ae4343f3f64705956c4d35e07074ef50b}\index{Unit@{Unit}!getVelocity@{getVelocity}}
+\index{getVelocity@{getVelocity}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getVelocity()}{getVelocity()}}
+{\footnotesize\ttfamily \label{class_unit_ae4343f3f64705956c4d35e07074ef50b} 
+const sf\+::\+Vector2f \& Unit\+::get\+Velocity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera wektor prędkości jednostki. 
+
+\begin{DoxyReturn}{Returns}
+Wektor prędkości 
+\end{DoxyReturn}
 \Hypertarget{class_unit_ad9245732ec5afbdb44b9942ae8ea98cc}\index{Unit@{Unit}!isAlive@{isAlive}}
 \index{isAlive@{isAlive}!Unit@{Unit}}
 \doxysubsubsection{\texorpdfstring{isAlive()}{isAlive()}}
@@ -347,6 +371,8 @@ sf\+::\+Vector2f Unit\+::resolve\+Collision (\begin{DoxyParamCaption}\item[{cons
 
 Rozwiązuje kolizję z innymi jednostkami. 
 
+Rozwiązuje kolizje jednostki z innymi obiektami.
+
 
 \begin{DoxyParams}{Parameters}
 {\em units} & Lista wszystkich jednostek \\
@@ -355,7 +381,23 @@ Rozwiązuje kolizję z innymi jednostkami.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Końcowa pozycja po rozwiązaniu kolizji 
+Końcowa pozycja po rozwiązaniu kolizji
+\end{DoxyReturn}
+Oblicza końcową pozycję uwzględniając\+:
+\begin{DoxyItemize}
+\item Kolizje z innymi jednostkami (odpychanie)
+\item Granice mapy (1400x800)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & Lista wszystkich jednostek na mapie \\
+\hline
+{\em proposed\+Move} & Proponowany wektor ruchu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Skorygowany wektor ruchu uwzględniający kolizje 
 \end{DoxyReturn}
 \Hypertarget{class_unit_ad3f439458e70ae3d4e8a331e8adc0bb6}\index{Unit@{Unit}!setDefense@{setDefense}}
 \index{setDefense@{setDefense}!Unit@{Unit}}
@@ -387,16 +429,52 @@ Ustawia pozycję jednostki.
 {\em pos} & Nowa pozycja \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_unit_afffcf41a53a9464464b35c739723b95f}\index{Unit@{Unit}!takeDamage@{takeDamage}}
+\Hypertarget{class_unit_a02d254391fc797a2cdcd8d150253226f}\index{Unit@{Unit}!takeDamage@{takeDamage}}
 \index{takeDamage@{takeDamage}!Unit@{Unit}}
-\doxysubsubsection{\texorpdfstring{takeDamage()}{takeDamage()}}
-{\footnotesize\ttfamily \label{class_unit_afffcf41a53a9464464b35c739723b95f} 
-void Unit\+::take\+Damage (\begin{DoxyParamCaption}\item[{float}]{dmg}{}\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{takeDamage()}{takeDamage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_unit_a02d254391fc797a2cdcd8d150253226f} 
+template$<$$>$ \\
+void Unit\+::take\+Damage (\begin{DoxyParamCaption}\item[{std\+::string}]{dmg\+Str}{}\end{DoxyParamCaption})}
+
+
+
+Specjalizacja dla obsługi string jako obrażeń 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dmg\+Str} & String zawierający wartość obrażeń \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_unit_a171389d8acb6c180acca61adfbbe3fb5}\index{Unit@{Unit}!takeDamage@{takeDamage}}
+\index{takeDamage@{takeDamage}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{takeDamage()}{takeDamage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_unit_a171389d8acb6c180acca61adfbbe3fb5} 
+template$<$typename T$>$ \\
+void Unit\+::take\+Damage (\begin{DoxyParamCaption}\item[{T}]{dmg}{}\end{DoxyParamCaption})}
 
 
 
 Obsługuje otrzymanie obrażeń 
 
+Oblicza i aplikuje obrażenia do jednostki.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Typ wartości obrażeń (int, float, string) \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em dmg} & Wartość otrzymanych obrażeń\\
+\hline
+\end{DoxyParams}
+Redukuje otrzymane obrażenia o wartość obrony i odejmuje od zdrowia. Jeśli zdrowie spadnie do 0, oznacza jednostkę jako martwą.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Typ wartości obrażeń (int, float) \\
+\hline
+\end{DoxyTemplParams}
 
 \begin{DoxyParams}{Parameters}
 {\em dmg} & Wartość otrzymanych obrażeń \\
@@ -413,7 +491,12 @@ bool Unit\+::try\+Hit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const
 Sprawdza czy atak trafił przeciwnika. 
 
 \begin{DoxyReturn}{Returns}
-true jeśli atak trafił 
+true jeśli atak trafił
+\end{DoxyReturn}
+Generuje losową wartość i porównuje z szansą na trafienie.
+
+\begin{DoxyReturn}{Returns}
+true jeśli atak trafił, false w przeciwnym wypadku 
 \end{DoxyReturn}
 \Hypertarget{class_unit_ae609e432af1261b1cdf8e804950e03b5}\index{Unit@{Unit}!update@{update}}
 \index{update@{update}!Unit@{Unit}}
@@ -453,5 +536,5 @@ Aktualizuje cooldown ataku.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/bartu/source/repos/projekt/Unit.\+h\item 
-C\+:/\+Users/bartu/source/repos/projekt/Unit.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/bartu/source/repos/projekt/include/Unit.\+h\item 
+C\+:/\+Users/bartu/source/repos/projekt/src/Unit.\+cpp\end{DoxyCompactItemize}

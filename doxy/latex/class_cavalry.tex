@@ -29,8 +29,10 @@ void \mbox{\hyperlink{class_cavalry_a40c9d84b0c9571c7f457674d1acca527}{update}} 
 \begin{DoxyCompactList}\small\item\em Konstruktor jednostki. \end{DoxyCompactList}\item 
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Unit} ()=default
 \begin{DoxyCompactList}\small\item\em Wirtualny destruktor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_unit_afffcf41a53a9464464b35c739723b95f}{take\+Damage}} (float dmg)
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{class_unit_a171389d8acb6c180acca61adfbbe3fb5}{take\+Damage}} (T dmg)
 \begin{DoxyCompactList}\small\item\em Obsługuje otrzymanie obrażeń \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{class_unit_a02d254391fc797a2cdcd8d150253226f}{take\+Damage}} (std\+::string dmg\+Str)
+\begin{DoxyCompactList}\small\item\em Specjalizacja dla obsługi string jako obrażeń \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_unit_aeee249661c19826096fa05b2fcc32387}{can\+Attack}} () const
 \begin{DoxyCompactList}\small\item\em Sprawdza czy jednostka może atakować \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_unit_a0a75f6f1f02ac5b1ba9885d2e2ff4da3}{try\+Hit}} () const
@@ -45,8 +47,6 @@ sf\+::\+Vector2f \mbox{\hyperlink{class_unit_aa33e6fe8098210a9aeac019345f8a235}{
 \begin{DoxyCompactList}\small\item\em Pobiera aktualną pozycję jednostki. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_unit_a1cd85f2618580b3ab84e2c3270900b0d}{set\+Position}} (const sf\+::\+Vector2f \&pos)
 \begin{DoxyCompactList}\small\item\em Ustawia pozycję jednostki. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_unit_a4224814c192f5465286eaf477ee3cb2c}{check\+Collision}} (const \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*}other) const
-\begin{DoxyCompactList}\small\item\em Sprawdza kolizję z inną jednostką \end{DoxyCompactList}\item 
 sf\+::\+Vector2f \mbox{\hyperlink{class_unit_a28593c073e8914f62f1266e3f822dcfb}{resolve\+Collision}} (const std\+::vector$<$ \mbox{\hyperlink{class_unit}{Unit}} \texorpdfstring{$\ast$}{*} $>$ \&units, const sf\+::\+Vector2f \&proposed\+Move)
 \begin{DoxyCompactList}\small\item\em Rozwiązuje kolizję z innymi jednostkami. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_unit_a191a4a0a3f0a23842171a0fc889e2135}{get\+Collision\+Radius}} () const
@@ -68,9 +68,11 @@ void \mbox{\hyperlink{class_unit_ad3f439458e70ae3d4e8a331e8adc0bb6}{set\+Defense
 float \mbox{\hyperlink{class_unit_a8f4dd3c378f8ce769eef53787d166149}{get\+Attack\+Speed}} () const
 \begin{DoxyCompactList}\small\item\em Pobiera szybkość ataku. \end{DoxyCompactList}\item 
 const sf\+::\+Sprite \& \mbox{\hyperlink{class_unit_a37888064d55619800f2ec2e3d36b752f}{get\+Shape}} () const
-\begin{DoxyCompactList}\small\item\em Pobiera sprite jednostki. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Pobiera sprite jednostki. \end{DoxyCompactList}\item 
+const sf\+::\+Vector2f \& \mbox{\hyperlink{class_unit_ae4343f3f64705956c4d35e07074ef50b}{get\+Velocity}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera wektor prędkości jednostki. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_unit}{Unit}}}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_unit}{Unit}}}
 \begin{DoxyCompactItemize}
 \item 
 float {\bfseries health}
@@ -99,10 +101,10 @@ sf\+::\+Texture {\bfseries unit\+Texture}
 \begin{DoxyCompactList}\small\item\em Tekstura jednostki. \end{DoxyCompactList}\item 
 sf\+::\+Sprite {\bfseries unit\+Sprite}
 \begin{DoxyCompactList}\small\item\em Sprite jednostki. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_unit}{Unit}}}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_unit}{Unit}}}
 \begin{DoxyCompactItemize}
 \item 
-static constexpr float {\bfseries COLLISION\+\_\+\+RADIUS} = 5.\+0f
+static constexpr float {\bfseries COLLISION\+\_\+\+RADIUS} = 10.\+0f
 \end{DoxyCompactItemize}
 
 
@@ -122,13 +124,26 @@ Cavalry\+::\+Cavalry (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}
 
 Konstruktor kawalerzysty. 
 
+Konstruktor klasy \doxylink{class_cavalry}{Cavalry}.
+
 
 \begin{DoxyParams}{Parameters}
 {\em x} & Pozycja X jednostki \\
 \hline
 {\em y} & Pozycja Y jednostki \\
 \hline
-{\em team} & Przynależność do drużyny \\
+{\em team} & Przynależność do drużyny\\
+\hline
+\end{DoxyParams}
+Inicjalizuje kawalerzystę z podanymi parametrami i ładuje odpowiednią teksturę. Kawaleria ma największą prędkość i specjalne zdolności (szarża, okrążanie).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Pozycja początkowa X jednostki \\
+\hline
+{\em y} & Pozycja początkowa Y jednostki \\
+\hline
+{\em team} & Przynależność do drużyny (true -\/ niebieska, false -\/ czerwona) \\
 \hline
 \end{DoxyParams}
 
@@ -144,9 +159,25 @@ void Cavalry\+::update (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \m
 
 Aktualizuje stan kawalerzysty. 
 
+Aktualizuje stan kawalerzysty w każdej klatce gry.
+
 
 \begin{DoxyParams}{Parameters}
-{\em units} & Lista wszystkich jednostek \\
+{\em units} & Lista wszystkich jednostek\\
+\hline
+\end{DoxyParams}
+Metoda odpowiedzialna za\+:
+\begin{DoxyItemize}
+\item Aktualizację stanu szarży
+\item Znajdowanie i atakowanie najbliższego wroga
+\item Okrążanie przeciwników
+\item Rozpoczynanie szarży gdy wróg jest w zasięgu
+\item Obsługę obracania sprite\textquotesingle{}a
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & Lista wszystkich jednostek na mapie \\
 \hline
 \end{DoxyParams}
 
@@ -157,5 +188,5 @@ Implements \mbox{\hyperlink{class_unit_ae609e432af1261b1cdf8e804950e03b5}{Unit}}
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/bartu/source/repos/projekt/Cavalry.\+h\item 
-C\+:/\+Users/bartu/source/repos/projekt/Cavalry.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/bartu/source/repos/projekt/include/Cavalry.\+h\item 
+C\+:/\+Users/bartu/source/repos/projekt/src/Cavalry.\+cpp\end{DoxyCompactItemize}

@@ -1,10 +1,20 @@
 #include "Infantry.h"
 
+/**
+ * @brief Konstruktor klasy Infantry
+ * 
+ * Inicjalizuje piechura z podanymi parametrami i ładuje odpowiednią teksturę.
+ * Piechur ma zwiększoną wytrzymałość i obronę w porównaniu do innych jednostek.
+ * 
+ * @param x Pozycja początkowa X jednostki
+ * @param y Pozycja początkowa Y jednostki
+ * @param team Przynależność do drużyny (true - niebieska, false - czerwona)
+ */
 Infantry::Infantry(float x, float y, bool team)
     : Unit(x, y, team, 
           100.0f,     // health
           15.0f,      // damage
-          1.4f,       // speed
+          0.8f,       // speed
           25.0f,      // attackRange
           1.0f,       // attackSpeed
           0.85f,      // hitChance
@@ -19,6 +29,15 @@ Infantry::Infantry(float x, float y, bool team)
     unitSprite.setScale({0.054f, 0.054f});
 }
 
+/**
+ * @brief Oblicza bonus do obrony w zależności od formacji
+ * 
+ * Każda pobliska jednostka piechoty z tej samej drużyny (w promieniu FORMATION_RADIUS)
+ * dodaje 5% bonusu do obrony, maksymalnie do MAX_DEFENSE_BONUS (30%).
+ * 
+ * @param units Lista wszystkich jednostek na mapie
+ * @return Obliczony bonus do obrony
+ */
 float Infantry::calculateDefenseBonus(const std::vector<Unit*>& units) {
     int nearbyInfantry = 0;
 
@@ -42,6 +61,16 @@ float Infantry::calculateDefenseBonus(const std::vector<Unit*>& units) {
     return bonus;
 }
 
+/**
+ * @brief Oblicza ruch uwzględniający formację
+ * 
+ * Jeśli w pobliżu (FORMATION_RADIUS * 2) są sojusznicze jednostki piechoty,
+ * modyfikuje ruch aby trzymać się formacji (średniej pozycji).
+ * 
+ * @param units Lista wszystkich jednostek
+ * @param currentMove Aktualnie obliczony ruch jednostki
+ * @return Zmodyfikowany wektor ruchu uwzględniający formację
+ */
 sf::Vector2f Infantry::calculateFormationMove(const std::vector<Unit*>& units, const sf::Vector2f& currentMove) {
     sf::Vector2f formationMove = currentMove;
     sf::Vector2f averagePos(0, 0);
@@ -83,6 +112,17 @@ sf::Vector2f Infantry::calculateFormationMove(const std::vector<Unit*>& units, c
     return formationMove;
 }
 
+/**
+ * @brief Aktualizuje stan piechura w każdej klatce gry
+ * 
+ * Metoda odpowiedzialna za:
+ * - Aktualizację bonusu do obrony w formacji
+ * - Znajdowanie i atakowanie najbliższego wroga
+ * - Poruszanie się z uwzględnieniem formacji
+ * - Obsługę obracania sprite'a
+ * 
+ * @param units Lista wszystkich jednostek na mapie
+ */
 void Infantry::update(const std::vector<Unit*>& units) {
     if (!isAlive()) return;
 
@@ -132,13 +172,14 @@ void Infantry::update(const std::vector<Unit*>& units) {
 
         // Zastosuj system kolizji do proponowanego ruchu
         sf::Vector2f actualMove = resolveCollision(units, proposedMove);
+        velocity = actualMove; // Aktualizuj velocity
         setPosition(getPosition() + actualMove);
         
         // Ustaw kierunek sprite'a w zależności od kierunku ruchu
-        float scale_sign = ((closestEnemy->getPosition().x - getPosition().x) > 0) ? 1.f : -1.f;
+        float scale_sign = ((closestEnemy->getPosition().x - getPosition().x) >= 0) ? 1.f : -1.f;
         if (unitSprite.getScale().x * scale_sign < 0)
         {
-            unitSprite.setScale({ unitSprite.getScale().x * scale_sign, unitSprite.getScale().y });
-        } 
+            unitSprite.setScale({ -unitSprite.getScale().x, unitSprite.getScale().y });
+        }
     }
 }

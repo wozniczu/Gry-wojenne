@@ -1,6 +1,7 @@
 #pragma once
 #include "Unit.h"
-#include <iostream>
+#include <vector>
+#include <cmath>
 
 /**
  * @brief Klasa reprezentująca jednostki kawalerii
@@ -17,11 +18,11 @@ private:
     float chargeCooldown;           ///< Czas oczekiwania na następną szarżę
     float maxChargeCooldown;        ///< Maksymalny czas oczekiwania na szarżę
     sf::Vector2f chargeTarget;      ///< Cel szarży
-    
+
     // Parametry okrążania
     float circlingRadius;           ///< Promień okrążania
     float circlingAngle;            ///< Aktualny kąt okrążania
-    bool returningFromCharge;        ///< Flaga określająca czy jednostka wraca po szarży
+    bool returningFromCharge;       ///< Flaga określająca czy jednostka wraca po szarży
 
     /**
      * @brief Rozpoczyna szarżę w kierunku celu

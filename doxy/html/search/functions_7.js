@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logic_0',['logic',['../class_slider_s_f_m_l.html#a51eb022d51d0c86981e07455bac10bc6',1,'SliderSFML']]]
+  ['mainwindow_0',['MainWindow',['../class_main_window.html#a34c4b4207b46d11a4100c9b19f0e81bb',1,'MainWindow']]]
 ];

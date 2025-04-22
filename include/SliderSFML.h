@@ -16,15 +16,15 @@ private:
 	sf::RectangleShape axis;        ///< Kształt osi suwaka
 	sf::Font font;                  ///< Czcionka używana w tekście
 	sf::Text text;                  ///< Tekst wyświetlany przy suwaku
-	int minValue;                   ///< Minimalna wartość suwaka
-	int maxValue;                   ///< Maksymalna wartość suwaka
-	int xCord;                      ///< Pozycja X suwaka
-	int yCord;                      ///< Pozycja Y suwaka
-	int axisWidth;                  ///< Szerokość osi suwaka
-	int axisHeight;                 ///< Wysokość osi suwaka
-	int sliderWidth;                ///< Szerokość suwaka
-	int sliderHeight;               ///< Wysokość suwaka
-	float sliderValue;              ///< Aktualna wartość suwaka
+	int minValue;                 ///< Minimalna wartość suwaka
+	int maxValue;                 ///< Maksymalna wartość suwaka
+	float xCord;                    ///< Pozycja X suwaka
+	float yCord;                    ///< Pozycja Y suwaka
+	float axisWidth;                ///< Szerokość osi suwaka
+	float axisHeight;               ///< Wysokość osi suwaka
+	float sliderWidth;              ///< Szerokość suwaka
+	float sliderHeight;             ///< Wysokość suwaka
+	int sliderValue;              ///< Aktualna wartość suwaka
 	bool isDragging;                ///< Flaga określająca czy suwak jest przeciągany
 	sf::Vector2f position;          ///< Aktualna pozycja suwaka
 
@@ -34,7 +34,7 @@ public:
 	 * @param x Pozycja X suwaka
 	 * @param y Pozycja Y suwaka
 	 */
-	SliderSFML(int x, int y);
+	SliderSFML(float x, float y);
 
 	/**
 	 * @brief Tworzy tekst dla suwaka
@@ -44,7 +44,7 @@ public:
 	 * @param fontSize Rozmiar czcionki
 	 * @return Utworzony obiekt tekstu
 	 */
-	sf::Text returnText(int x, int y, std::string z, int fontSize);
+	sf::Text returnText(float x, float y, std::string z, float fontSize);
 
 	/**
 	 * @brief Inicjalizuje suwak z określonym zakresem wartości
@@ -69,13 +69,13 @@ public:
 	 * @brief Ustawia wartość suwaka
 	 * @param newValue Nowa wartość
 	 */
-	void setSliderValue(float newValue);
+	void setSliderValue(int newValue);
 
 	/**
 	 * @brief Ustawia wartość suwaka jako procent zakresu
 	 * @param newPercentValue Nowa wartość procentowa
 	 */
-	void setSliderPercentValue(float newPercentValue);
+	void setSliderPercentValue(int newPercentValue);
 
 	/**
 	 * @brief Rysuje suwak w oknie

@@ -10,5 +10,6 @@ var searchData=
   ['getrange_7',['getRange',['../class_unit.html#aa5b146a83e01560c14f459f99e3850ba',1,'Unit']]],
   ['getshape_8',['getShape',['../class_unit.html#a37888064d55619800f2ec2e3d36b752f',1,'Unit']]],
   ['getslidervalue_9',['getSliderValue',['../class_slider_s_f_m_l.html#ac36ec710eb0918925a8c3b755ec0ebf9',1,'SliderSFML']]],
-  ['getteam_10',['getTeam',['../class_unit.html#af4ad723e41c62303cf535ebb3742934b',1,'Unit']]]
+  ['getteam_10',['getTeam',['../class_unit.html#af4ad723e41c62303cf535ebb3742934b',1,'Unit']]],
+  ['getvelocity_11',['getVelocity',['../class_unit.html#ae4343f3f64705956c4d35e07074ef50b',1,'Unit']]]
 ];

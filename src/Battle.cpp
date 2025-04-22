@@ -1,7 +1,15 @@
 ﻿#include "Battle.h"
 
+/**
+ * @brief Konstruktor domyślny klasy Battle
+ * 
+ * Inicjalizuje bitwę z domyślnymi parametrami:
+ * - Ładuje teksturę areny
+ * - Tworzy 10 jednostek każdego typu dla obu drużyn
+ * - Ustawia jednostki w uporządkowanych formacjach
+ */
 Battle::Battle() : finished(false), arenaSprite(arenaTexture) {
-    if (!arenaTexture.loadFromFile("textures/arena.jpg")) {
+    if (!arenaTexture.loadFromFile("textures/arena.png")) {
         std::cerr << "Nie można załadować tekstury areny!" << std::endl;
     }
     arenaSprite.setTexture(arenaTexture, true);
@@ -17,6 +25,20 @@ Battle::Battle() : finished(false), arenaSprite(arenaTexture) {
     }
 }
 
+/**
+ * @brief Konstruktor parametryczny klasy Battle
+ * 
+ * Inicjalizuje bitwę z określoną liczbą jednostek:
+ * - Ładuje teksturę areny i skaluje ją
+ * - Tworzy jednostki w losowych pozycjach
+ * 
+ * @param infantryA Liczba piechoty drużyny A
+ * @param archerA Liczba łuczników drużyny A
+ * @param cavalryA Liczba kawalerii drużyny A
+ * @param infantryB Liczba piechoty drużyny B
+ * @param archerB Liczba łuczników drużyny B
+ * @param cavalryB Liczba kawalerii drużyny B
+ */
 Battle::Battle(int infantryA, int archerA, int cavalryA, int infantryB, int archerB, int cavalryB) : finished(false), arenaSprite(arenaTexture) {
     // Generator losowych pozycji
     std::random_device rd;
@@ -26,7 +48,7 @@ Battle::Battle(int infantryA, int archerA, int cavalryA, int infantryB, int arch
     std::uniform_real_distribution<float> distrib_y(100.f, 700.f);
 
     if (!arenaTexture.loadFromFile("textures/arena.png")) {
-        std::cerr << "Błd: Nie udało się załadować tekstury!" << std::endl;
+        std::cerr << "Błąd: Nie udało się załadować tekstury!" << std::endl;
     }
 
     arenaSprite.setTexture(arenaTexture, true);
@@ -63,6 +85,12 @@ Battle::Battle(int infantryA, int archerA, int cavalryA, int infantryB, int arch
     }
 }
 
+/**
+ * @brief Destruktor klasy Battle
+ * 
+ * Zwalnia pamięć zajmowaną przez jednostki obu drużyn
+ * i czyści wektory jednostek
+ */
 Battle::~Battle() {
     for (auto& unit : teamA) {
         delete unit;
@@ -75,6 +103,14 @@ Battle::~Battle() {
     teamB.clear();
 }
 
+/**
+ * @brief Aktualizuje stan bitwy
+ * 
+ * Metoda odpowiedzialna za:
+ * - Aktualizację stanu wszystkich jednostek
+ * - Sprawdzenie warunków zakończenia bitwy
+ * - Ustawienie flagi finished jeśli bitwa się zakończyła
+ */
 void Battle::update() {
     // Przygotuj wektor wszystkich jednostek
     std::vector<Unit*> allUnits;
@@ -118,6 +154,17 @@ void Battle::update() {
     }
 }
 
+/**
+ * @brief Rysuje bitwę w oknie
+ * 
+ * Metoda odpowiedzialna za:
+ * - Rysowanie areny
+ * - Rysowanie żywych jednostek obu drużyn
+ * - Rysowanie strzał łuczników
+ * - Wyświetlanie wyniku po zakończeniu bitwy
+ * 
+ * @param window Okno, w którym rysowana jest bitwa
+ */
 void Battle::draw(sf::RenderWindow& window) {
     // Rysowanie areny
     window.draw(arenaSprite);
@@ -189,6 +236,12 @@ void Battle::draw(sf::RenderWindow& window) {
 }
 
 
+/**
+ * @brief Sprawdza czy bitwa się zakończyła
+ * 
+ * @return true jeśli bitwa się zakończyła (jedna z drużyn nie ma żywych jednostek)
+ * @return false jeśli bitwa trwa nadal
+ */
 bool Battle::isFinished() const {
     return finished;
 }

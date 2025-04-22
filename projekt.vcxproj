@@ -105,7 +105,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\bartu\source\repos\Bitwa\SFML-3.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bartu\source\repos\projekt\include;C:\Users\bartu\source\repos\Bitwa\SFML-3.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,7 +123,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\bartu\source\repos\Bitwa\SFML-3.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bartu\source\repos\projekt\include;C:\Users\bartu\source\repos\Bitwa\SFML-3.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,25 +135,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Archer.h" />
-    <ClInclude Include="Battle.h" />
-    <ClInclude Include="ButtonSFML.h" />
-    <ClInclude Include="Cavalry.h" />
-    <ClInclude Include="Infantry.h" />
-    <ClInclude Include="MainWindow.h" />
-    <ClInclude Include="SliderSFML.h" />
-    <ClInclude Include="Unit.h" />
+    <ClInclude Include="include\Archer.h" />
+    <ClInclude Include="include\Arrow.h" />
+    <ClInclude Include="include\Battle.h" />
+    <ClInclude Include="include\ButtonSFML.h" />
+    <ClInclude Include="include\Cavalry.h" />
+    <ClInclude Include="include\Infantry.h" />
+    <ClInclude Include="include\MainWindow.h" />
+    <ClInclude Include="include\SliderSFML.h" />
+    <ClInclude Include="include\Unit.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Archer.cpp" />
-    <ClCompile Include="Battle.cpp" />
-    <ClCompile Include="ButtonSFML.cpp" />
-    <ClCompile Include="Cavalry.cpp" />
-    <ClCompile Include="Infantry.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainWindow.cpp" />
-    <ClCompile Include="SliderSFML.cpp" />
-    <ClCompile Include="Unit.cpp" />
+    <ClCompile Include="src\Archer.cpp" />
+    <ClCompile Include="src\Battle.cpp" />
+    <ClCompile Include="src\ButtonSFML.cpp" />
+    <ClCompile Include="src\Cavalry.cpp" />
+    <ClCompile Include="src\Infantry.cpp" />
+    <ClCompile Include="src\MainWindow.cpp" />
+    <ClCompile Include="src\SliderSFML.cpp" />
+    <ClCompile Include="src\Unit.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,14 @@
 #include "Archer.h"
 
+/**
+ * @brief Konstruktor klasy Archer
+ * 
+ * Inicjalizuje łucznika z podanymi parametrami i ładuje odpowiednią teksturę.
+ * 
+ * @param x Pozycja początkowa X łucznika
+ * @param y Pozycja początkowa Y łucznika 
+ * @param team Przynależność do drużyny (true - niebieska, false - czerwona)
+ */
 Archer::Archer(float x, float y, bool team)
     : Unit(x, y, team, 
           80.0f,      // health
@@ -19,6 +28,18 @@ Archer::Archer(float x, float y, bool team)
     unitSprite.setScale({ 0.05f, 0.05f });
 }
 
+/**
+ * @brief Aktualizuje stan łucznika w każdej klatce gry
+ * 
+ * Metoda odpowiedzialna za:
+ * - Znajdowanie najbliższego przeciwnika
+ * - Podejmowanie decyzji o ruchu (zbliżanie/oddalanie)
+ * - Strzelanie do przeciwników w zasięgu
+ * - Obsługę obracania sprite'a w kierunku przeciwnika
+ * - Aktualizację pozycji strzał
+ * 
+ * @param units Vector zawierający wszystkie jednostki na mapie
+ */
 void Archer::update(const std::vector<Unit*>& units) {
     if (!isAlive()) return;
 
@@ -72,11 +93,11 @@ void Archer::update(const std::vector<Unit*>& units) {
         sf::Vector2f actualMove = resolveCollision(units, proposedMove);
         setPosition(getPosition() + actualMove);
         
-        // Ustaw kierunek sprite'a w zależności od kierunku ruchu
+        // Ustaw kierunek sprite'a w zależności od kierunku ataku
         float scale_sign = ((closestEnemy->getPosition().x - getPosition().x) >= 0) ? 1.f : -1.f;
         if (unitSprite.getScale().x * scale_sign < 0)
         {
-            unitSprite.setScale({ unitSprite.getScale().x * scale_sign, unitSprite.getScale().y });
+            unitSprite.setScale({ -unitSprite.getScale().x, unitSprite.getScale().y});
         }
     }
 
@@ -120,6 +141,14 @@ void Archer::update(const std::vector<Unit*>& units) {
     }
 }
 
+/**
+ * @brief Wystrzeliwuje strzałę w kierunku celu
+ * 
+ * Tworzy nową strzałę z obliczonym wektorem kierunku i dodaje ją do listy aktywnych strzał.
+ * Strzała będzie poruszać się w kierunku celu z zadaną prędkością (arrowSpeed).
+ * 
+ * @param targetPos Docelowa pozycja strzały (pozycja przeciwnika)
+ */
 void Archer::shoot(const sf::Vector2f& targetPos) {
     sf::Vector2f direction = targetPos - getPosition();
     float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
@@ -130,6 +159,14 @@ void Archer::shoot(const sf::Vector2f& targetPos) {
     }
 }
 
+/**
+ * @brief Rysuje wszystkie aktywne strzały w oknie gry
+ * 
+ * Iteruje przez listę strzał i rysuje tylko te, które są aktywne.
+ * Strzały są usuwane z listy po trafieniu w cel lub wyjściu poza mapę.
+ * 
+ * @param window Referencja do okna renderowania SFML
+ */
 void Archer::drawArrows(sf::RenderWindow& window) {
     for (const auto& arrow : arrows) {
         if (arrow.active) {

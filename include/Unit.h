@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <cmath>
+#include <random>
 #include <iostream>
 
 /**
@@ -11,7 +12,7 @@
  * typów jednostek. Zawiera mechanizmy kolizji, ataku i obrony.
  */
 class Unit {
-protected:
+public:
     float health;                   ///< Aktualne zdrowie jednostki
     float damage;                   ///< Obrażenia zadawane przez jednostkę
     float speed;                    ///< Prędkość poruszania się jednostki
@@ -179,4 +180,10 @@ public:
      * @return Sprite jednostki
      */
     const sf::Sprite& getShape() const { return unitSprite; }
+
+    /**
+     * @brief Pobiera wektor prędkości jednostki
+     * @return Wektor prędkości
+     */
+    const sf::Vector2f& getVelocity() const { return velocity; }
 };
