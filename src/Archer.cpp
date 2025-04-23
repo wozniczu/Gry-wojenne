@@ -11,11 +11,11 @@
  */
 Archer::Archer(float x, float y, bool team)
     : Unit(x, y, team, 
-          80.0f,      // health
+          50.0f,      // health
           10.0f,      // damage
           0.7f,       // speed
           300.0f,     // attackRange
-          0.4f,       // attackSpeed
+          1.0f,       // attackSpeed
           0.95f,      // hitChance
           0.1f),      // defense
     arrowSpeed(20.f) {
@@ -44,10 +44,10 @@ void Archer::update(const std::vector<Unit*>& units) {
     if (!isAlive()) return;
 
     // Aktualizacja cooldownu ataku
-    updateAttackCooldown(0.016f);
+    updateAttackCooldown(1.0f / 60.0f);
 
-    float minDist = 1000000.f;
     sf::Vector2f targetPos;
+    float minDistance = std::numeric_limits<float>::max();
     Unit* closestEnemy = nullptr;
 
     // Znalezienie najbliższego przeciwnika
@@ -55,8 +55,8 @@ void Archer::update(const std::vector<Unit*>& units) {
         if (!unit->isAlive() || unit->getTeam() == team) continue;
 
         float dist = getDistance(unit->getPosition());
-        if (dist < minDist) {
-            minDist = dist;
+        if (dist < minDistance) {
+            minDistance = dist;
             closestEnemy = unit;
             targetPos = unit->getPosition();
         }
@@ -91,6 +91,7 @@ void Archer::update(const std::vector<Unit*>& units) {
 
         // Zastosuj system kolizji do proponowanego ruchu, uwzględniając wszystkie jednostki
         sf::Vector2f actualMove = resolveCollision(units, proposedMove);
+        velocity = actualMove;
         setPosition(getPosition() + actualMove);
         
         // Ustaw kierunek sprite'a w zależności od kierunku ataku

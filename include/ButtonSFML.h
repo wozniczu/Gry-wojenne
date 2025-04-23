@@ -10,7 +10,7 @@
  */
 class ButtonSFML {
 private:
-    sf::RectangleShape shape;      ///< Kształt przycisku
+    sf::RectangleShape shape;       ///< Kształt przycisku
     sf::Text text;                  ///< Tekst przycisku
     sf::Font font;                  ///< Czcionka używana w tekście
     bool isHovered;                 ///< Flaga określająca czy mysz jest nad przyciskiem

@@ -235,7 +235,6 @@ void Battle::draw(sf::RenderWindow& window) {
     }
 }
 
-
 /**
  * @brief Sprawdza czy bitwa się zakończyła
  * 

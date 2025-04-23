@@ -84,6 +84,7 @@ void ButtonSFML::update(sf::RenderWindow& window) {
  * @param window Okno, w którym rysowany jest przycisk
  */
 void ButtonSFML::draw(sf::RenderWindow& window) {
+    update(window);
     window.draw(shape);
     window.draw(text);
 }

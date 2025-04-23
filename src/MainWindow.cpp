@@ -31,7 +31,7 @@ MainWindow::MainWindow()
       menuSprite(menuTexture)
 {
     if (!font.openFromFile("fonts/arial.ttf")) {
-        std::cerr << "Nie można załadować czcionki!" << std::endl;
+        std::cerr << "Nie można załadować czcionki fonts/arial.ttf!" << std::endl;
     }
     if (!menuTexture.loadFromFile("textures/menu.png")) {
         std::cerr << "Nie można załadować tekstury menu!" << std::endl;

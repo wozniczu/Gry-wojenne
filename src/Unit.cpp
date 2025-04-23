@@ -123,7 +123,7 @@ void Unit::setPosition(const sf::Vector2f& pos) {
  * - Kolizje z innymi jednostkami (odpychanie)
  * - Granice mapy (1400x800)
  * 
- * @param units Lista wszystkich jednostek na mapie
+ * @param units Wektor wszystkich jednostek na mapie
  * @param proposedMove Proponowany wektor ruchu
  * @return Skorygowany wektor ruchu uwzględniający kolizje
  */

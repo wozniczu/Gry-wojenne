@@ -22,7 +22,6 @@ private:
     // Parametry okrążania
     float circlingRadius;           ///< Promień okrążania
     float circlingAngle;            ///< Aktualny kąt okrążania
-    bool returningFromCharge;       ///< Flaga określająca czy jednostka wraca po szarży
 
     /**
      * @brief Rozpoczyna szarżę w kierunku celu

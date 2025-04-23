@@ -1,9 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
 #include <SFML/Window.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
 #include <memory>
 #include <thread>
 #include <chrono>
@@ -28,12 +25,12 @@ enum class GameState {
  */
 class MainWindow {
 private:
-    sf::RenderWindow window;        ///< Okno aplikacji SFML
-    sf::Font font;                  ///< Czcionka używana w interfejsie
+    sf::RenderWindow window;       ///< Okno aplikacji SFML
+    sf::Font font;                 ///< Czcionka używana w interfejsie
     sf::Texture menuTexture;       ///< Tekstura menu
     sf::Sprite menuSprite;         ///< Sprite menu
-    GameState currentState;         ///< Aktualny stan gry
-    Battle* battle;                 ///< Wskaźnik do aktualnej bitwy
+    GameState currentState;        ///< Aktualny stan gry
+    Battle* battle;                ///< Wskaźnik do aktualnej bitwy
     
     // Suwaki dla drużyny A
     SliderSFML infantrySliderA;    ///< Suwak wyboru liczby piechoty dla drużyny A

@@ -12,11 +12,11 @@
  */
 Infantry::Infantry(float x, float y, bool team)
     : Unit(x, y, team, 
-          100.0f,     // health
+          70.0f,     // health
           15.0f,      // damage
           0.8f,       // speed
           25.0f,      // attackRange
-          1.0f,       // attackSpeed
+          2.0f,       // attackSpeed
           0.85f,      // hitChance
           0.2f),      // defense - bazowa wartość obrony
     baseDefense(defense) // zapisujemy bazową wartość obrony
@@ -54,10 +54,10 @@ float Infantry::calculateDefenseBonus(const std::vector<Unit*>& units) {
         }
     }
 
-    // Obliczamy bonus do obrony (każda pobliska jednostka daje 5% bonusu, max 15%)
+    // Obliczamy bonus do obrony (każda pobliska jednostka daje 5% bonusu, max 30%)
     float bonus = std::min(nearbyInfantry * 0.05f, MAX_DEFENSE_BONUS);
     
-    // Zwracamy bazową obronę + bonus
+    // Zwracamy bonus do obrony
     return bonus;
 }
 
@@ -82,7 +82,7 @@ sf::Vector2f Infantry::calculateFormationMove(const std::vector<Unit*>& units, c
         
         if (dynamic_cast<Infantry*>(unit) != nullptr) {
             float distance = getDistance(unit->getPosition());
-            if (distance <= FORMATION_RADIUS * 2) { // Większy promień dla formacji
+            if (distance <= FORMATION_RADIUS * 2) {
                 averagePos += unit->getPosition();
                 nearbyAllies++;
             }

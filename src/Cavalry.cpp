@@ -12,13 +12,13 @@
  */
 Cavalry::Cavalry(float x, float y, bool team)
     : Unit(x, y, team,
-        120.0f,     // health
+        80.0f,     // health
         30.0f,      // damage
         2.0f,       // speed
         35.0f,      // attackRange
-        0.7f,       // attackSpeed
+        1.8f,       // attackSpeed
         0.95f,      // hitChance
-        0.1f),     // defense
+        0.1f),      // defense
     isCharging(false),
     chargeSpeed(3.0f),
     chargeCooldown(0.0f),
@@ -171,7 +171,7 @@ void Cavalry::update(const std::vector<Unit*>& units) {
                         proposedMove = direction * speed;
                     }
                 }
-                else if (minDistance <= 200.0f && chargeCooldown <= 0) {
+                else if (minDistance <= 300.0f && chargeCooldown <= 0) {
                     startCharge(closestEnemy->getPosition());
                 }
                 else {
@@ -180,8 +180,9 @@ void Cavalry::update(const std::vector<Unit*>& units) {
             }
         }
 
-        // Zastosuj system kolizji do proponowanego ruchu, uwzględniając wszystkie jednostki
+        // Zastosuj system kolizji do proponowanego ruchu
         sf::Vector2f actualMove = resolveCollision(units, proposedMove);
+        velocity = actualMove;
         setPosition(getPosition() + actualMove);
 
         // Ustaw kierunek sprite'a w zależności od kierunku ruchu
